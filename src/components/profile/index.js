@@ -48,7 +48,7 @@ export default function Dashboard() {
   const classes = useStyles();
   return (
     <>
-      <HeadNav title="Otp service" />
+      <HeadNav title="Api Keys" />
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>

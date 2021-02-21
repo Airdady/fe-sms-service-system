@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 export const mainListItems = (
   <div>
-    <Link style={{textDecoration:'none'}} to="/">
+    <Link style={{ textDecoration: "none" }} to="/">
       <ListItem button>
         <ListItemIcon>
           <DashboardIcon />
@@ -41,7 +41,7 @@ export const mainListItems = (
         <ListItemText primary="Dashboard" />
       </ListItem>
     </Link>
-    <Link style={{textDecoration:'none'}} to="/verify">
+    <Link style={{ textDecoration: "none" }} to="/verify">
       <ListItem button>
         <ListItemIcon>
           <ShoppingCartIcon />
@@ -49,7 +49,7 @@ export const mainListItems = (
         <ListItemText primary="OTP service" />
       </ListItem>
     </Link>
-    <Link style={{textDecoration:'none'}} to="/sms">
+    <Link style={{ textDecoration: "none" }} to="/sms">
       <ListItem button>
         <ListItemIcon>
           <PeopleIcon />
@@ -57,29 +57,35 @@ export const mainListItems = (
         <ListItemText primary="Messages" />
       </ListItem>
     </Link>
-    <ListItem  button>
-      <ListItemIcon>
-        <BarChartIcon />
-      </ListItemIcon>
-      <ListItemText primary="Lookup" />
-    </ListItem>
+    <Link style={{ textDecoration: "none" }} to="/number_lookup">
+      <ListItem button>
+        <ListItemIcon>
+          <BarChartIcon />
+        </ListItemIcon>
+        <ListItemText primary="Lookup" />
+      </ListItem>
+    </Link>
   </div>
 );
 
 export const secondaryListItems = (
   <div>
-    <ListSubheader inset>Saved reports</ListSubheader>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Api Keys" />
-    </ListItem>
-    <ListItem button>
-      <ListItemIcon>
-        <AssignmentIcon />
-      </ListItemIcon>
-      <ListItemText primary="Documentation" />
-    </ListItem>
+    <ListSubheader inset>Others</ListSubheader>
+    <Link style={{ textDecoration: "none" }} to="/api_keys">
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="Api Keys" />
+      </ListItem>
+    </Link>
+    <Link style={{ textDecoration: "none" }} to="/documentation">
+      <ListItem button>
+        <ListItemIcon>
+          <AssignmentIcon />
+        </ListItemIcon>
+        <ListItemText primary="Documentation" />
+      </ListItem>
+    </Link>
   </div>
 );

@@ -14,7 +14,7 @@ import Button from "@material-ui/core/Button";
 import FileCopyRoundedIcon from "@material-ui/icons/FileCopyRounded";
 import Stepper from "./Stepper";
 import DenseTable from "./Table";
-import { green } from "@material-ui/core/colors";
+import HeadNav from "../Nav";
 
 function Copyright() {
   return (
@@ -122,95 +122,98 @@ export default function Dashboard() {
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <main className={classes.content}>
-      <div className={classes.appBarSpacer} />
-      <Container maxWidth="lg" className={classes.container}>
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Paper className={fixedHeightPaper}>
-              <Grid container spacing={3}>
-                <Grid item xs={8}>
-                  <Box>
-                    <Typography variant="subtitle1" gutterBottom>
-                      Hi, Rumbiiha
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      style={{ marginTop: "-.5rem" }}
-                      display="block"
-                      gutterBottom
-                    >
-                      company
-                    </Typography>
-                    <Typography variant="subtitle1" gutterBottom>
-                      Available Balance
-                    </Typography>
-                    <Grid container spacing={1} alignItems="flex-end">
-                      <Grid item>
-                        <TextField
-                          style={{ width: "30rem" }}
-                          value="7d0eb91189353d00bbf1f5ba0ed322ee-c92d62ee"
-                          id="input-with-icon-grid"
-                        />
+    <>
+      <HeadNav title="Dashboard"/>
+      <main className={classes.content}>
+        <div className={classes.appBarSpacer} />
+        <Container maxWidth="lg" className={classes.container}>
+          <Grid container spacing={3}>
+            <Grid item xs={12}>
+              <Paper className={fixedHeightPaper}>
+                <Grid container spacing={3}>
+                  <Grid item xs={8}>
+                    <Box>
+                      <Typography variant="subtitle1" gutterBottom>
+                        Hi, Rumbiiha
+                      </Typography>
+                      <Typography
+                        variant="caption"
+                        style={{ marginTop: "-.5rem" }}
+                        display="block"
+                        gutterBottom
+                      >
+                        company
+                      </Typography>
+                      <Typography variant="subtitle1" gutterBottom>
+                        Public Api Keys
+                      </Typography>
+                      <Grid container spacing={1} alignItems="flex-end">
+                        <Grid item>
+                          <TextField
+                            style={{ width: "30rem" }}
+                            value="7d0eb91189353d00bbf1f5ba0ed322ee-c92d62ee"
+                            id="input-with-icon-grid"
+                          />
+                        </Grid>
+                        <Grid item>
+                          <FileCopyRoundedIcon />
+                        </Grid>
+                        <Grid item>
+                          <Button color="primary">manage Keys</Button>
+                        </Grid>
                       </Grid>
-                      <Grid item>
-                        <FileCopyRoundedIcon />
-                      </Grid>
-                      <Grid item>
-                        <Button color="primary">manage Keys</Button>
-                      </Grid>
-                    </Grid>
-                  </Box>
+                    </Box>
+                  </Grid>
+                  <Grid item xs={4}>
+                    <Box>
+                      <Typography variant="subtitle1" gutterBottom>
+                        Available Balance
+                      </Typography>
+                      <Typography
+                        variant="h5"
+                        className={classes.green}
+                        style={{ marginTop: "-.5rem" }}
+                        display="block"
+                        gutterBottom
+                      >
+                        $ 15.6
+                      </Typography>
+                      <Typography
+                        variant="caption"
+                        style={{ marginTop: "-.5rem" }}
+                        display="block"
+                        gutterBottom
+                      >
+                        Upgrade now to buy phone numbers, publish your app in
+                        the App Gallery, and take over the world.
+                      </Typography>
+                      <Button size="small" variant="contained" color="primary">
+                        Upgrade
+                      </Button>
+                    </Box>
+                  </Grid>
                 </Grid>
-                <Grid item xs={4}>
-                  <Box>
-                    <Typography variant="subtitle1" gutterBottom>
-                      Available Balance
-                    </Typography>
-                    <Typography
-                      variant="h5"
-                      className={classes.green}
-                      style={{ marginTop: "-.5rem" }}
-                      display="block"
-                      gutterBottom
-                    >
-                      $ 15.6
-                    </Typography>
-                    <Typography
-                      variant="caption"
-                      style={{ marginTop: "-.5rem" }}
-                      display="block"
-                      gutterBottom
-                    >
-                      Upgrade now to buy phone numbers, publish your app in the
-                      App Gallery, and take over the world.
-                    </Typography>
-                    <Button variant="contained" color="primary">
-                      Upgrade
-                    </Button>
-                  </Box>
-                </Grid>
-              </Grid>
-            </Paper>
+              </Paper>
+            </Grid>
+            <Grid item xs={8}>
+              <Paper className={fixedHeightPaper1}>
+                <Stepper />
+              </Paper>
+            </Grid>
+            <Grid item xs={4}>
+              <Paper className={fixedHeightPaper1}></Paper>
+            </Grid>
+            <Grid item xs={12}>
+              {/* <Paper> */}
+              <DenseTable />
+              {/* </Paper> */}
+            </Grid>
           </Grid>
-          <Grid item xs={8}>
-            <Paper className={fixedHeightPaper1}>
-              <Stepper />
-            </Paper>
-          </Grid>
-          <Grid item xs={4}>
-            <Paper className={fixedHeightPaper1}></Paper>
-          </Grid>
-          <Grid item xs={12}>
-            {/* <Paper> */}
-            <DenseTable />
-            {/* </Paper> */}
-          </Grid>
-        </Grid>
-        <Box pt={4}>
-          <Copyright />
-        </Box>
-      </Container>
-    </main>
+          <Box pt={4}>
+            <Copyright />
+          </Box>
+        </Container>
+      </main>
+    </>
   );
 }
