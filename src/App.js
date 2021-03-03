@@ -1,13 +1,14 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./components/dashboard";
+import Dashboard from "./components/dashboard";
 import Login from "./components/login";
 import Verify from "./components/verify";
 import Register from "./components/register";
 import ApiKeys from "./components/apiKeys";
 import Profile from "./components/profile";
 import { makeStyles } from "@material-ui/core/styles";
-import CssBaseline from "@material-ui/core/CssBaseline";
+import Home from "./components/home";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -96,6 +97,7 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/dashboard" component={Dashboard} />
           <Route exact path="/login" component={Login} />
           <Route exact path="/register" component={Register} />
           <Route exact path="/verify" component={Verify} />

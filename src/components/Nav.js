@@ -14,7 +14,9 @@ import MenuIcon from "@material-ui/icons/Menu";
 import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
-import Dropdown from './DropDown'
+import Dropdown from "./DropDown";
+import Grid from "@material-ui/core/Grid";
+import { Button, Box } from "@material-ui/core";
 
 const drawerWidth = 240;
 
@@ -143,8 +145,19 @@ export default function Nav({ title }) {
               <NotificationsIcon />
             </Badge>
           </IconButton>
-          <Dropdown/>
+          <Dropdown />
         </Toolbar>
+        <Box display="flex" justifyContent="space-between" ml={4} mr={4}>
+          <Typography
+            style={{ color: "white" }}
+            variant="subtitle1"
+            gutterBottom
+          >
+            Create and manage API Keys to use with the Telgo API v2 Create API
+            Key API V1 Tokens
+          </Typography>
+          <Button variant="contained" size="small">quick start</Button>
+        </Box>
       </AppBar>
       <Drawer
         variant="permanent"

@@ -8,7 +8,9 @@ import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
 import Link from "@material-ui/core/Link";
 import HeadNav from "../Nav";
-
+import Button from "@material-ui/core/Button";
+import Table from "../Table";
+import createDrawer from './create'
 function Copyright() {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
@@ -30,16 +32,17 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     height: "100vh",
     overflow: "auto",
+    marginTop: "3.5rem",
+    margin: 33,
   },
   container: {
     paddingTop: theme.spacing(4),
     paddingBottom: theme.spacing(4),
   },
+  appBarSpacer: theme.mixins.toolbar,
   paper: {
     padding: theme.spacing(2),
-    display: "flex",
     overflow: "auto",
-    flexDirection: "column",
   },
 }));
 
@@ -47,14 +50,21 @@ export default function Dashboard() {
   const classes = useStyles();
   return (
     <>
-      <HeadNav />
+      <HeadNav title="Api Keys" />
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="lg" className={classes.container}>
-          <Box pt={4}>
-            <Copyright />
-          </Box>
-        </Container>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <Paper className={classes.paper}>
+            <createDrawer />
+              <Button variant="contained" size="small" color="primary">ADD NEW KEYS</Button>
+              <Table />
+            </Paper>
+          </Grid>
+        </Grid>
+        <Box pt={4}>
+          <Copyright />
+        </Box>
       </main>
     </>
   );

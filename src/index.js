@@ -4,19 +4,25 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { createMuiTheme } from "@material-ui/core/styles";
 import { ThemeProvider } from "@material-ui/styles";
-import { red } from "@material-ui/core/colors";
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 const theme = createMuiTheme({
   palette: {
+    type: "light",
     primary: {
       main: '#742ddd',
     },
+    background:{
+      default: '#e8e8e8'
+    }
   },
 });
+
 
 ReactDOM.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+    <CssBaseline />
       <App />
     </ThemeProvider>
   </React.StrictMode>,
