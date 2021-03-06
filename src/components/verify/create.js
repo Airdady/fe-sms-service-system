@@ -46,7 +46,7 @@ export default function FormDialog() {
   const [token, setToken] = React.useState("");
 
   useMemo(() => {
-    setToken(`VM-${uuid.v4().replace('-','').replace('-','')}`)
+    setToken(`VM-${uuid.v4().replace('-','').replace('-','').replace('-','')}`)
   },[]);
 
   const handleClickOpen = () => {

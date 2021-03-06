@@ -6,7 +6,6 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
 import Chart from "./Chart";
 import TextField from "@material-ui/core/TextField";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -15,6 +14,7 @@ import FileCopyRoundedIcon from "@material-ui/icons/FileCopyRounded";
 import Stepper from "./Stepper";
 import DenseTable from "./Table";
 import HeadNav from "../Nav";
+import { Link } from "react-router-dom";
 
 function Copyright() {
   return (
@@ -123,7 +123,7 @@ export default function Dashboard() {
 
   return (
     <>
-      <HeadNav title="Dashboard"/>
+      <HeadNav title="Dashboard" />
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
@@ -188,7 +188,7 @@ export default function Dashboard() {
                         the App Gallery, and take over the world.
                       </Typography>
                       <Button size="small" variant="contained" color="primary">
-                        Upgrade
+                        <Link to="/payments">Upgrade</Link>
                       </Button>
                     </Box>
                   </Grid>

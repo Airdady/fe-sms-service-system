@@ -8,6 +8,7 @@ import ApiKeys from "./components/apiKeys";
 import Profile from "./components/profile";
 import { makeStyles } from "@material-ui/core/styles";
 import Home from "./components/home";
+import Checkout from "./components/payments/Checkout";
 
 const drawerWidth = 240;
 
@@ -104,6 +105,8 @@ function App() {
           <Route exact path="/sms" component={Verify} />
           <Route exact path="/api_keys" component={ApiKeys} />
           <Route exact path="/profile" component={Profile} />
+          <Route exact path="/payments" component={Checkout} />
+          <Route exact path="/return" component={Checkout} />
         </Switch>
       </Router>
     </div>
