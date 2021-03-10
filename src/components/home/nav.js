@@ -35,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
   },
   links: {
     textDecoration: "none",
-    color: "white",
+    color: "inherit",
     textTransform: "capitalize",
   },
   navButtons: {
@@ -100,12 +100,14 @@ export default function MenuAppBar() {
               </Box>
 
               <Button color="inherit" className={classes.navButtons}>
-                <Link to="/register" className={classes.links}>
+                <Link to="/login" className={classes.links}>
                   Login
                 </Link>
               </Button>
               <Button variant="contained" style={{ marginLeft: ".5rem" }}>
-                Register
+                <Link to="/register" className={classes.links}>
+                  Register
+                </Link>
               </Button>
               {/* <div>
                 <IconButton

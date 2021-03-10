@@ -4,18 +4,15 @@ import MenuNav from "./nav";
 import Paper from "@material-ui/core/Paper";
 import { Container, Typography, Box, Button } from "@material-ui/core";
 import Grid from "@material-ui/core/Grid";
-import Adobe from "../../assets/img/adobe.svg";
-import Facebook from "../../assets/img/facebook.svg";
-import Imgur from "../../assets/img/imgur.svg";
-import Laradock from "../../assets/img/laradock.svg";
-import Ritter from "../../assets/img/ritter.svg";
 import Freepik from "../../assets/img/freepik.svg";
-import Slack from "../../assets/img/slack-2.svg";
 import SearchInput from "./search";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 import Footer from "./Footer";
+import IconButton from "@material-ui/core/IconButton";
+import PhotoCamera from "@material-ui/icons/PhotoCamera";
+import ExpertForm from "./ExpertForm";
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -48,13 +45,12 @@ const useStyles = makeStyles((theme) => ({
   centerContent: {
     display: "flex",
     alignItems: "center",
-    justifyContent: "space-around",
+    justifyContent: "start",
   },
   goodies: {
     width: "100%",
-    height: "50rem",
-    marginBottom: "20rem",
-    // clipPath: "polygon(100% 23%, 100% 100%, 0 78%, 0 0)",
+    marginBottom: "3rem",
+    padding:'3rem 0'
   },
 }));
 
@@ -94,9 +90,9 @@ export default function BasicTable() {
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                width="275.639"
+                width="398"
                 height="420.5"
-                viewBox="0 0 275.639 420.5"
+                viewBox="0 0 398 420.5"
               >
                 <defs>
                   <filter
@@ -118,7 +114,7 @@ export default function BasicTable() {
                     x="0"
                     y="75.412"
                     width="195"
-                    height="68"
+                    height="174"
                     filterUnits="userSpaceOnUse"
                   >
                     <feOffset dy="3" input="SourceAlpha" />
@@ -127,154 +123,204 @@ export default function BasicTable() {
                     <feComposite operator="in" in2="blur-2" />
                     <feComposite in="SourceGraphic" />
                   </filter>
+                  <filter
+                    id="Rectangle_3"
+                    x="183"
+                    y="284.412"
+                    width="215"
+                    height="98"
+                    filterUnits="userSpaceOnUse"
+                  >
+                    <feOffset dy="3" input="SourceAlpha" />
+                    <feGaussianBlur stdDeviation="3" result="blur-3" />
+                    <feFlood flood-opacity="0.161" />
+                    <feComposite operator="in" in2="blur-3" />
+                    <feComposite in="SourceGraphic" />
+                  </filter>
                 </defs>
                 <g
-                  id="Group_4"
-                  data-name="Group 4"
-                  transform="translate(-926 -1124.588)"
+                  id="Group_5"
+                  data-name="Group 5"
+                  transform="translate(-871 -1171.588)"
                 >
-                  <g id="Group_3" data-name="Group 3">
-                    <g
-                      id="iPhoneX_Light"
-                      transform="translate(990.62 1125.089)"
-                    >
+                  <g
+                    id="Group_4"
+                    data-name="Group 4"
+                    transform="translate(-55 47)"
+                  >
+                    <g id="Group_3" data-name="Group 3">
                       <g
-                        id="Group_1"
-                        data-name="Group 1"
-                        transform="translate(0 0)"
+                        id="iPhoneX_Light"
+                        transform="translate(990.62 1125.089)"
+                      >
+                        <g
+                          id="Group_1"
+                          data-name="Group 1"
+                          transform="translate(0 0)"
+                        >
+                          <path
+                            id="Path_1"
+                            data-name="Path 1"
+                            d="M184.878,420H24.5C10.959,420,0,409.606,0,396.761V23.239C0,10.394,10.959,0,24.5,0H184.878c13.543,0,24.5,10.394,24.5,23.239V396.676C209.469,409.606,198.51,420,184.878,420Z"
+                            transform="translate(0 0)"
+                            fill="#ebebeb"
+                            opacity="0.95"
+                          />
+                          <path
+                            id="Path_2"
+                            data-name="Path 2"
+                            d="M49.875,7.888V8.4c0,6.541,5.7,11.893,12.666,11.893h88.212c6.966,0,12.666-5.352,12.666-11.893v-.51A2.962,2.962,0,0,1,166.5,5h21.8c11.219,0,20.357,8.58,20.357,19.113V399.5c0,10.534-9.138,19.113-20.357,19.113H25.447C14.138,418.7,5,410.116,5,399.583V24.113C5,13.58,14.138,5,25.357,5H46.8A2.962,2.962,0,0,1,49.875,7.888Z"
+                            transform="translate(-2.133 -1.721)"
+                            fill="#fff"
+                          />
+                          <path
+                            id="Path_3"
+                            data-name="Path 3"
+                            d="M146.095,16.706H91.038A2.946,2.946,0,0,1,88,13.953h0A2.946,2.946,0,0,1,91.038,11.2h55.057a2.946,2.946,0,0,1,3.038,2.753h0A2.946,2.946,0,0,1,146.095,16.706ZM159.764,11.2a2.946,2.946,0,0,0-3.038,2.753,3.052,3.052,0,0,0,6.075,0A2.946,2.946,0,0,0,159.764,11.2Z"
+                            transform="translate(-20.711 -4.697)"
+                            fill="#fff"
+                          />
+                        </g>
+                        <path
+                          id="Path_4"
+                          data-name="Path 4"
+                          d="M152.781,480.3H89.469c-.9,0-1.569-.493-1.569-1.15h0c0-.657.672-1.15,1.569-1.15h63.313c.9,0,1.569.493,1.569,1.15h0C154.35,479.726,153.678,480.3,152.781,480.3Z"
+                          transform="translate(-12.999 -72.621)"
+                          fill="#e3e5e8"
+                        />
+                      </g>
+                      <g
+                        transform="matrix(1, 0, 0, 1, 926, 1124.59)"
+                        filter="url(#Intersection_1)"
                       >
                         <path
-                          id="Path_1"
-                          data-name="Path 1"
-                          d="M184.878,420H24.5C10.959,420,0,409.606,0,396.761V23.239C0,10.394,10.959,0,24.5,0H184.878c13.543,0,24.5,10.394,24.5,23.239V396.676C209.469,409.606,198.51,420,184.878,420Z"
-                          transform="translate(0 0)"
-                          fill="#ebebeb"
-                          opacity="0.95"
+                          id="Intersection_1-2"
+                          data-name="Intersection 1"
+                          d="M5131.486-2658.5v-35.909c0-10.534,9.138-19.114,20.357-19.114h21.442a2.961,2.961,0,0,1,3.076,2.888v.51c0,6.541,5.7,11.892,12.667,11.892h88.212c6.967,0,12.667-5.351,12.667-11.892v-.51a2.961,2.961,0,0,1,3.076-2.888h21.8c11.219,0,20.357,8.58,20.357,19.114v35.909Z"
+                          transform="translate(-5064 2717.02)"
+                          fill="#f8f8f8"
                         />
+                      </g>
+                      <circle
+                        id="Ellipse_1"
+                        data-name="Ellipse 1"
+                        cx="15"
+                        cy="15"
+                        r="15"
+                        transform="translate(1024 1149)"
+                        fill="#742ddd"
+                      />
+                      <text
+                        id="V"
+                        transform="translate(1034 1170)"
+                        fill="#fff"
+                        font-size="16"
+                        font-family="HelveticaNeue-Bold, Helvetica Neue"
+                        font-weight="700"
+                      >
+                        <tspan x="0" y="0">
+                          V
+                        </tspan>
+                      </text>
+                      <path
+                        id="Icon_awesome-video"
+                        data-name="Icon awesome-video"
+                        d="M5.778,4.5H.821A.834.834,0,0,0,0,5.345v5.1a.834.834,0,0,0,.821.845H5.778a.834.834,0,0,0,.821-.845v-5.1A.834.834,0,0,0,5.778,4.5Zm3.255.667L7.149,6.5V9.286l1.883,1.335a.55.55,0,0,0,.866-.456V5.623A.55.55,0,0,0,9.032,5.167Z"
+                        transform="translate(1151.602 1158.5)"
+                        fill="#742ddd"
+                      />
+                      <path
+                        id="Icon_ionic-md-call"
+                        data-name="Icon ionic-md-call"
+                        d="M12.816,10.64a5.719,5.719,0,0,1-1.736-.27.456.456,0,0,0-.489.123l-1.076,1.08A7.371,7.371,0,0,1,6.285,8.331l1.076-1.08a.513.513,0,0,0,.122-.491A5.362,5.362,0,0,1,7.19,4.991.492.492,0,0,0,6.7,4.5H4.989a.492.492,0,0,0-.489.491,8.326,8.326,0,0,0,8.316,8.35.492.492,0,0,0,.489-.491V11.131A.492.492,0,0,0,12.816,10.64Z"
+                        transform="translate(1171.695 1157.449)"
+                        fill="#742ddd"
+                      />
+                      <path
+                        id="Icon_feather-chevron-left"
+                        data-name="Icon feather-chevron-left"
+                        d="M18.5,19.27l-5-5.135L18.5,9"
+                        transform="translate(991.037 1149.52)"
+                        fill="none"
+                        stroke="#742ddd"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="2"
+                      />
+                      <text
+                        id="Vamoo"
+                        transform="translate(1061 1170)"
+                        fill="#4d4d4d"
+                        font-size="16"
+                        font-family="HelveticaNeue-Medium, Helvetica Neue"
+                        font-weight="500"
+                      >
+                        <tspan x="0" y="0">
+                          Vamoo
+                        </tspan>
+                      </text>
+                    </g>
+                    <g id="Group_2" data-name="Group 2">
+                      <g
+                        transform="matrix(1, 0, 0, 1, 926, 1124.59)"
+                        filter="url(#Rectangle_2)"
+                      >
                         <path
-                          id="Path_2"
-                          data-name="Path 2"
-                          d="M49.875,7.888V8.4c0,6.541,5.7,11.893,12.666,11.893h88.212c6.966,0,12.666-5.352,12.666-11.893v-.51A2.962,2.962,0,0,1,166.5,5h21.8c11.219,0,20.357,8.58,20.357,19.113V399.5c0,10.534-9.138,19.113-20.357,19.113H25.447C14.138,418.7,5,410.116,5,399.583V24.113C5,13.58,14.138,5,25.357,5H46.8A2.962,2.962,0,0,1,49.875,7.888Z"
-                          transform="translate(-2.133 -1.721)"
-                          fill="#fff"
-                        />
-                        <path
-                          id="Path_3"
-                          data-name="Path 3"
-                          d="M146.095,16.706H91.038A2.946,2.946,0,0,1,88,13.953h0A2.946,2.946,0,0,1,91.038,11.2h55.057a2.946,2.946,0,0,1,3.038,2.753h0A2.946,2.946,0,0,1,146.095,16.706ZM159.764,11.2a2.946,2.946,0,0,0-3.038,2.753,3.052,3.052,0,0,0,6.075,0A2.946,2.946,0,0,0,159.764,11.2Z"
-                          transform="translate(-20.711 -4.697)"
+                          id="Rectangle_2-2"
+                          data-name="Rectangle 2"
+                          d="M20,0H157a20,20,0,0,1,20,20V156a0,0,0,0,1,0,0H20A20,20,0,0,1,0,136V20A20,20,0,0,1,20,0Z"
+                          transform="translate(9 81.41)"
                           fill="#fff"
                         />
                       </g>
-                      <path
-                        id="Path_4"
-                        data-name="Path 4"
-                        d="M152.781,480.3H89.469c-.9,0-1.569-.493-1.569-1.15h0c0-.657.672-1.15,1.569-1.15h63.313c.9,0,1.569.493,1.569,1.15h0C154.35,479.726,153.678,480.3,152.781,480.3Z"
-                        transform="translate(-12.999 -72.621)"
-                        fill="#e3e5e8"
-                      />
-                    </g>
-                    <g
-                      transform="matrix(1, 0, 0, 1, 926, 1124.59)"
-                      filter="url(#Intersection_1)"
-                    >
-                      <path
-                        id="Intersection_1-2"
-                        data-name="Intersection 1"
-                        d="M5131.486-2658.5v-35.909c0-10.534,9.138-19.114,20.357-19.114h21.442a2.961,2.961,0,0,1,3.076,2.888v.51c0,6.541,5.7,11.892,12.667,11.892h88.212c6.967,0,12.667-5.351,12.667-11.892v-.51a2.961,2.961,0,0,1,3.076-2.888h21.8c11.219,0,20.357,8.58,20.357,19.114v35.909Z"
-                        transform="translate(-5064 2717.02)"
-                        fill="#f8f8f8"
-                      />
-                    </g>
-                    <circle
-                      id="Ellipse_1"
-                      data-name="Ellipse 1"
-                      cx="15"
-                      cy="15"
-                      r="15"
-                      transform="translate(1024 1149)"
-                      fill="#742ddd"
-                    />
-                    <text
-                      id="V"
-                      transform="translate(1034 1170)"
-                      fill="#fff"
-                      font-size="16"
-                      font-family="HelveticaNeue-Bold, Helvetica Neue"
-                      font-weight="700"
-                    >
-                      <tspan x="0" y="0">
-                        V
-                      </tspan>
-                    </text>
-                    <path
-                      id="Icon_awesome-video"
-                      data-name="Icon awesome-video"
-                      d="M5.778,4.5H.821A.834.834,0,0,0,0,5.345v5.1a.834.834,0,0,0,.821.845H5.778a.834.834,0,0,0,.821-.845v-5.1A.834.834,0,0,0,5.778,4.5Zm3.255.667L7.149,6.5V9.286l1.883,1.335a.55.55,0,0,0,.866-.456V5.623A.55.55,0,0,0,9.032,5.167Z"
-                      transform="translate(1151.602 1158.5)"
-                      fill="#742ddd"
-                    />
-                    <path
-                      id="Icon_ionic-md-call"
-                      data-name="Icon ionic-md-call"
-                      d="M12.816,10.64a5.719,5.719,0,0,1-1.736-.27.456.456,0,0,0-.489.123l-1.076,1.08A7.371,7.371,0,0,1,6.285,8.331l1.076-1.08a.513.513,0,0,0,.122-.491A5.362,5.362,0,0,1,7.19,4.991.492.492,0,0,0,6.7,4.5H4.989a.492.492,0,0,0-.489.491,8.326,8.326,0,0,0,8.316,8.35.492.492,0,0,0,.489-.491V11.131A.492.492,0,0,0,12.816,10.64Z"
-                      transform="translate(1171.695 1157.449)"
-                      fill="#742ddd"
-                    />
-                    <path
-                      id="Icon_feather-chevron-left"
-                      data-name="Icon feather-chevron-left"
-                      d="M18.5,19.27l-5-5.135L18.5,9"
-                      transform="translate(991.037 1149.52)"
-                      fill="none"
-                      stroke="#742ddd"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                    />
-                    <text
-                      id="Vamoo"
-                      transform="translate(1061 1170)"
-                      fill="#4d4d4d"
-                      font-size="16"
-                      font-family="HelveticaNeue-Medium, Helvetica Neue"
-                      font-weight="500"
-                    >
-                      <tspan x="0" y="0">
-                        Vamoo
-                      </tspan>
-                    </text>
-                  </g>
-                  <g id="Group_2" data-name="Group 2">
-                    <g
-                      transform="matrix(1, 0, 0, 1, 926, 1124.59)"
-                      filter="url(#Rectangle_2)"
-                    >
-                      <path
-                        id="Rectangle_2-2"
-                        data-name="Rectangle 2"
-                        d="M10,0H167a10,10,0,0,1,10,10V50a0,0,0,0,1,0,0H10A10,10,0,0,1,0,40V10A10,10,0,0,1,10,0Z"
-                        transform="translate(9 81.41)"
-                        fill="#fff"
-                      />
-                    </g>
-                    <text
-                      id="Your_Vamoo_service_verification_code_is:_3755"
-                      data-name="Your Vamoo service verification
+                      <text
+                        id="Your_Vamoo_service_verification_code_is:_3755"
+                        data-name="Your Vamoo service verification
  code is: 3755"
-                      transform="translate(947 1228)"
-                      fill="#4d4d4d"
-                      font-size="10"
-                      font-family="HelveticaNeue, Helvetica Neue"
-                    >
-                      <tspan x="0" y="0">
-                        Your Vamoo service verification
-                      </tspan>
-                      <tspan x="0" y="12">
-                        code is: 3755
-                      </tspan>
-                    </text>
+                        transform="translate(947 1277)"
+                        fill="#4d4d4d"
+                        font-size="10"
+                        font-family="HelveticaNeue, Helvetica Neue"
+                      >
+                        <tspan x="0" y="0">
+                          Your Vamoo service verification
+                        </tspan>
+                        <tspan x="0" y="12">
+                          {" "}
+                          code is: 3755
+                        </tspan>
+                      </text>
+                    </g>
                   </g>
+                  <g
+                    transform="matrix(1, 0, 0, 1, 871, 1171.59)"
+                    filter="url(#Rectangle_3)"
+                  >
+                    <path
+                      id="Rectangle_3-2"
+                      data-name="Rectangle 3"
+                      d="M20,0H177a20,20,0,0,1,20,20V60a20,20,0,0,1-20,20H0a0,0,0,0,1,0,0V20A20,20,0,0,1,20,0Z"
+                      transform="translate(192 290.41)"
+                      fill="#fff"
+                    />
+                  </g>
+                  <text
+                    id="Your_Vamoo_service_verification_code_is:_3755-2"
+                    data-name="Your Vamoo service verification
+ code is: 3755"
+                    transform="translate(1083 1502)"
+                    fill="#4d4d4d"
+                    font-size="10"
+                    font-family="HelveticaNeue, Helvetica Neue"
+                  >
+                    <tspan x="0" y="0">
+                      Your Vamoo service verification
+                    </tspan>
+                    <tspan x="0" y="12">
+                      {" "}
+                      code is: 3755
+                    </tspan>
+                  </text>
                 </g>
               </svg>
             </Grid>
@@ -1387,7 +1433,19 @@ export default function BasicTable() {
         </Paper>
         <Box elevation={0} my={7}>
           <Grid container>
-            <Grid item xs={3} className={classes.centerContent}>
+            <Grid item xs={12} className={classes.centerContent}>
+              <Box mb={3}>
+                <Typography variant="h5">What is OTP?</Typography>
+                <Typography variant="body2">
+                  Route OTP is a security solution that ensures safe and secure
+                  login process. Integrate Route OTP in your existing system and
+                  manage the entire end to end business process ranging from OTP
+                  generation, delivery via SMS, time tracking and authentication
+                  without utilizing any additional resources.
+                </Typography>
+              </Box>
+            </Grid>
+            <Grid item xs={6} className={classes.centerContent}>
               <Paper
                 elevation={0}
                 square
@@ -1396,68 +1454,88 @@ export default function BasicTable() {
                 <img height="100" src={Freepik} alt="logo" />
               </Paper>
             </Grid>
-            <Grid item xs={3} className={classes.centerContent}>
-              <Paper
-                elevation={0}
-                square
-                style={{ padding: ".2rem", background: "transparent" }}
-              >
-                <img height="100" src={Adobe} alt="logo" />
-              </Paper>
-            </Grid>
-            <Grid item xs={3} className={classes.centerContent}>
-              <Paper
-                elevation={0}
-                square
-                style={{ padding: ".2rem", background: "transparent" }}
-              >
-                <img height="50" src={Slack} alt="logo" />
-              </Paper>
-            </Grid>
-            <Grid item xs={3} className={classes.centerContent}>
-              <Paper
-                elevation={0}
-                square
-                style={{ padding: ".2rem", background: "transparent" }}
-              >
-                <img height="100" src={Facebook} alt="logo" />
-              </Paper>
-            </Grid>
-            <Grid item xs={3} className={classes.centerContent}>
-              <Paper
-                elevation={0}
-                square
-                style={{ padding: ".2rem", background: "transparent" }}
-              >
-                <img height="100" src={Ritter} alt="logo" />
-              </Paper>
-            </Grid>
-            <Grid item xs={3} className={classes.centerContent}>
-              <Paper
-                elevation={0}
-                square
-                style={{ padding: ".2rem", background: "transparent" }}
-              >
-                <img height="50" src={Laradock} alt="logo" />
-              </Paper>
-            </Grid>
-            <Grid item xs={3} className={classes.centerContent}>
-              <Paper
-                elevation={0}
-                square
-                style={{ padding: ".2rem", background: "transparent" }}
-              >
-                <img height="50" src={Imgur} alt="logo" />
-              </Paper>
+            <Grid item xs={6} className={classes.centerContent}>
+              <Box>
+                <Typography variant="h5">
+                  How does it benefit your business?
+                </Typography>
+                <Box display="flex" my={3}>
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                    style={{ background: "white", width: 50, height: 50 }}
+                  >
+                    <PhotoCamera />
+                  </IconButton>
+                  <Box ml={3}>
+                    <Typography variant="h6">Easy Deployment</Typography>
+                    <Typography variant="body2">
+                      Effortlessly integrate two API’s within few minutes before
+                      starting the service
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box display="flex" my={3}>
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                    style={{ background: "white", width: 50, height: 50 }}
+                  >
+                    <PhotoCamera />
+                  </IconButton>
+                  <Box ml={3}>
+                    <Typography variant="h6">
+                      Customizable Time Period
+                    </Typography>
+                    <Typography variant="body2">
+                      Set the validity of your OTP as per your suitability and
+                      specification
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box display="flex" my={3}>
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                    style={{ background: "white", width: 50, height: 50 }}
+                  >
+                    <PhotoCamera />
+                  </IconButton>
+                  <Box ml={3}>
+                    <Typography variant="h6">
+                      Deployment at Multiple Locations
+                    </Typography>
+                    <Typography variant="body2">
+                      Extend your workflow with the ability to assign tags for
+                      each instances based on your requirement.
+                    </Typography>
+                  </Box>
+                </Box>
+                <Box display="flex" my={3}>
+                  <IconButton
+                    color="primary"
+                    aria-label="upload picture"
+                    component="span"
+                    style={{ background: "white", width: 50, height: 50 }}
+                  >
+                    <PhotoCamera />
+                  </IconButton>
+                  <Box ml={3}>
+                    <Typography variant="h6">Manage OTP Security</Typography>
+                    <Typography variant="body2">
+                      Administer the security by adjoining variations in the
+                      length of the password between 4 to 6 digits
+                    </Typography>
+                  </Box>
+                </Box>
+              </Box>
             </Grid>
           </Grid>
         </Box>
       </Container>
-      <Paper className={classes.goodies}>
-        <Container maxWidth="lg">
-          <Typography variant="h5">Pricing</Typography>
-        </Container>
-      </Paper>
       <Paper
         className={classes.goodies}
         style={{ textAlign: "center", padding: "9rem" }}
@@ -1625,6 +1703,14 @@ export default function BasicTable() {
           </Box>
         </Container>
       </Paper>
+      <Container style={{ marginBottom: '7rem' }}>
+        <Grid container spacing={3}>
+          <Grid item xs={6}></Grid>
+          <Grid item xs={6}>
+            <ExpertForm />
+          </Grid>
+        </Grid>
+      </Container>
       <Footer />
     </div>
   );
