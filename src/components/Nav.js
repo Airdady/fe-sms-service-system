@@ -15,7 +15,6 @@ import ChevronLeftIcon from "@material-ui/icons/ChevronLeft";
 import NotificationsIcon from "@material-ui/icons/Notifications";
 import { mainListItems, secondaryListItems } from "./listItems";
 import Dropdown from "./DropDown";
-import Grid from "@material-ui/core/Grid";
 import { Button, Box } from "@material-ui/core";
 
 const drawerWidth = 240;

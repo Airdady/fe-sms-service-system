@@ -9,28 +9,7 @@ import PeopleIcon from "@material-ui/icons/People";
 import BarChartIcon from "@material-ui/icons/BarChart";
 import AssignmentIcon from "@material-ui/icons/Assignment";
 import { Link } from "react-router-dom";
-import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    flexGrow: 1,
-  },
-  content: {
-    flexGrow: 1,
-    height: "100vh",
-    overflow: "auto",
-  },
-  container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
-  },
-  paper: {
-    padding: theme.spacing(2),
-    display: "flex",
-    overflow: "auto",
-    flexDirection: "column",
-  },
-}));
 export const mainListItems = (
   <div>
     <Link style={{ textDecoration: "none" }} to="/">

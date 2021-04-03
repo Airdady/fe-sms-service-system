@@ -9,8 +9,6 @@ import InboxIcon from "@material-ui/icons/MoveToInbox";
 import DraftsIcon from "@material-ui/icons/Drafts";
 import SendIcon from "@material-ui/icons/Send";
 import Avatar from "@material-ui/core/Avatar";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
 
 const StyledMenu = withStyles({
   paper: {
