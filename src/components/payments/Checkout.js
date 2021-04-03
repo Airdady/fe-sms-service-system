@@ -1,290 +1,109 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import StripeCheckout from "react-stripe-checkout";
+import { PayPalScriptProvider, PayPalButtons } from "@paypal/react-paypal-js";
+import { useState } from "react";
+import { Grid, Box, Container, Paper } from "@material-ui/core";
+import { makeStyles } from "@material-ui/core/styles";
+import OutlinedInput from "@material-ui/core/OutlinedInput";
+import InputLabel from "@material-ui/core/InputLabel";
+import InputAdornment from "@material-ui/core/InputAdornment";
+import FormControl from "@material-ui/core/FormControl";
+import Api from "../../service";
 
-// TODO: Configure with your test mode publishable key.
-const stripeApiKey = "pk_test_IBQKzyxudAwwOfwePa2XyxPa";
+const useStyles = makeStyles((theme) => ({
+  root: {
+    "& .paypal-button-color-gold": {
+      width: "100%",
+      color: "rgba(0, 0, 0, 0.87)",
+      boxShadow:
+        "0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)",
+      backgroundColor: "#e0e0e0",
+    },
+  },
+  avatar: {
+    margin: theme.spacing(1),
+    backgroundColor: theme.palette.secondary.main,
+  },
+  form: {
+    width: "100%", // Fix IE 11 issue.
+    marginTop: theme.spacing(3),
+  },
+  submit: {
+    margin: theme.spacing(3, 0, 2),
+  },
+}));
 
-// TODO: Head over to https://codesandbox.io/s/311ppyl0m1, fork it, configure
-// with your test mode secret key, and update the following checkout URL using
-// your forked sandbox's ID.
-const checkoutUrl = "https://localhost:5000/checkout";
+const Checkout = () => {
+  const classes = useStyles();
+  const [amount, setAmount] = useState(0);
 
-class App extends React.Component {
-  state = {
-    product: "one-for-five",
-    show: true
-  };
-
-  handleClose = () => {
-    console.log("App#handleClose");
-  };
-
-  handleOpen = () => {
-    console.log("App#handleOpen");
-  };
-
-  handleProductChange = evt => {
-    this.setState({ product: evt.target.value });
-  };
-
-  toggleShow = () => {
-    this.setState(state => ({
-      show: !state.show
-    }));
-  };
-
-  /*::
-  type Token = {
-    id: string, // "tok_asdf123asdf123asdf123"
-    object: "token",
-    card: {
-      id: string // "card_asdf123asdf123asdf123"
-      object: "card"
-      address_city: string, // "Anywhere"
-      address_country: string, // "United States"
-      address_line1: string, // "1234 Main St"
-      address_line1_check: string, // "pass"
-      address_line2: string, // `null`
-      address_state: string, // "AL"
-      address_zip: string, // "70000"
-      address_zip_check: string, // "pass"
-      brand: string, // "Visa"
-      country: string, // "US"
-      cvc_check: string, // "pass"
-      dynamic_last4: null,
-      exp_month: number, // 1
-      exp_year: number, // 2019
-      funding: string, // "credit"
-      last4: string, // "4242"
-      metadata: {
-       ...
-      },
-      name: string, // "Bayou Bill"
-      tokenization_method: null
-    }
-    client_ip: string, // "5.5.5.123"
-    created: number, // 1540398618
-    email: string, // "me@example.com"
-    livemode: boolean, // false
-    type: "card"
-    used: boolean, // false
-  }
-  type Addresses = {
-    billing_name: string, // "Bayou B Bill"
-    billing_address_line1: string, // "1234 Main St"
-    billing_address_city: string, // "Anywhere"
-    billing_address_state: string, // "LA"
-    billing_address_zip: string, // "70000"
-    billing_address_country: string, // "United States"
-    billing_address_country_code: string, // "US"
-    shipping_name: string, // "Bayou S Bill"
-    shipping_address_line1: string, // "1234 Main St"
-    shipping_address_city: string, // "Anywhere"
-    shipping_address_state: string, // "LA"
-    shipping_address_zip: string, // "70000"
-    shipping_address_country: string, // "United States"
-    shipping_address_country_code: string, // "US"
-  }
-  */
-  handleToken = (token, addresses) => {
-    console.log("App#handleToken");
-    console.log(token);
-    console.log(addresses);
-    const { product } = this.state;
-
-    const body = new FormData();
-    // Send information to determine how to charge customer:
-    body.append("product", product);
-    body.append("quantity", 1);
-
-    // Send standard Stripe information:
-    body.append("stripeEmail", token.email);
-    body.append("stripeToken", token.id);
-    body.append("stripeTokenType", token.type);
-
-    body.append("stripeBillingName", addresses.billing_name || "");
-    body.append(
-      "stripeBillingAddressLine1",
-      addresses.billing_address_line1 || ""
-    );
-    body.append("stripeBillingAddressZip", addresses.billing_address_zip || "");
-    body.append(
-      "stripeBillingAddressState",
-      addresses.billing_address_state || ""
-    );
-    body.append(
-      "stripeBillingAddressCity",
-      addresses.billing_address_city || ""
-    );
-    body.append(
-      "stripeBillingAddressCountry",
-      addresses.billing_address_country || ""
-    );
-    body.append(
-      "stripeBillingAddressCountryCode",
-      addresses.billing_address_country_code || ""
-    );
-
-    body.append("stripeShippingName", addresses.shipping_name || "");
-    body.append(
-      "stripeShippingAddressLine1",
-      addresses.shipping_address_line1 || ""
-    );
-    body.append(
-      "stripeShippingAddressZip",
-      addresses.shipping_address_zip || ""
-    );
-    body.append(
-      "stripeShippingAddressState",
-      addresses.shipping_address_state || ""
-    );
-    body.append(
-      "stripeShippingAddressCity",
-      addresses.shipping_address_city || ""
-    );
-    body.append(
-      "stripeShippingAddressCountry",
-      addresses.shipping_address_country || ""
-    );
-    body.append(
-      "stripeShippingAddressCountryCode",
-      addresses.shipping_address_country_code || ""
-    );
-
-    fetch(checkoutUrl, {
-      method: "POST",
-      body,
-      mode: "cors"
-    })
-      .then(res => {
-        console.log("response received");
-        console.dir(res);
-        return res.json();
+  function createOrder(data, actions) {
+    return actions.order
+      .create({
+        purchase_units: [
+          {
+            amount: {
+              value: amount,
+            },
+          },
+        ],
       })
-      .then(result => {
-        console.log("result");
-        console.log(result);
-      })
-      .catch(error => {
-        console.log("error");
-        console.error(
-          error,
-          "You may need to refresh the server sandbox. It hibernates due to inactivity."
-        );
+      .then((orderID) => {
+        return orderID;
       });
+  }
+
+  function handleChange({ target: { value } }) {
+    setAmount(value);
+  }
+
+  const handleApprove = (data) => {
+    const newData = { amount, payerId: data.payerID, orderId: data.orderID };
+    Api.capturePayment(newData)
+      .then((res) => console.log(res))
+      .catch((error) => console.log(error));
   };
 
-  render() {
-    const { product, show } = this.state;
-    let amount, description, label;
-    if (product === "one-for-five") {
-      amount = 500;
-      description = "Rent an Alligator for $5/day";
-      label = "Rent for $5/day";
-    } else {
-      amount = 900;
-      description = "Rent two Alligators for $9/day";
-      label = "Rent for $9/day";
-    }
-    return (
-      <div className="App">
-        {stripeApiKey === "pk_test_publishable_key" ? (
-          <p>Configure your Stripe test mode publishable key.</p>
-        ) : (
-          <React.Fragment>
-            <h1>
-              <span aria-label="Gator image" role="img">
-                🐊
-              </span>
-              Gators for Rent
-            </h1>
-            <div className="App__body">
-              {show && (
-                <>
-                  <form>
-                    <label>
-                      Rent one for $5/day
-                      <input
-                        type="radio"
-                        name="product"
-                        value="one-for-five"
-                        checked={product === "one-for-five"}
-                        onChange={this.handleProductChange}
-                      />
-                    </label>
-                    <br />
-                    <label>
-                      Rent two for $9/day
-                      <input
-                        type="radio"
-                        name="product"
-                        value="two-for-nine"
-                        checked={product === "two-for-nine"}
-                        onChange={this.handleProductChange}
-                      />
-                    </label>
-                  </form>
-                  <StripeCheckout
-                    allowRememberMe={false}
-                    amount={amount}
-                    billingAddress
-                    closed={this.handleClose}
-                    description={description}
-                    // image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                    image="https://alligator.io/images/alligator-logo3.svg"
-                    label="Pay with 💳"
-                    locale="auto"
-                    name="Alligator.io"
-                    opened={this.handleOpen}
-                    panelLabel="Rent for {{amount}}"
-                    // shippingAddress
-                    stripeKey={stripeApiKey}
-                    token={this.handleToken}
-                    zipCode
-                  />
-                </>
-              )}
-              <br />
-              <br />
-              <br />
-              <br />
-              <p className="text-muted">
-                You may use the following for testing:
-              </p>
-              <ul className="text-muted">
-                <li>Credit Card Number: 4242 4242 4242 4242</li>
-                <li>MM/YY: Any present or future date.</li>
-                <li>CVC: Any three digits, e.g., 123.</li>
-              </ul>
-              <p className="text-muted">
-                See{" "}
-                <a href="https://stripe.com/docs/testing" target="_blank">
-                  Stripe Testing
-                </a>{" "}
-                for more options.
-              </p>
-              <br />
-              <br />
-              <p className="text-muted">
-                After making a change here, it seems that the page sometimes
-                needs to be manually refreshed. May be a bug with CodeSandbox.
-              </p>
-            </div>
-            <footer className="App__foot">
-              {/*
-                This button allows the StripeCheckout component to be mounted and unmounted to
-                confirm that it behaves as expected.
-                */}
-              <button className="btn btn-primary" onClick={this.toggleShow}>
-                {show ? "Unmount Form" : "Mount Form"}
-              </button>
-            </footer>
-          </React.Fragment>
-        )}
-      </div>
-    );
-  }
-}
+  return (
+    <Container
+      className={classes.root}
+      component="main"
+      maxWidth="xs"
+      style={{ height: "100%", marginTop: "5rem" }}
+    >
+      <Paper>
+        <Box display="flex" flexDirection="column" p={5}>
+          <Grid item xs={12}>
+            <FormControl
+              fullWidth
+              className={classes.margin}
+              variant="outlined"
+            >
+              <InputLabel htmlFor="outlined-adornment-amount">
+                Amount
+              </InputLabel>
+              <OutlinedInput
+                id="outlined-adornment-amount"
+                onChange={handleChange}
+                startAdornment={
+                  <InputAdornment position="start">$</InputAdornment>
+                }
+                labelWidth={60}
+              />
+            </FormControl>
+          </Grid>
+          <Box mt={3}>
+            <PayPalScriptProvider options={{ "client-id": "test" }}>
+              <PayPalButtons
+                createOrder={createOrder}
+                onApprove={handleApprove}
+                forceReRender={amount}
+                disabled={amount < 1 ? true : false}
+              />
+            </PayPalScriptProvider>
+          </Box>
+        </Box>
+      </Paper>
+    </Container>
+  );
+};
 
-export default App;
+export default Checkout;

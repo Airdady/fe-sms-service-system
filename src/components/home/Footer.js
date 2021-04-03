@@ -1,12 +1,12 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
-import { Container, Box, Typography, Button } from "@material-ui/core";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemText from "@material-ui/core/ListItemText";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
+import { Container, Box, Typography, Button } from '@material-ui/core';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
+import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -15,13 +15,18 @@ const useStyles = makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
-    textAlign: "center",
+    textAlign: 'center',
     color: theme.palette.text.secondary,
   },
   footerLink: {
-    color: "gainsboro",
-    textDecoration: "none",
-    marginBottom: ".4rem",
+    color: 'gainsboro',
+    textDecoration: 'none',
+    marginBottom: '.4rem',
+  },
+  footerHeader: {
+    color: '#b1b1b1',
+    textDecoration: 'none',
+    marginBottom: '.4rem',
   },
 }));
 
@@ -32,8 +37,8 @@ export default function Footer() {
     <div className={classes.root}>
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={12} style={{ marginTop: "-4rem" }}>
-            <Paper className={classes.paper} style={{ background: "#f8f9fb" }}>
+          <Grid item xs={12} style={{ marginTop: '-4rem' }}>
+            <Paper className={classes.paper} style={{ background: '#f8f9fb' }}>
               <img
                 height="100"
                 src="https://dcsaml.com/wp-content/uploads/2020/09/logos-clients-desktop-mono.jpg"
@@ -42,101 +47,101 @@ export default function Footer() {
             </Paper>
           </Grid>
           <Grid item xs={3}>
-            <Typography variant="subtitle1">Secondary text</Typography>
+            <Typography variant="subtitle2" className={classes.footerHeader}>
+              Contact
+            </Typography>
             <List>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  (793) 151-6230
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Theodore Lowe Ap #867-859 Sit Rd. Azusa New York 39531
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
+              </ListItem>
+            </List>
+          </Grid>
+          <Grid item xs={3}>
+            <Typography variant="subtitle2" className={classes.footerHeader}>
+              Our Products
+            </Typography>
+            <List>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Programmable Messages
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  OTP verify
+                </Link>
+              </ListItem>
+              <ListItem style={{ padding: 2 }}>
+                <Link to="/" className={classes.footerLink}>
+                  Number Lookup
+                </Link>
+              </ListItem>
+              <ListItem style={{ padding: 2 }}>
+                <Link to="/" className={classes.footerLink}>
+                  Emails
                 </Link>
               </ListItem>
             </List>
           </Grid>
           <Grid item xs={3}>
-            <Typography variant="subtitle1">Secondary text</Typography>
+            <Typography variant="subtitle2" className={classes.footerHeader}>
+              Developers
+            </Typography>
             <List>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Documentation
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Server SDKs
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Full Api Reference
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Sample Projects
                 </Link>
               </ListItem>
             </List>
           </Grid>
           <Grid item xs={3}>
-            <Typography variant="subtitle1">Secondary text</Typography>
+            <Typography variant="subtitle2" className={classes.footerHeader}>
+              Resources
+            </Typography>
             <List>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Programmable Messages
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  OTP verify
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Number Lookup
                 </Link>
               </ListItem>
-              <ListItem style={{ padding: 0 }}>
+              <ListItem style={{ padding: 2 }}>
                 <Link to="/" className={classes.footerLink}>
-                  Secondary text
-                </Link>
-              </ListItem>
-            </List>
-          </Grid>
-          <Grid item xs={3}>
-            <Typography variant="subtitle1">Secondary text</Typography>
-            <List>
-              <ListItem style={{ padding: 0 }}>
-                <Link to="/" className={classes.footerLink}>
-                  Secondary text
-                </Link>
-              </ListItem>
-              <ListItem style={{ padding: 0 }}>
-                <Link to="/" className={classes.footerLink}>
-                  Secondary text
-                </Link>
-              </ListItem>
-              <ListItem style={{ padding: 0 }}>
-                <Link to="/" className={classes.footerLink}>
-                  Secondary text
-                </Link>
-              </ListItem>
-              <ListItem style={{ padding: 0 }}>
-                <Link to="/" className={classes.footerLink}>
-                  Secondary text
+                  Emails
                 </Link>
               </ListItem>
             </List>
@@ -147,7 +152,9 @@ export default function Footer() {
               alignItems="cennter"
               justifyContent="space-between"
             >
-              <Typography variant="body2">Copy right 2021 Vamoo</Typography>
+              <Typography variant="body2" className={classes.footerHeader}>
+                Copy right 2021 Vamoo
+              </Typography>
               <Box>
                 <Button>
                   <svg
