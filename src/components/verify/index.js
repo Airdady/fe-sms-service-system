@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import HeadNav from '../Nav';
-import Table from '../Table';
+import Table from './Table';
 import CreateButton from './create';
 import { useSelector, useDispatch } from 'react-redux';
 import Actions from './verify.action';

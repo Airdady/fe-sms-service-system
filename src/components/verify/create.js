@@ -24,11 +24,7 @@ export default function FormDialog() {
     expiry: 600,
     profileName: '',
     senderName: '',
-    serviceToken: `VM-${uuid
-      .v4()
-      .replace('-', '')
-      .replace('-', '')
-      .replace('-', '')}`,
+    serviceToken: `AC-${uuid.v4().replaceAll('-', '.')}`,
     msg: 'Your one-time verification code is {code}',
   });
 
@@ -156,9 +152,9 @@ export default function FormDialog() {
                 size="small"
                 type="submit"
                 color="primary"
-                disabled={loaded}
+                disabled={!loaded}
               >
-                {loaded ? 'LOADING . . .' : 'SAVE'}
+                {!loaded ? 'LOADING . . .' : 'SAVE'}
               </Button>
             </Box>
           </DialogActions>

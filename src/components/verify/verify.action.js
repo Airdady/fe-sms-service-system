@@ -8,7 +8,7 @@ const VerifyProfile = {
       console.log(res.data);
       return {
         type: Types.CREATE_VERIFY_SUCCESS,
-        createData: res.data,
+        createData: res.data.data,
       };
     } catch (error) {
       return {
@@ -27,6 +27,34 @@ const VerifyProfile = {
     } catch (error) {
       return {
         type: Types.GET_VERIFY_PROFILE_ERROR,
+        error: error.response,
+      };
+    }
+  },
+  async deleteOtpProfile(id) {
+    try {
+      await Service.deleteOtpProfile(id);
+      return {
+        type: Types.DEL_VERIFY_PROFILE_SUCCESS,
+        id,
+      };
+    } catch (error) {
+      return {
+        type: Types.DEL_VERIFY_PROFILE_ERROR,
+        error: error.response,
+      };
+    }
+  },
+  async updateOtpProfile(id, data) {
+    try {
+      await Service.updateOtpProfile(id, data);
+      return {
+        type: Types.UPDATE_VERIFY_PROFILE_SUCCESS,
+        data: { id, active: data.active }
+      };
+    } catch (error) {
+      return {
+        type: Types.UPDATE_VERIFY_PROFILE_ERROR,
         error: error.response,
       };
     }
