@@ -7,6 +7,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Container, Button, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import AuthUser from '../Account.user';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -146,17 +147,7 @@ export default function MenuAppBar() {
                   </Link>
                 </Button>
               </Box>
-
-              <Button color="inherit" className={classes.navButtons}>
-                <Link to="/login" className={classes.links}>
-                  Login
-                </Link>
-              </Button>
-              <Button variant="contained" style={{ marginLeft: '.5rem' }}>
-                <Link to="/register" className={classes.links}>
-                  Register
-                </Link>
-              </Button>
+              <AuthUser />
             </Toolbar>
           </Container>
         </AppBar>
