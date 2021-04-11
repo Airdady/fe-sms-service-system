@@ -13,8 +13,18 @@ import Footer from './Footer';
 import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import ExpertForm from './ExpertForm';
+import Icon from './sampleIcon';
 
 const useStyles = makeStyles((theme) => ({
+  root: {
+    width: '100%',
+    backgroundSize: 'cover',
+    background:
+      'url(https://numverify.com/images/promo_bgs/numverify_promo_bg.jpg)',
+    '& .hljs': {
+      borderRadius: theme.shape.borderRadius,
+    },
+  },
   table: {
     minWidth: 650,
     marginTop: '1rem',
@@ -28,12 +38,10 @@ const useStyles = makeStyles((theme) => ({
   bgColor: {
     width: '100%',
     height: '92vh',
-    // clipPath: "polygon(100% 0, 100% 99%, 0 78%, 0 0)",
-    background: theme.palette.primary.main,
   },
   rightBtn: {
     marginLeft: '1rem',
-    background: theme.palette.primary.dark,
+    background: theme.palette.primary.light,
   },
   popularPaper: {
     padding: '1rem',
@@ -59,39 +67,40 @@ export default function BasicTable() {
 
   return (
     <div style={{ width: '100%' }}>
-      <MenuNav />
-      {/* <div className={classes.bgColor}> */}
-      <div className={classes.bgColor}>
-        <Container maxWidth="lg" style={{ height: '100%' }}>
-          <Grid container style={{ height: '100%' }}>
-            <Grid item xs={4} style={{ marginTop: '6rem' }}>
-              <Typography variant="h6" style={{ color: 'white' }}>
-                Connect and engage with your customers globally
-              </Typography>
-              <Box mt={4} display>
-                <Button variant="contained">Get started</Button>
-                <Button variant="contained" className={classes.rightBtn}>
-                  Talk to Experts
-                </Button>
-              </Box>
+      <div className={classes.root}>
+        <MenuNav />
+
+        <div className={classes.bgColor}>
+          <Container maxWidth="lg" style={{ height: '100%' }}>
+            <Grid container style={{ height: '100%' }}>
+              <Grid item xs={4} style={{ marginTop: '6rem' }}>
+                <Typography variant="h6" style={{ color: 'white' }}>
+                  Connect and engage with your customers globally
+                </Typography>
+                <Box mt={4} display>
+                  <Button variant="contained">Get started</Button>
+                  <Button variant="contained" className={classes.rightBtn}>
+                    Talk to Experts
+                  </Button>
+                </Box>
+              </Grid>
+              <Grid
+                item
+                xs={8}
+                style={{
+                  display: 'flex',
+                  alignItems: 'flex-end',
+                  justifyContent: 'space-around',
+                  marginTop: '2rem',
+                  backgroundSize: 'cover',
+                  backgroundImage:
+                    'url(https://fireflies.ai/assets/images/new/Landing-Page-Assets/big-part-june2020.svg)',
+                }}
+              ></Grid>
             </Grid>
-            <Grid
-              item
-              xs={8}
-              style={{
-                display: 'flex',
-                alignItems: 'flex-end',
-                justifyContent: 'space-around',
-                marginTop: '2rem',
-                backgroundSize: 'cover',
-                backgroundImage:
-                  'url(https://fireflies.ai/assets/images/new/Landing-Page-Assets/big-part-june2020.svg)',
-              }}
-            ></Grid>
-          </Grid>
-        </Container>
+          </Container>
+        </div>
       </div>
-      {/* </div> */}
       <Container maxWidth="lg">
         <Paper className={classes.cardContent} elevation={3}>
           <Grid container>
@@ -1195,285 +1204,86 @@ export default function BasicTable() {
             </Grid>
           </Grid>
         </Paper>
-        <Box elevation={0} my={7}>
-          <Grid container>
-            <Grid item xs={12} className={classes.centerContent}>
-              <Box mb={3}>
-                <Typography variant="h5">What is OTP?</Typography>
-                <Typography variant="body2">
-                  Route OTP is a security solution that ensures safe and secure
-                  login process. Integrate Route OTP in your existing system and
-                  manage the entire end to end business process ranging from OTP
-                  generation, delivery via SMS, time tracking and authentication
-                  without utilizing any additional resources.
+        <Box my={5}>
+          <Grid container spacing={3}>
+            <Grid item xs={6}>
+              <Box mb={2}>
+                <Icon />
+                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="subtitle1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                  obcaecati vel ad unde est illo at. Labore excepturi officia
+                  dolores!,dolores!
                 </Typography>
               </Box>
+              <Button variant="outlined">learn more</Button>
             </Grid>
-            <Grid item xs={6} className={classes.centerContent}>
-              <Paper
-                elevation={0}
-                square
-                style={{ padding: '.2rem', background: 'transparent' }}
-              >
-                <img height="100" src={Freepik} alt="logo" />
-              </Paper>
+            <Grid item xs={6}>
+              <img
+                style={{ width: '90%' }}
+                src="https://www.moshified.com/easy@2x.31665d23.jpg"
+              />
             </Grid>
-            <Grid item xs={6} className={classes.centerContent}>
-              <Box>
-                <Typography variant="h5">
-                  How does it benefit your business?
+            <Grid item xs={6}>
+              <img
+                style={{ width: '90%' }}
+                src="https://www.moshified.com/easy@2x.31665d23.jpg"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Box mb={2}>
+                <Icon />
+                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="subtitle1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                  obcaecati vel ad unde est illo at. Labore excepturi officia
+                  dolores!
                 </Typography>
-                <Box display="flex" my={3}>
-                  <IconButton
-                    color="primary"
-                    aria-label="upload picture"
-                    component="span"
-                    style={{ background: 'white', width: 50, height: 50 }}
-                  >
-                    <PhotoCamera />
-                  </IconButton>
-                  <Box ml={3}>
-                    <Typography variant="h6">Easy Deployment</Typography>
-                    <Typography variant="body2">
-                      Effortlessly integrate two API’s within few minutes before
-                      starting the service
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box display="flex" my={3}>
-                  <IconButton
-                    color="primary"
-                    aria-label="upload picture"
-                    component="span"
-                    style={{ background: 'white', width: 50, height: 50 }}
-                  >
-                    <PhotoCamera />
-                  </IconButton>
-                  <Box ml={3}>
-                    <Typography variant="h6">
-                      Customizable Time Period
-                    </Typography>
-                    <Typography variant="body2">
-                      Set the validity of your OTP as per your suitability and
-                      specification
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box display="flex" my={3}>
-                  <IconButton
-                    color="primary"
-                    aria-label="upload picture"
-                    component="span"
-                    style={{ background: 'white', width: 50, height: 50 }}
-                  >
-                    <PhotoCamera />
-                  </IconButton>
-                  <Box ml={3}>
-                    <Typography variant="h6">
-                      Deployment at Multiple Locations
-                    </Typography>
-                    <Typography variant="body2">
-                      Extend your workflow with the ability to assign tags for
-                      each instances based on your requirement.
-                    </Typography>
-                  </Box>
-                </Box>
-                <Box display="flex" my={3}>
-                  <IconButton
-                    color="primary"
-                    aria-label="upload picture"
-                    component="span"
-                    style={{ background: 'white', width: 50, height: 50 }}
-                  >
-                    <PhotoCamera />
-                  </IconButton>
-                  <Box ml={3}>
-                    <Typography variant="h6">Manage OTP Security</Typography>
-                    <Typography variant="body2">
-                      Administer the security by adjoining variations in the
-                      length of the password between 4 to 6 digits
-                    </Typography>
-                  </Box>
-                </Box>
               </Box>
+              <Button variant="outlined">learn more</Button>
+            </Grid>
+            <Grid item xs={6}>
+              <Box mb={2}>
+                <Icon />
+                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="subtitle1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                  obcaecati vel ad unde est illo at. Labore excepturi officia
+                  dolores!
+                </Typography>
+              </Box>
+              <Button variant="outlined">learn more</Button>
+            </Grid>
+            <Grid item xs={6}>
+              <img
+                style={{ width: '90%' }}
+                src="https://www.moshified.com/easy@2x.31665d23.jpg"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <img
+                style={{ width: '90%' }}
+                src="https://www.moshified.com/easy@2x.31665d23.jpg"
+              />
+            </Grid>
+            <Grid item xs={6}>
+              <Box mb={2}>
+                <Icon />
+                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="subtitle1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                  obcaecati vel ad unde est illo at. Labore excepturi officia
+                  dolores!
+                </Typography>
+              </Box>
+              <Button variant="outlined">learn more</Button>
+            </Grid>
+            <Grid item xs={6}></Grid>
+            <Grid item xs={6}>
+              <ExpertForm />
             </Grid>
           </Grid>
         </Box>
-      </Container>
-      <Paper
-        className={classes.goodies}
-        style={{ textAlign: 'center', padding: '9rem' }}
-      >
-        <Container maxWidth="lg">
-          <Box
-            display="flex"
-            flexDirection="column"
-            alignItems="center"
-            justifyContent="space-around"
-          >
-            <Box mb={3}>
-              <Typography variant="h4">Pricing</Typography>
-            </Box>
-            <Box mb={4}>
-              <SearchInput />
-            </Box>
-            <Grid container spacing={3}>
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>
-                  <Box p={2}>
-                    <Typography variant="body1">Sending Messages</Typography>
-                    <Box display="flex" justifyContent="space-around" my={3}>
-                      <Box display="flex">
-                        <Typography variant="h5">$</Typography>
-                        <Typography variant="h3">0.005</Typography>
-                        <Typography
-                          variant="caption"
-                          style={{ alignSelf: 'flex-end' }}
-                        >
-                          /sms
-                        </Typography>
-                      </Box>
-                    </Box>
-                    <List>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                    </List>
-                    <Button
-                      style={{ display: 'block', width: '100%' }}
-                      variant="contained"
-                    >
-                      Default
-                    </Button>
-                  </Box>
-                </Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>
-                  <Box p={2}>
-                    <Typography variant="body1">Sending Messages</Typography>
-                    <Box display="flex" justifyContent="space-around" my={3}>
-                      <Box display="flex">
-                        <Typography variant="h5">$</Typography>
-                        <Typography variant="h3">0.005</Typography>
-                        <Typography
-                          variant="caption"
-                          style={{ alignSelf: 'flex-end' }}
-                        >
-                          /sms
-                        </Typography>
-                      </Box>
-                    </Box>
-                    <List>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                    </List>
-                    <Button
-                      style={{ display: 'block', width: '100%' }}
-                      variant="contained"
-                    >
-                      Default
-                    </Button>
-                  </Box>
-                </Paper>
-              </Grid>
-
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>
-                  <Box p={2}>
-                    <Typography variant="body1">Sending Messages</Typography>
-                    <Box display="flex" justifyContent="space-around" my={3}>
-                      <Box display="flex">
-                        <Typography variant="h5">$</Typography>
-                        <Typography variant="h3">0.005</Typography>
-                        <Typography
-                          variant="caption"
-                          style={{ alignSelf: 'flex-end' }}
-                        >
-                          /sms
-                        </Typography>
-                      </Box>
-                    </Box>
-                    <List>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                    </List>
-                    <Button
-                      style={{ display: 'block', width: '100%' }}
-                      variant="contained"
-                    >
-                      Default
-                    </Button>
-                  </Box>
-                </Paper>
-              </Grid>
-              <Grid item xs={3}>
-                <Paper className={classes.paper}>
-                  <Box p={2}>
-                    <Typography variant="body1">Sending Messages</Typography>
-                    <Box display="flex" justifyContent="space-around" my={3}>
-                      <Box display="flex">
-                        <Typography variant="h5">$</Typography>
-                        <Typography variant="h3">0.005</Typography>
-                        <Typography
-                          variant="caption"
-                          style={{ alignSelf: 'flex-end' }}
-                        >
-                          /sms
-                        </Typography>
-                      </Box>
-                    </Box>
-                    <List>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                      <ListItem button>
-                        <ListItemText primary={`hello`} />
-                      </ListItem>
-                    </List>
-                    <Button
-                      style={{ display: 'block', width: '100%' }}
-                      variant="contained"
-                    >
-                      Default
-                    </Button>
-                  </Box>
-                </Paper>
-              </Grid>
-            </Grid>
-          </Box>
-        </Container>
-      </Paper>
-      <Container style={{ marginBottom: '7rem' }}>
-        <Grid container spacing={3}>
-          <Grid item xs={6}></Grid>
-          <Grid item xs={6}>
-            <ExpertForm />
-          </Grid>
-        </Grid>
       </Container>
       <Footer />
     </div>

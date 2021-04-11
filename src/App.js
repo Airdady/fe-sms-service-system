@@ -14,6 +14,9 @@ import Register from './components/register';
 import Profile from './components/profile';
 import Home from './components/home';
 import Checkout from './components/payments/Checkout';
+import LookupPage from './components/products/lookup';
+import SmsPage from './components/products/sms';
+import VerifyPage from './components/products/verify';
 
 function App() {
   return (
@@ -21,6 +24,9 @@ function App() {
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
+          <Route exact path="/product/number_lookup" component={LookupPage} />
+          <Route exact path="/product/sms" component={SmsPage} />
+          <Route exact path="/product/verify" component={VerifyPage} />
           <AuthRoute exact path="/login">
             <Login />
           </AuthRoute>

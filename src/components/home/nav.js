@@ -12,6 +12,9 @@ import AuthUser from '../Account.user';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    '& .MuiAppBar-root': {
+      background: 'transparent',
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -116,22 +119,22 @@ export default function MenuAppBar() {
                   onClose={handleClose}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/messages" className={classes.links}>
+                    <Link to="/product/sms" className={classes.links}>
                       Programmable Messages
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/otp_verify" className={classes.links}>
+                    <Link to="/product/verify" className={classes.links}>
                       OTP verify
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/number_lookup" className={classes.links}>
+                    <Link to="/product/number_lookup" className={classes.links}>
                       Number Lookup
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/emails" className={classes.links}>
+                    <Link to="/product/emails" className={classes.links}>
                       Emails
                     </Link>
                   </MenuItem>
