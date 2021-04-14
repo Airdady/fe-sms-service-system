@@ -17,6 +17,8 @@ import Checkout from './components/payments/Checkout';
 import LookupPage from './components/products/lookup';
 import SmsPage from './components/products/sms';
 import VerifyPage from './components/products/verify';
+import ContactUs from './components/contactus';
+import Pricing from './components/pricing';
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route exact path="/product/number_lookup" component={LookupPage} />
           <Route exact path="/product/sms" component={SmsPage} />
           <Route exact path="/product/verify" component={VerifyPage} />
+          <Route exact path="/contact" component={ContactUs} />
+          <Route exact path="/pricing" component={Pricing} />
           <AuthRoute exact path="/login">
             <Login />
           </AuthRoute>
