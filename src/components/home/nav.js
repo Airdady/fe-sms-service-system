@@ -140,13 +140,18 @@ export default function MenuAppBar() {
                   </MenuItem>
                 </Menu>
                 <Button color="inherit" className={classes.navButtons}>
-                  <Link to="/register" className={classes.links}>
+                  <Link to="/api_docs" className={classes.links}>
                     Developers
                   </Link>
                 </Button>
                 <Button color="inherit" className={classes.navButtons}>
-                  <Link to="/register" className={classes.links}>
+                  <Link to="/pricing" className={classes.links}>
                     Pricing
+                  </Link>
+                </Button>
+                <Button color="inherit" className={classes.navButtons}>
+                  <Link to="/contact" className={classes.links}>
+                    Contact
                   </Link>
                 </Button>
               </Box>
