@@ -8,19 +8,21 @@ import CssBaseline from '@material-ui/core/CssBaseline';
 import { SnackbarProvider } from 'notistack';
 import { Provider } from 'react-redux';
 import store from './redux/store';
-
+import types from './redux/types';
 const theme = createMuiTheme({
   palette: {
     type: 'light',
     primary: {
-      main: '#742ddd',
+      main: '#202d59',
     },
     background: {
-      default: '#f0f3fb',
+      default: '#ffff',
     },
   },
 });
-
+store.dispatch({
+  type: types.GET_USER_DETAILS,
+});
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>

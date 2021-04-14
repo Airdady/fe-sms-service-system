@@ -21,7 +21,7 @@ export default function CustomizedMenus() {
           style={{ width: "32px", height: "32px", marginRight: 5 }}
           src="/broken-image.jpg"
         />
-        John Doe
+        verify
       </Button>
     </div>
   );

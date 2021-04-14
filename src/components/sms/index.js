@@ -1,28 +1,12 @@
-import React from "react";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
-import HeadNav from "../Nav";
-import Button from "@material-ui/core/Button";
-import Table from "../Table";
-import createDrawer from './create'
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import React, { useMemo } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import HeadNav from '../Nav';
+import Table from './Table';
+import CreateButton from './create';
+import { useSelector, useDispatch } from 'react-redux';
+import Actions from './sms.action';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -30,9 +14,9 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    height: "100vh",
-    overflow: "auto",
-    marginTop: "3.5rem",
+    height: '100vh',
+    overflow: 'auto',
+    marginTop: '3.5rem',
     margin: 33,
   },
   container: {
@@ -42,12 +26,19 @@ const useStyles = makeStyles((theme) => ({
   appBarSpacer: theme.mixins.toolbar,
   paper: {
     padding: theme.spacing(2),
-    overflow: "auto",
+    overflow: 'auto',
   },
 }));
 
 export default function Dashboard() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  useMemo(async () => {
+    dispatch(await Actions.GetSmsProfile());
+  }, [dispatch]);
+
+  const data = useSelector(({ SmsProfile }) => SmsProfile.data);
   return (
     <>
       <HeadNav title="Api Keys" />
@@ -56,15 +47,11 @@ export default function Dashboard() {
         <Grid container spacing={3}>
           <Grid item xs={12}>
             <Paper className={classes.paper}>
-            <createDrawer />
-              <Button variant="contained" size="small" color="primary">ADD NEW KEYS</Button>
-              <Table />
+              <CreateButton />
+              <Table data={data} />
             </Paper>
           </Grid>
         </Grid>
-        <Box pt={4}>
-          <Copyright />
-        </Box>
       </main>
     </>
   );

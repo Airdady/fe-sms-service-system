@@ -7,10 +7,14 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Menu from '@material-ui/core/Menu';
 import { Container, Button, Box } from '@material-ui/core';
 import { Link } from 'react-router-dom';
+import AuthUser from '../Account.user';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
+    '& .MuiAppBar-root': {
+      background: 'transparent',
+    },
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -115,48 +119,43 @@ export default function MenuAppBar() {
                   onClose={handleClose}
                 >
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/messages" className={classes.links}>
+                    <Link to="/product/sms" className={classes.links}>
                       Programmable Messages
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/otp_verify" className={classes.links}>
+                    <Link to="/product/verify" className={classes.links}>
                       OTP verify
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/number_lookup" className={classes.links}>
+                    <Link to="/product/number_lookup" className={classes.links}>
                       Number Lookup
                     </Link>
                   </MenuItem>
                   <MenuItem onClick={handleClose}>
-                    <Link to="product/emails" className={classes.links}>
+                    <Link to="/product/emails" className={classes.links}>
                       Emails
                     </Link>
                   </MenuItem>
                 </Menu>
                 <Button color="inherit" className={classes.navButtons}>
-                  <Link to="/register" className={classes.links}>
+                  <Link to="/api_docs" className={classes.links}>
                     Developers
                   </Link>
                 </Button>
                 <Button color="inherit" className={classes.navButtons}>
-                  <Link to="/register" className={classes.links}>
+                  <Link to="/pricing" className={classes.links}>
                     Pricing
                   </Link>
                 </Button>
+                <Button color="inherit" className={classes.navButtons}>
+                  <Link to="/contact" className={classes.links}>
+                    Contact
+                  </Link>
+                </Button>
               </Box>
-
-              <Button color="inherit" className={classes.navButtons}>
-                <Link to="/login" className={classes.links}>
-                  Login
-                </Link>
-              </Button>
-              <Button variant="contained" style={{ marginLeft: '.5rem' }}>
-                <Link to="/register" className={classes.links}>
-                  Register
-                </Link>
-              </Button>
+              <AuthUser />
             </Toolbar>
           </Container>
         </AppBar>
