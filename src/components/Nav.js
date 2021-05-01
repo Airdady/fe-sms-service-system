@@ -17,7 +17,7 @@ import { mainListItems, secondaryListItems } from "./listItems";
 import Dropdown from "./DropDown";
 import { Button, Box } from "@material-ui/core";
 
-const drawerWidth = 240;
+const drawerWidth = 60;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -97,7 +97,7 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: "column",
   },
   fixedHeight: {
-    height: 240,
+    height: 60,
   },
 }));
 
@@ -172,8 +172,6 @@ export default function Nav({ title }) {
         </div>
         <Divider />
         <List>{mainListItems}</List>
-        <Divider />
-        <List>{secondaryListItems}</List>
       </Drawer>
     </>
   );

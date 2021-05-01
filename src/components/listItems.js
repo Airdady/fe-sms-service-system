@@ -17,7 +17,6 @@ export const mainListItems = (
         <ListItemIcon>
           <DashboardIcon />
         </ListItemIcon>
-        <ListItemText primary="Dashboard" />
       </ListItem>
     </Link>
     <Link style={{ textDecoration: "none" }} to="/verify">
@@ -25,7 +24,6 @@ export const mainListItems = (
         <ListItemIcon>
           <ShoppingCartIcon />
         </ListItemIcon>
-        <ListItemText primary="OTP service" />
       </ListItem>
     </Link>
     <Link style={{ textDecoration: "none" }} to="/sms">
@@ -33,7 +31,6 @@ export const mainListItems = (
         <ListItemIcon>
           <PeopleIcon />
         </ListItemIcon>
-        <ListItemText primary="Messages" />
       </ListItem>
     </Link>
     <Link style={{ textDecoration: "none" }} to="/number_lookup">
@@ -41,7 +38,6 @@ export const mainListItems = (
         <ListItemIcon>
           <BarChartIcon />
         </ListItemIcon>
-        <ListItemText primary="Lookup" />
       </ListItem>
     </Link>
   </div>

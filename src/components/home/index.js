@@ -14,10 +14,19 @@ import IconButton from '@material-ui/core/IconButton';
 import PhotoCamera from '@material-ui/icons/PhotoCamera';
 import ExpertForm from './ExpertForm';
 import Icon from './sampleIcon';
+import CheckCircleOutlineRoundedIcon from '@material-ui/icons/CheckCircleOutlineRounded';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import SLC from './user.svg';
+import Custom from './customise.svg';
+import Conversation from './conversation.svg';
+import Support from './support.svg';
+import Coverage from './coverage.svg';
+import StarIcon from '@material-ui/icons/Star';
 
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
+    maxHeight: '37rem',
     backgroundSize: 'cover',
     background:
       'url(https://numverify.com/images/promo_bgs/numverify_promo_bg.jpg)',
@@ -30,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '1rem',
   },
   cardContent: {
-    marginTop: '-8rem',
+    marginTop: '-5.5rem',
     position: 'relative',
     zIndex: 100,
     padding: '1rem',
@@ -73,7 +82,7 @@ export default function BasicTable() {
         <div className={classes.bgColor}>
           <Container maxWidth="lg" style={{ height: '100%' }}>
             <Grid container style={{ height: '100%' }}>
-              <Grid item xs={4} style={{ marginTop: '6rem' }}>
+              <Grid item md={4} style={{ marginTop: '6rem' }}>
                 <Typography variant="h6" style={{ color: 'white' }}>
                   Connect and engage with your customers globally
                 </Typography>
@@ -104,7 +113,7 @@ export default function BasicTable() {
       <Container maxWidth="lg">
         <Paper className={classes.cardContent} elevation={3}>
           <Grid container>
-            <Grid item xs={3}>
+            <Grid item md={3}>
               <Paper
                 variant="outlined"
                 square
@@ -366,7 +375,7 @@ export default function BasicTable() {
                 </Typography>
               </Paper>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item md={3}>
               <Paper
                 variant="outlined"
                 square
@@ -651,7 +660,7 @@ export default function BasicTable() {
                 </Typography>
               </Paper>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item md={3}>
               <Paper
                 variant="outlined"
                 square
@@ -1035,7 +1044,7 @@ export default function BasicTable() {
                 </Typography>
               </Paper>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item md={3}>
               <Paper
                 variant="outlined"
                 square
@@ -1206,34 +1215,43 @@ export default function BasicTable() {
         </Paper>
         <Box my={5}>
           <Grid container spacing={3}>
-            <Grid item xs={6}>
+            <Grid item md={6}>
               <Box mb={2}>
                 <Icon />
-                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="h5">Easy Deployment</Typography>
                 <Typography variant="subtitle1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
                   obcaecati vel ad unde est illo at. Labore excepturi officia
                   dolores!,dolores!
                 </Typography>
+                <List component="nav" aria-label="contacts">
+                  <ListItem paragraph>
+                    <ListItemIcon>
+                      <CheckCircleOutlineRoundedIcon
+                        style={{ width: 'auto', marginRight: '.5rem' }}
+                      />
+                    </ListItemIcon>
+                    <ListItemText primary="Chelsea Otakan" />
+                  </ListItem>
+                  <ListItem button>
+                    <ListItemText inset primary="Eric Hoffman" />
+                  </ListItem>
+                </List>
               </Box>
               <Button variant="outlined">learn more</Button>
             </Grid>
-            <Grid item xs={6}>
-              <img
-                style={{ width: '90%' }}
-                src="https://www.moshified.com/easy@2x.31665d23.jpg"
-              />
+            <Grid item md={6}>
+              <img src={Custom} alt="fireSpot" />
             </Grid>
-            <Grid item xs={6}>
-              <img
-                style={{ width: '90%' }}
-                src="https://www.moshified.com/easy@2x.31665d23.jpg"
-              />
+            <Grid item md={6}>
+              <img src={Coverage} alt="hello" />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item md={6}>
               <Box mb={2}>
                 <Icon />
-                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="h5">
+                  Robust Routing and Instant Delivery
+                </Typography>
                 <Typography variant="subtitle1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
                   obcaecati vel ad unde est illo at. Labore excepturi officia
@@ -1242,10 +1260,12 @@ export default function BasicTable() {
               </Box>
               <Button variant="outlined">learn more</Button>
             </Grid>
-            <Grid item xs={6}>
+            <Grid item md={6}>
               <Box mb={2}>
                 <Icon />
-                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="h5">
+                  Robust Routing and Instant Delivery
+                </Typography>
                 <Typography variant="subtitle1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
                   obcaecati vel ad unde est illo at. Labore excepturi officia
@@ -1254,22 +1274,16 @@ export default function BasicTable() {
               </Box>
               <Button variant="outlined">learn more</Button>
             </Grid>
-            <Grid item xs={6}>
-              <img
-                style={{ width: '90%' }}
-                src="https://www.moshified.com/easy@2x.31665d23.jpg"
-              />
+            <Grid item md={6}>
+              <img src={Conversation} alt="hello" />
             </Grid>
-            <Grid item xs={6}>
-              <img
-                style={{ width: '90%' }}
-                src="https://www.moshified.com/easy@2x.31665d23.jpg"
-              />
+            <Grid item md={6}>
+              <img src={Conversation} alt="hello" />
             </Grid>
-            <Grid item xs={6}>
+            <Grid item md={6}>
               <Box mb={2}>
                 <Icon />
-                <Typography variant="h5">Wordpress Made Easy</Typography>
+                <Typography variant="h5">Quick Access to Operators</Typography>
                 <Typography variant="subtitle1">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
                   obcaecati vel ad unde est illo at. Labore excepturi officia
@@ -1278,9 +1292,52 @@ export default function BasicTable() {
               </Box>
               <Button variant="outlined">learn more</Button>
             </Grid>
-            <Grid item xs={6}></Grid>
-            <Grid item xs={6}>
-              <ExpertForm />
+            <Grid item md={6}>
+              <Box mb={2}>
+                <Icon />
+                <Typography variant="h5">
+                  Monitor and manage Services
+                </Typography>
+                <Typography variant="subtitle1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                  obcaecati vel ad unde est illo at. Labore excepturi officia
+                  dolores!
+                </Typography>
+              </Box>
+              <Button variant="outlined">learn more</Button>
+            </Grid>
+            <Grid item md={6}>
+              <img src={Conversation} alt="hello" />
+            </Grid>
+            <Grid item md={6}>
+              <img src={Conversation} alt="hello" />
+            </Grid>
+            <Grid item md={6}>
+              <Box mb={2}>
+                <Icon />
+                <Typography variant="h5">Customizable Time Period</Typography>
+                <Typography variant="subtitle1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                  obcaecati vel ad unde est illo at. Labore excepturi officia
+                  dolores!
+                </Typography>
+              </Box>
+              <Button variant="outlined">learn more</Button>
+            </Grid>
+            <Grid item md={6}>
+              <Box mb={2}>
+                <Icon />
+                <Typography variant="h5">Customizable Time Period</Typography>
+                <Typography variant="subtitle1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
+                  obcaecati vel ad unde est illo at. Labore excepturi officia
+                  dolores!
+                </Typography>
+              </Box>
+              <Button variant="outlined">learn more</Button>
+            </Grid>
+            <Grid item md={6}>
+              <img src={Support} alt="support" />
             </Grid>
           </Grid>
         </Box>

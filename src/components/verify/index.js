@@ -7,6 +7,9 @@ import Table from './Table';
 import CreateButton from './create';
 import { useSelector, useDispatch } from 'react-redux';
 import Actions from './verify.action';
+import { Box, IconButton, Typography } from '@material-ui/core';
+import Tab from './docs';
+import List from './verify.list';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -15,18 +18,23 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     height: '100vh',
-    overflow: 'auto',
     marginTop: '3.5rem',
     margin: 33,
   },
   container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
   },
   appBarSpacer: theme.mixins.toolbar,
   paper: {
-    padding: theme.spacing(2),
-    overflow: 'auto',
+    paddingTop: 0,
+    padding: theme.spacing(1),
+  },
+  iconButton: {
+    borderRadius: 4,
+    padding: 5,
+    background: theme.palette.primary.main,
+    color: 'white',
   },
 }));
 
@@ -38,19 +46,19 @@ export default function Dashboard() {
     dispatch(await Actions.GetOtpProfile());
   }, [dispatch]);
 
-  const data = useSelector(({ VerifyProfile }) => VerifyProfile.data);
   return (
     <>
       <HeadNav title="Api Keys" />
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
+
         <Grid container spacing={3}>
-          <Grid item xs={12}>
+          <Grid item md={8}>
             <Paper className={classes.paper}>
-              <CreateButton />
-              <Table data={data} />
+              <Tab />
             </Paper>
           </Grid>
+          <List />
         </Grid>
       </main>
     </>

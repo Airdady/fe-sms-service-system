@@ -9,14 +9,16 @@ import { SnackbarProvider } from 'notistack';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import types from './redux/types';
+
 const theme = createMuiTheme({
   palette: {
     type: 'light',
     primary: {
       main: '#202d59',
+      light:'#1F3680'
     },
     background: {
-      default: '#ffff',
+      default: '#efeeee',
     },
   },
 });

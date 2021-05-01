@@ -12,10 +12,24 @@ import Grid from '@material-ui/core/Grid';
 // import { useSnackbar } from 'notistack';
 import { useDispatch, useSelector } from 'react-redux';
 import Actions from './verify.action';
+import AddRoundedIcon from '@material-ui/icons/AddRounded';
+import { IconButton } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
 
 const uuid = require('uuid');
 
+const useStyles = makeStyles((theme) => ({
+  iconButton: {
+    borderRadius: 4,
+    padding: 5,
+    background: theme.palette.primary.main,
+    color: 'white',
+  },
+}));
+
+
 export default function FormDialog() {
+  const classes = useStyles();
   const dispatch = useDispatch();
   // const { enqueueSnackbar } = useSnackbar();
   const [open, setOpen] = useState(false);
@@ -49,20 +63,15 @@ export default function FormDialog() {
 
   return (
     <div>
-      <Button
-        variant="contained"
-        size="small"
-        color="primary"
-        onClick={handleClickOpen}
-      >
-        ADD PROFILE
-      </Button>
+      <IconButton size="small" onClick={handleClickOpen} className={classes.iconButton}>
+        <AddRoundedIcon fontSize="small" />
+      </IconButton>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle id="form-dialog-title">Create Profile</DialogTitle>
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <Grid container spacing={3}>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     label="Profile Name"
@@ -73,7 +82,7 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     label="Sender Name"
@@ -84,7 +93,7 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     fullWidth
@@ -97,7 +106,7 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item md={6}>
                 <FormControl fullWidth>
                   <TextField
                     select
@@ -116,7 +125,7 @@ export default function FormDialog() {
                   </TextField>
                 </FormControl>
               </Grid>
-              <Grid item xs={6}>
+              <Grid item md={6}>
                 <FormControl fullWidth>
                   <TextField
                     label="Expiry Time in (seconds)"
@@ -128,7 +137,7 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     label="Message Template"

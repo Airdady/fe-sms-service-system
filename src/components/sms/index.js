@@ -45,7 +45,7 @@ export default function Dashboard() {
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
         <Grid container spacing={3}>
-          <Grid item xs={12}>
+          <Grid item md={12}>
             <Paper className={classes.paper}>
               <CreateButton />
               <Table data={data} />

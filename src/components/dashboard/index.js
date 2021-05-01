@@ -14,7 +14,7 @@ import DenseTable from './Table';
 import HeadNav from '../Nav';
 import { Link } from 'react-router-dom';
 
-const drawerWidth = 240;
+const drawerWidth = 60;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -113,10 +113,10 @@ export default function Dashboard() {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               <Paper className={fixedHeightPaper}>
                 <Grid container spacing={3}>
-                  <Grid item xs={8}>
+                  <Grid item md={8}>
                     <Box>
                       <Typography variant="subtitle1" gutterBottom>
                         Hi, Rumbiiha
@@ -149,7 +149,7 @@ export default function Dashboard() {
                       </Grid>
                     </Box>
                   </Grid>
-                  <Grid item xs={4}>
+                  <Grid item md={4}>
                     <Box>
                       <Typography variant="subtitle1" gutterBottom>
                         Available Balance
@@ -180,15 +180,15 @@ export default function Dashboard() {
                 </Grid>
               </Paper>
             </Grid>
-            <Grid item xs={8}>
+            <Grid item md={8}>
               <Paper className={fixedHeightPaper1}>
                 <Stepper />
               </Paper>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item md={4}>
               <Paper className={fixedHeightPaper1}></Paper>
             </Grid>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               {/* <Paper> */}
               <DenseTable />
               {/* </Paper> */}

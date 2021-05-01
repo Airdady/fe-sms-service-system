@@ -72,7 +72,7 @@ export default function FormDialog() {
         <form onSubmit={handleSubmit}>
           <DialogContent>
             <Grid container spacing={3}>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     label="Profile Name"
@@ -83,7 +83,7 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     label="Sender Name"
@@ -94,7 +94,7 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     fullWidth
@@ -107,7 +107,7 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item xs={9}>
+              <Grid item md={9}>
                 <FormControl fullWidth>
                   <TextField
                     select
@@ -126,7 +126,7 @@ export default function FormDialog() {
                   </TextField>
                 </FormControl>
               </Grid>
-              <Grid item xs={3}>
+              <Grid item md={3}>
                 <FormControl fullWidth>
                   <TextField
                     select
@@ -137,7 +137,7 @@ export default function FormDialog() {
                     value={values.dlr}
                     onChange={handleChange('dlr')}
                   >
-                    {['yes','no'].map((option) => (
+                    {['yes', 'no'].map((option) => (
                       <MenuItem key={option.value} value={option}>
                         {option}
                       </MenuItem>
@@ -145,7 +145,7 @@ export default function FormDialog() {
                   </TextField>
                 </FormControl>
               </Grid>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <FormControl fullWidth>
                   <TextField
                     label="Message Template"

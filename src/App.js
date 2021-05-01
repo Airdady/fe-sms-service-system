@@ -19,6 +19,7 @@ import SmsPage from './components/products/sms';
 import VerifyPage from './components/products/verify';
 import ContactUs from './components/contactus';
 import Pricing from './components/pricing';
+import Docs from './components/documentation';
 
 function App() {
   return (
@@ -31,14 +32,15 @@ function App() {
           <Route exact path="/product/verify" component={VerifyPage} />
           <Route exact path="/contact" component={ContactUs} />
           <Route exact path="/pricing" component={Pricing} />
+          <Route exact path="/api_docs" component={Docs} />
+          <AuthRoute exact path="/register">
+            <Register />
+          </AuthRoute>
           <AuthRoute exact path="/login">
             <Login />
           </AuthRoute>
           <PrivateRoute exact path="/dashboard">
             <Dashboard />
-          </PrivateRoute>
-          <PrivateRoute exact path="/register">
-            <Register />
           </PrivateRoute>
           <PrivateRoute exact path="/verify">
             <Verify />
@@ -89,11 +91,7 @@ function AuthRoute({ children }) {
     <Route
       render={({ location }) => {
         let { from } = location.state || { from: { pathname: '/dashboard' } };
-        return !user ? (
-          children
-        ) : (
-          history.replace(from)
-        );
+        return !user ? children : history.replace(from);
       }}
     />
   );

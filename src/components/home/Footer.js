@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    background: theme.palette.primary.dark,
+    background: theme.palette.primary.main,
     paddingTop: 15,
   },
   paper: {
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '.4rem',
   },
   copyright: {
-    background: theme.palette.primary.light,
+    background: theme.palette.primary.dark,
   },
 }));
 
@@ -40,7 +40,7 @@ export default function Footer() {
     <div className={classes.root}>
       <Container>
         <Grid container spacing={3}>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <Typography variant="subtitle2" className={classes.footerHeader}>
               Contact
             </Typography>
@@ -58,7 +58,7 @@ export default function Footer() {
               <ListItem style={{ padding: 2 }}></ListItem>
             </List>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <Typography variant="subtitle2" className={classes.footerHeader}>
               Our Products
             </Typography>
@@ -85,7 +85,7 @@ export default function Footer() {
               </ListItem>
             </List>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <Typography variant="subtitle2" className={classes.footerHeader}>
               Developers
             </Typography>
@@ -112,7 +112,7 @@ export default function Footer() {
               </ListItem>
             </List>
           </Grid>
-          <Grid item xs={3}>
+          <Grid item md={3}>
             <Typography variant="subtitle2" className={classes.footerHeader}>
               Resources
             </Typography>

@@ -41,7 +41,7 @@ const ExpertForm = () => {
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
-            <Grid item xs={12} sm={12}>
+            <Grid item md={12} sm={12}>
               <TextField
                 variant="outlined"
                 required
@@ -51,7 +51,7 @@ const ExpertForm = () => {
                 name="lastName"
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               <TextField
                 variant="outlined"
                 required
@@ -62,7 +62,7 @@ const ExpertForm = () => {
                 autoComplete="email"
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               <TextField
                 variant="outlined"
                 required
@@ -74,7 +74,7 @@ const ExpertForm = () => {
                 autoComplete="current-telephone"
               />
             </Grid>
-            <Grid item xs={12}>
+            <Grid item md={12}>
               <TextField
                 fullWidth
                 multiline

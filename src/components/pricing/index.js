@@ -64,14 +64,14 @@ export default function BasicTable() {
         <Box display="flex" alignItems="center" className={classes.bgColor}>
           <Container maxWidth="lg">
             <Grid container style={{ height: '100%' }}>
-              <Grid item xs={12}>
+              <Grid item md={12}>
                 <Box
                   display="flex"
                   flexGrow={1}
                   textAlign="center"
                   justifyContent="space-around"
                 >
-                  <Box justifyContent='space-around' flexGrow={1}>
+                  <Box justifyContent="space-around" flexGrow={1}>
                     <Typography
                       variant="h3"
                       style={{ color: 'white' }}
@@ -79,7 +79,7 @@ export default function BasicTable() {
                     >
                       Pricing
                     </Typography>
-                    <Grid item xs={5}>
+                    <Grid item md={5}>
                       <CountrySelector />
                     </Grid>
                   </Box>
@@ -92,7 +92,7 @@ export default function BasicTable() {
       <Box p={5} width="100%" bgcolor="#f0f3fb" textAlign="left">
         <Container>
           <Grid container spacing={3}>
-            <Grid item xs={6}></Grid>
+            <Grid item md={6}></Grid>
           </Grid>
         </Container>
       </Box>
