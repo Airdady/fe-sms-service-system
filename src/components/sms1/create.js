@@ -11,35 +11,31 @@ import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 // import { useSnackbar } from 'notistack';
 import { useDispatch, useSelector } from 'react-redux';
-import Actions from './sms.action';
-import AddRoundedIcon from '@material-ui/icons/AddRounded';
-import { IconButton } from '@material-ui/core';
-import { makeStyles } from '@material-ui/core/styles';
+import Actions from '../sms/sms.action';
 
 const uuid = require('uuid');
 
-const useStyles = makeStyles((theme) => ({
-  iconButton: {
-    borderRadius: 4,
-    padding: 5,
-    background: theme.palette.primary.main,
-    color: 'white',
-  },
-}));
-
-
 export default function FormDialog() {
-  const classes = useStyles();
   const dispatch = useDispatch();
   // const { enqueueSnackbar } = useSnackbar();
   const [open, setOpen] = useState(false);
+  const [type] = useState([
+    'Plain text (GSM 3.38 Character encoding)',
+    'Flash (GSM 3.38 Character encoding)',
+    'Unicode',
+    'Reserved',
+    'Plain text (ISO-8859-1 Character encoding)',
+    'Unicode Flash',
+    'Flash (ISO-8859-1 Character encoding)',
+  ]);
+
   const [values, setValues] = useState({
-    otplen: 4,
-    expiry: 600,
     profileName: '',
     senderName: '',
     serviceToken: `AC-${uuid.v4().replaceAll('-', '.')}`,
     msg: 'Your one-time verification code is {code}',
+    type: type[0],
+    dlr: 'yes',
   });
 
   const handleClickOpen = () => {
@@ -55,17 +51,22 @@ export default function FormDialog() {
   };
   const handleSubmit = async (event) => {
     event.preventDefault();
-    dispatch(await Actions.CreateSmsProfile(values));
+    dispatch(await Actions.CreateOtpProfile(values));
     handleClose();
   };
 
-  const { loaded } = useSelector(({ VerifyProfile }) => VerifyProfile);
+  const { loaded } = useSelector(({ SmsProfile }) => SmsProfile);
 
   return (
     <div>
-      <IconButton size="small" onClick={handleClickOpen} className={classes.iconButton}>
-        <AddRoundedIcon fontSize="small" />
-      </IconButton>
+      <Button
+        variant="contained"
+        size="small"
+        color="primary"
+        onClick={handleClickOpen}
+      >
+        ADD PROFILE
+      </Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle id="form-dialog-title">Create Profile</DialogTitle>
         <form onSubmit={handleSubmit}>
@@ -97,6 +98,7 @@ export default function FormDialog() {
                 <FormControl fullWidth>
                   <TextField
                     fullWidth
+                    disabled
                     label="Service Token"
                     defaultValue={values.serviceToken}
                     variant="outlined"
@@ -105,18 +107,18 @@ export default function FormDialog() {
                   />
                 </FormControl>
               </Grid>
-              <Grid item md={6}>
+              <Grid item md={9}>
                 <FormControl fullWidth>
                   <TextField
                     select
                     fullWidth
-                    label="Select Code Length"
+                    label="message Typee"
                     variant="outlined"
                     size="small"
-                    value={values.otplen}
-                    onChange={handleChange('otplen')}
+                    value={values.type}
+                    onChange={handleChange('type')}
                   >
-                    {[4, 5, 6, 7, 8, 9, 10].map((option) => (
+                    {type.map((option) => (
                       <MenuItem key={option.value} value={option}>
                         {option}
                       </MenuItem>
@@ -124,16 +126,23 @@ export default function FormDialog() {
                   </TextField>
                 </FormControl>
               </Grid>
-              <Grid item md={6}>
+              <Grid item md={3}>
                 <FormControl fullWidth>
                   <TextField
-                    label="Expiry Time in (seconds)"
-                    type="number"
-                    defaultValue={values.expiry}
+                    select
+                    fullWidth
+                    label="Delivery Report"
                     variant="outlined"
                     size="small"
-                    onChange={handleChange('expiry')}
-                  />
+                    value={values.dlr}
+                    onChange={handleChange('dlr')}
+                  >
+                    {['yes', 'no'].map((option) => (
+                      <MenuItem key={option.value} value={option}>
+                        {option}
+                      </MenuItem>
+                    ))}
+                  </TextField>
                 </FormControl>
               </Grid>
               <Grid item md={12}>

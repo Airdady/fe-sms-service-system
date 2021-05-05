@@ -6,10 +6,7 @@ import HeadNav from '../Nav';
 import Table from './Table';
 import CreateButton from './create';
 import { useSelector, useDispatch } from 'react-redux';
-import Actions from './sms.action';
-import { Box, IconButton, Typography } from '@material-ui/core';
-import Tab from './docs';
-import List from './verify.list';
+import Actions from '../sms/sms.action';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -18,23 +15,18 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     height: '100vh',
+    overflow: 'auto',
     marginTop: '3.5rem',
     margin: 33,
   },
   container: {
-    paddingTop: theme.spacing(1),
-    paddingBottom: theme.spacing(1),
+    paddingTop: theme.spacing(4),
+    paddingBottom: theme.spacing(4),
   },
   appBarSpacer: theme.mixins.toolbar,
   paper: {
-    paddingTop: 0,
-    padding: theme.spacing(1),
-  },
-  iconButton: {
-    borderRadius: 4,
-    padding: 5,
-    background: theme.palette.primary.main,
-    color: 'white',
+    padding: theme.spacing(2),
+    overflow: 'auto',
   },
 }));
 
@@ -46,19 +38,19 @@ export default function Dashboard() {
     dispatch(await Actions.GetSmsProfile());
   }, [dispatch]);
 
+  const data = useSelector(({ SmsProfile }) => SmsProfile.data);
   return (
     <>
       <HeadNav title="Api Keys" />
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-
         <Grid container spacing={3}>
-          <Grid item md={8}>
+          <Grid item md={12}>
             <Paper className={classes.paper}>
-              <Tab />
+              <CreateButton />
+              <Table data={data} />
             </Paper>
           </Grid>
-          <List />
         </Grid>
       </main>
     </>

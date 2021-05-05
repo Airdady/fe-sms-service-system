@@ -11,6 +11,10 @@ import store from './redux/store';
 import types from './redux/types';
 
 const theme = createMuiTheme({
+  typography: {
+    fontFamily: 'Poppins',
+    htmlFontSize: 17
+  },
   palette: {
     type: 'light',
     primary: {

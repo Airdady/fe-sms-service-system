@@ -5,7 +5,7 @@ const Auth = {
   async Login(data, history, from) {
     try {
       const res = await Service.login(data);
-      console.log(res.data.data);
+      localStorage.setItem("user", JSON.stringify(res.data.data));
       return {
         type: Types.LOGIN,
         createData: res.data.data,

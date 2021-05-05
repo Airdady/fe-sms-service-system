@@ -11,7 +11,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 import TimeAgo from 'timeago-react';
 import { useDispatch } from 'react-redux';
-import Actions from './verify.action';
+import Actions from '../sms/sms.action';
 
 const useStyles = makeStyles({
   table: {
@@ -26,14 +26,12 @@ export default function BasicTable({ data }) {
 
   const handleClick = (id) => async (e) => {
     e.preventDefault();
-    console.log(id);
-    dispatch(await Actions.deleteOtpProfile(id));
+    dispatch(await Actions.deleteSmsProfile(id));
   };
 
   const handleChange = (id, active) => async (e) => {
     e.preventDefault();
-    console.log(id);
-    dispatch(await Actions.updateOtpProfile(id, { active }));
+    dispatch(await Actions.updateSmsProfile(id, { active }));
   };
 
   return (

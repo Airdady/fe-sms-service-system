@@ -7,6 +7,7 @@ const initialState = {
 const userData = (state = initialState, action) => {
   switch (action.type) {
     case Types.LOGIN:
+      console.log('action.data', action.data);
       localStorage.setItem("user", JSON.stringify(action.data));
       return {
         ...state,

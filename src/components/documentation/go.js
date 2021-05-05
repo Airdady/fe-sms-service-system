@@ -1,7 +1,7 @@
 const Go = () => (
   <svg
     class="SVGInline-svg SVG-svg LangIcon-svg"
-    style={{ width: 24, height: 24 }}
+    style={{ width: 24, height: 24, marginRight: 5 }}
     viewBox="2 2 30 30"
     xmlns="http://www.w3.org/2000/svg"
   >

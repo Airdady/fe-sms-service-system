@@ -20,6 +20,7 @@ import VerifyPage from './components/products/verify';
 import ContactUs from './components/contactus';
 import Pricing from './components/pricing';
 import Docs from './components/documentation';
+import ApiLog from './components/apiLogs';
 
 function App() {
   return (
@@ -56,6 +57,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute exact path="/return">
             <Checkout />
+          </PrivateRoute>
+          <PrivateRoute exact path="/api_logs">
+            <ApiLog />
           </PrivateRoute>
         </Switch>
       </Router>

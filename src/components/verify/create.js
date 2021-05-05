@@ -97,7 +97,6 @@ export default function FormDialog() {
                 <FormControl fullWidth>
                   <TextField
                     fullWidth
-                    disabled
                     label="Service Token"
                     defaultValue={values.serviceToken}
                     variant="outlined"
