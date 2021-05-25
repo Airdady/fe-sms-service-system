@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
     marginLeft: 5,
     textDecoration: 'none',
-    color: 'white',
+    color: theme.palette.primary.main,
   },
   bgColor: {
     width: '100%',
@@ -62,7 +62,7 @@ export default function MenuAppBar() {
   return (
     <>
       <div className={classes.root}>
-        <AppBar position="static">
+        <AppBar elevation={0} position="static">
           <Container maxWidth="lg">
             <Toolbar>
               <Box display="flex" alignItems="center" className={classes.title}>
@@ -130,11 +130,6 @@ export default function MenuAppBar() {
                   <MenuItem onClick={handleClose}>
                     <Link to="/product/verify" className={classes.links}>
                       Verification
-                    </Link>
-                  </MenuItem>
-                  <MenuItem onClick={handleClose}>
-                    <Link to="/product/number_lookup" className={classes.links}>
-                      Number Lookup
                     </Link>
                   </MenuItem>
                 </Menu>

@@ -1,20 +1,42 @@
 import React from 'react';
 import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Drawer from '@material-ui/core/Drawer';
 import Box from '@material-ui/core/Box';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import List from '@material-ui/core/List';
 import Typography from '@material-ui/core/Typography';
+import Divider from '@material-ui/core/Divider';
+import IconButton from '@material-ui/core/IconButton';
+import Badge from '@material-ui/core/Badge';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import FileCopyRoundedIcon from '@material-ui/icons/FileCopyRounded';
-import Stepper from './Stepper';
-import DenseTable from './Table';
-import HeadNav from '../Nav';
-import { Link } from 'react-router-dom';
+import Link from '@material-ui/core/Link';
+import MenuIcon from '@material-ui/icons/Menu';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import NotificationsIcon from '@material-ui/icons/Notifications';
+import { mainListItems, secondaryListItems } from './listItems';
+import Chart from './Chart';
+import Deposits from './Deposits';
+import Orders from './Orders';
 
-const drawerWidth = 60;
+function Copyright() {
+  return (
+    <Typography variant="body2" color="textSecondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://material-ui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -91,111 +113,107 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
   },
   fixedHeight: {
-    height: 170,
-  },
-  fixedHeight1: {
-    height: 400,
-  },
-  green: {
-    color: theme.palette.success.main,
+    height: 240,
   },
 }));
 
 export default function Dashboard() {
   const classes = useStyles();
-  const fixedHeightPaper1 = clsx(classes.paper, classes.fixedHeight1);
+  const [open, setOpen] = React.useState(true);
+  const handleDrawerOpen = () => {
+    setOpen(true);
+  };
+  const handleDrawerClose = () => {
+    setOpen(false);
+  };
   const fixedHeightPaper = clsx(classes.paper, classes.fixedHeight);
 
   return (
-    <>
-      <HeadNav title="Dashboard" />
+    <div className={classes.root}>
+      <CssBaseline />
+      <AppBar
+        position="absolute"
+        className={clsx(classes.appBar, open && classes.appBarShift)}
+      >
+        <Toolbar className={classes.toolbar}>
+          <IconButton
+            edge="start"
+            color="inherit"
+            aria-label="open drawer"
+            onClick={handleDrawerOpen}
+            className={clsx(
+              classes.menuButton,
+              open && classes.menuButtonHidden
+            )}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography
+            component="h1"
+            variant="h6"
+            color="inherit"
+            noWrap
+            className={classes.title}
+          >
+            Dashboard
+          </Typography>
+          <IconButton color="inherit">
+            <Badge badgeContent={4} color="secondary">
+              <NotificationsIcon />
+            </Badge>
+          </IconButton>
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        variant="permanent"
+        classes={{
+          paper: clsx(classes.drawerPaper, !open && classes.drawerPaperClose),
+        }}
+        open={open}
+      >
+        <div className={classes.toolbarIcon}>
+          <IconButton onClick={handleDrawerClose}>
+            <ChevronLeftIcon />
+          </IconButton>
+        </div>
+        <Divider />
+        <List>{mainListItems}</List>
+        <Divider />
+        <List>{secondaryListItems}</List>
+      </Drawer>
       <main className={classes.content}>
         <div className={classes.appBarSpacer} />
-        <Container maxWidth="xl" className={classes.container}>
+        <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Grid item md={12}>
+            {/* Chart */}
+            <Grid item xs={12} md={8} lg={9}>
               <Paper className={fixedHeightPaper}>
-                <Grid container spacing={3}>
-                  <Grid item md={8}>
-                    <Box>
-                      <Typography variant="subtitle1" gutterBottom>
-                        Hi, Rumbiiha
-                      </Typography>
-                      <Typography
-                        variant="caption"
-                        style={{ marginTop: '-.5rem' }}
-                        display="block"
-                        gutterBottom
-                      >
-                        company
-                      </Typography>
-                      <Typography variant="subtitle1" gutterBottom>
-                        Public Api Keys
-                      </Typography>
-                      <Grid container spacing={1} alignItems="flex-end">
-                        <Grid item>
-                          <TextField
-                            style={{ width: '30rem' }}
-                            value="VM_7d0eb91189353d00bbf1f5ba0ed322ee-c92d62ee"
-                            id="input-with-icon-grid"
-                          />
-                        </Grid>
-                        <Grid item>
-                          <FileCopyRoundedIcon />
-                        </Grid>
-                        <Grid item>
-                          <Button color="primary">manage Keys</Button>
-                        </Grid>
-                      </Grid>
-                    </Box>
-                  </Grid>
-                  <Grid item md={4}>
-                    <Box>
-                      <Typography variant="subtitle1" gutterBottom>
-                        Available Balance
-                      </Typography>
-                      <Typography
-                        variant="h5"
-                        className={classes.green}
-                        style={{ marginTop: '-.5rem' }}
-                        display="block"
-                        gutterBottom
-                      >
-                        $ 15.6
-                      </Typography>
-                      <Typography
-                        variant="caption"
-                        style={{ marginTop: '-.5rem' }}
-                        display="block"
-                        gutterBottom
-                      >
-                        Upgrade now to buy phone numbers, publish your app in
-                        the App Gallery, and take over the world.
-                      </Typography>
-                      <Button size="small" variant="contained" color="primary">
-                        <Link to="/payments">Upgrade</Link>
-                      </Button>
-                    </Box>
-                  </Grid>
-                </Grid>
+                <Chart />
               </Paper>
             </Grid>
-            <Grid item md={8}>
-              <Paper className={fixedHeightPaper1}>
-                <Stepper />
+            {/* Recent Deposits */}
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <Deposits />
               </Paper>
             </Grid>
-            <Grid item md={4}>
-              <Paper className={fixedHeightPaper1}></Paper>
+            <Grid item xs={12} md={4} lg={3}>
+              <Paper className={fixedHeightPaper}>
+                <Deposits />
+              </Paper>
             </Grid>
-            <Grid item md={12}>
-              {/* <Paper> */}
-              <DenseTable />
-              {/* </Paper> */}
+            {/* Recent Orders */}
+            <Grid item xs={12}>
+              <Paper className={classes.paper}>
+                <Orders />
+              </Paper>
             </Grid>
           </Grid>
+          <Box pt={4}>
+            <Copyright />
+          </Box>
         </Container>
       </main>
-    </>
+    </div>
   );
 }

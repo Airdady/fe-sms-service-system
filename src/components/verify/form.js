@@ -36,7 +36,7 @@ const Form = ({ data }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Grid container spacing={3}>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
               label="Profile Name"
@@ -48,7 +48,7 @@ const Form = ({ data }) => {
             />
           </FormControl>
         </Grid>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
               label="Sender Name"
@@ -60,7 +60,7 @@ const Form = ({ data }) => {
             />
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item xs={6}>
           <FormControl fullWidth>
             <TextField
               select
@@ -79,7 +79,7 @@ const Form = ({ data }) => {
             </TextField>
           </FormControl>
         </Grid>
-        <Grid item md={6}>
+        <Grid item xs={6}>
           <FormControl fullWidth>
             <TextField
               label="Expiry Time in (sec)"
@@ -91,7 +91,7 @@ const Form = ({ data }) => {
             />
           </FormControl>
         </Grid>
-        <Grid item md={12}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
               label="Message Template"

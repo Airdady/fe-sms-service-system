@@ -21,10 +21,11 @@ import ContactUs from './components/contactus';
 import Pricing from './components/pricing';
 import Docs from './components/documentation';
 import ApiLog from './components/apiLogs';
+import Settings from './components/settings';
 
 function App() {
   return (
-    <div style={{ display: 'flex' }}>
+    <div>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -60,6 +61,9 @@ function App() {
           </PrivateRoute>
           <PrivateRoute exact path="/api_logs">
             <ApiLog />
+          </PrivateRoute>
+          <PrivateRoute exact path="/settings">
+            <Settings />
           </PrivateRoute>
         </Switch>
       </Router>

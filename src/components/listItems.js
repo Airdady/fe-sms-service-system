@@ -3,10 +3,6 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListSubheader from '@material-ui/core/ListSubheader';
-import DashboardIcon from '@material-ui/icons/Dashboard';
-import PhonelinkLockRoundedIcon from '@material-ui/icons/PhonelinkLockRounded';
-import PeopleIcon from '@material-ui/icons/People';
-import BarChartIcon from '@material-ui/icons/BarChart';
 import AssignmentIcon from '@material-ui/icons/Assignment';
 import { Link } from 'react-router-dom';
 import { Box, Typography } from '@material-ui/core';
@@ -83,7 +79,7 @@ export const mainListItems = (
         </ListItemIcon>
       </ListItem>
     </Link>
-    <Link style={{ textDecoration: 'none' }} to="/number_lookup">
+    <Link style={{ textDecoration: 'none' }} to="/settings">
       <ListItem button style={{ justifyContent: 'center' }}>
         <ListItemIcon style={{ minWidth: 0 }}>
           <Box display="flex" flexDirection="column">
