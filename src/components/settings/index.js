@@ -2,12 +2,10 @@ import React from 'react';
 import { makeStyles, withStyles } from '@material-ui/core/styles';
 import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
-import Typography from '@material-ui/core/Typography';
 import ProfileSettings from './profile.settings';
 import BillingSettings from './billing.settings';
 import PasswordResetSettings from './password.reset.settings';
 import { Box, Grid, Paper } from '@material-ui/core';
-import HeadNav from '../Nav';
 
 const AntTabs = withStyles({
   root: {
@@ -54,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
   },
   demo1: {
     backgroundColor: theme.palette.background.paper,
-  }
+  },
 }));
 
 export default function CustomizedTabs() {
@@ -68,31 +66,25 @@ export default function CustomizedTabs() {
   };
 
   return (
-    <>
-      <HeadNav title="Api Keys" />
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Grid container spacing={3}>
-          <Grid item md={8}>
-            <Paper className={classes.paper}>
-              <AntTabs
-                value={value}
-                onChange={handleChange}
-                aria-label="ant example"
-              >
-                <AntTab label="Profile" />
-                <AntTab label="Billing" />
-                <AntTab label="Password Reset" />
-              </AntTabs>
-              <Box p={3}>
-                {(activeTab?.match('Profile') && <ProfileSettings />) ||
-                  (activeTab?.match('Billing') && <BillingSettings />) ||
-                  (activeTab?.match('Password') && <PasswordResetSettings />)}
-              </Box>
-            </Paper>
-          </Grid>
-        </Grid>
-      </main>
-    </>
+    <Grid container spacing={3}>
+      <Grid item md={12}>
+        <Paper className={classes.paper}>
+          <AntTabs
+            value={value}
+            onChange={handleChange}
+            aria-label="ant example"
+          >
+            <AntTab label="Profile" />
+            <AntTab label="Billing" />
+            <AntTab label="Password Reset" />
+          </AntTabs>
+          <Box p={3}>
+            {(activeTab?.match('Profile') && <ProfileSettings />) ||
+              (activeTab?.match('Billing') && <BillingSettings />) ||
+              (activeTab?.match('Password') && <PasswordResetSettings />)}
+          </Box>
+        </Paper>
+      </Grid>
+    </Grid>
   );
 }

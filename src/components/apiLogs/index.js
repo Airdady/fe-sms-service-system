@@ -1,9 +1,7 @@
-import React, { useMemo } from 'react';
+import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import HeadNav from '../Nav';
-import { useDispatch } from 'react-redux';
 import Highlight from 'react-highlight';
 import { Box, Divider, Typography } from '@material-ui/core';
 
@@ -39,20 +37,16 @@ export default function Dashboard() {
 
   return (
     <>
-      <HeadNav title="Api Keys" />
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-
-        <Grid container spacing={3}>
-          <Grid item md={12}>
-            <Paper className={classes.paper}>
-              <Box p={2}>
-                <Typography variant="h6">API Logs</Typography>
-              </Box>
-              <Divider />
-              <Box p={2}>
-                <Highlight language="http">
-                  {`
+      <Grid container spacing={3}>
+        <Grid item md={12}>
+          <Paper className={classes.paper}>
+            <Box p={2}>
+              <Typography variant="h6">API Logs</Typography>
+            </Box>
+            <Divider />
+            <Box p={2}>
+              <Highlight language="http">
+                {`
 
 ${[1, 2, 3, 4, 5].map(
   () =>
@@ -60,12 +54,11 @@ ${[1, 2, 3, 4, 5].map(
 )}
 
                   `}
-                </Highlight>
-              </Box>
-            </Paper>
-          </Grid>
+              </Highlight>
+            </Box>
+          </Paper>
         </Grid>
-      </main>
+      </Grid>
     </>
   );
 }

@@ -6,12 +6,6 @@ import Grid from '@material-ui/core/Grid';
 import SearchInput from '../../home/search';
 import Highlight from 'react-highlight';
 import ProductFeatures from './features';
-import ProductReports from './reports';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import StarIcon from '@material-ui/icons/Star';
 import Footer from '../../home/Footer';
 
 const useStyles = makeStyles((theme) => ({

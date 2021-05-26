@@ -48,19 +48,14 @@ export default function Dashboard() {
 
   return (
     <>
-      <HeadNav title="Api Keys" />
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-
-        <Grid container spacing={3}>
-          <Grid item md={8}>
-            <Paper className={classes.paper}>
-              <Tab />
-            </Paper>
-          </Grid>
-          <List />
+      <Grid container spacing={3}>
+        <Grid item md={8}>
+          <Paper className={classes.paper}>
+            <Tab />
+          </Paper>
         </Grid>
-      </main>
+        <List />
+      </Grid>
     </>
   );
 }

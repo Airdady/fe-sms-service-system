@@ -2,12 +2,8 @@ import React, { useMemo } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
-import HeadNav from '../Nav';
-import Table from './Table';
-import CreateButton from './create';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Actions from './sms.action';
-import { Box, IconButton, Typography } from '@material-ui/core';
 import Tab from './docs';
 import List from './verify.list';
 
@@ -48,19 +44,14 @@ export default function Dashboard() {
 
   return (
     <>
-      <HeadNav title="Api Keys" />
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-
-        <Grid container spacing={3}>
-          <Grid item md={8}>
-            <Paper className={classes.paper}>
-              <Tab />
-            </Paper>
-          </Grid>
-          <List />
+      <Grid container spacing={3}>
+        <Grid item md={8}>
+          <Paper className={classes.paper}>
+            <Tab />
+          </Paper>
         </Grid>
-      </main>
+        <List />
+      </Grid>
     </>
   );
 }

@@ -22,6 +22,7 @@ import Pricing from './components/pricing';
 import Docs from './components/documentation';
 import ApiLog from './components/apiLogs';
 import Settings from './components/settings';
+import DashboardLayout from './layouts/dashboard/admin.layout';
 
 function App() {
   return (
@@ -79,7 +80,7 @@ function PrivateRoute({ children }) {
     <Route
       render={({ location }) => {
         return user ? (
-          children
+          <DashboardLayout content={children} />
         ) : (
           <Redirect
             to={{
