@@ -4,6 +4,7 @@ import Router from '../config';
 import { verifyErrorsHelper, errorsHelper } from './verify.util';
 import jwt from 'jsonwebtoken';
 import parsePhoneNumber from 'libphonenumber-js';
+import client from '../../../utils/dependence';
 
 const optMiddleware = {
   generateOtp: async (req, res) => {
@@ -27,10 +28,13 @@ const optMiddleware = {
       params: { otp_id, otp_code },
     } = req;
     try {
-      const response = await Router.post(`/verifier/verify`, { otp_id, otp_code });
+      const response = await Router.post(`/verifier/verify`, {
+        otp_id,
+        otp_code,
+      });
       return res.status(200).send(response.data);
     } catch (error) {
-      console.log(error)
+      console.log(error);
       return res.status(422).send(error.response.data);
     }
   },
@@ -46,6 +50,13 @@ const optMiddleware = {
       console.log(error);
       return res.status(422).send(error.response.data);
     }
+  },
+  test: async (req, res) => {
+    client.otp
+      .keys('AC-37597ab2.1639.4af3.b611.3f765ecb35cc')
+      .generate({ to: '256758407272' })
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error.response));
   },
 };
 
