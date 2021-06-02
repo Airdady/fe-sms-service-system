@@ -36,54 +36,48 @@ export default function ControlledAccordions() {
   const data = useSelector(({ VerifyProfile }) => VerifyProfile.data);
   return (
     <Grid item md={4}>
+      <Box mb={2}>
+        <Paper>
+          <Box p={2}>
+            <Typography>Add Profile</Typography>
+            <Box>
+              <Form data={{}} />
+            </Box>
+          </Box>
+        </Paper>
+      </Box>
       <Paper className={classes.paper}>
-        <div className={classes.root}>
-          <Accordion
-            elevation={0}
-            expanded={expanded === `panel1`}
-            onChange={handleChange(`panel1`)}
-          >
-            <AccordionSummary
-              expandIcon={<AddRoundedIcon fontSize="small" />}
-              aria-controls={`panel1bh-content`}
-              id={`panel1bh-header`}
-            >
-              <Typography>Add Profile</Typography>
-            </AccordionSummary>
-            <AccordionDetails>
-              <Box>
-                <Form data={{}} />
-              </Box>
-            </AccordionDetails>
-          </Accordion>
-          {!!data?.length &&
-            data.map((profile, i) => (
-              <Accordion
-                key={i}
-                elevation={0}
-                expanded={expanded === `panel${profile._id}`}
-                onChange={handleChange(`panel${profile._id}`)}
-              >
-                <AccordionSummary
-                  expandIcon={<ExpandMoreIcon />}
-                  aria-controls={`panel${profile._id}bh-content`}
-                  id={`panel${profile._id}bh-header`}
+        <Box>
+          <div className={classes.root}>
+            {!!data?.length &&
+              data.map((profile, i) => (
+                <Accordion
+                  key={i}
+                  elevation={0}
+                  expanded={expanded === `panel${profile._id}`}
+                  onChange={handleChange(`panel${profile._id}`)}
                 >
-                  <Typography className={classes.heading}>
-                    {profile.profileName}
-                  </Typography>
-                  <Typography className={classes.secondaryHeading}>
-                    {profile.senderName}
-                  </Typography>
-                </AccordionSummary>
-                <AccordionDetails>
-                  <Box>
-                    <Form data={profile} />
-                  </Box>
-                </AccordionDetails>
-              </Accordion>
-            ))}
-        </div>
+                  <AccordionSummary
+                    expandIcon={<ExpandMoreIcon />}
+                    aria-controls={`panel${profile._id}bh-content`}
+                    id={`panel${profile._id}bh-header`}
+                  >
+                    <Typography className={classes.heading}>
+                      {profile.profileName}
+                    </Typography>
+                    <Typography className={classes.secondaryHeading}>
+                      {profile.senderName}
+                    </Typography>
+                  </AccordionSummary>
+                  <AccordionDetails>
+                    <Box>
+                      <Form data={profile} />
+                    </Box>
+                  </AccordionDetails>
+                </Accordion>
+              ))}
+          </div>
+        </Box>
       </Paper>
     </Grid>
   );

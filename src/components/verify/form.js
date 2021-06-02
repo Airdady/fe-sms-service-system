@@ -5,7 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Box } from '@material-ui/core';
+import { Box, FormControlLabel, Switch } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 // import { useSnackbar } from 'notistack';
 import { useDispatch, useSelector } from 'react-redux';
@@ -22,11 +22,20 @@ const Form = ({ data }) => {
     senderName: '',
     serviceToken: `AC-${uuid.v4().replaceAll('-', '.')}`,
     msg: 'Your one-time verification code is {code}',
+    defaultTemplate: true,
   });
 
   const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
+    console.log(prop, event.target.checked);
+    setValues({
+      ...values,
+      [prop]:
+        event.target.type !== 'checkbox'
+          ? event.target.value
+          : event.target.checked,
+    });
   };
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     dispatch(await Actions.CreateOtpProfile(values));
@@ -91,28 +100,32 @@ const Form = ({ data }) => {
             />
           </FormControl>
         </Grid>
-        <Grid item xs={12}>
-          <FormControl fullWidth>
-            <TextField
-              label="Message Template"
-              multiline
-              rows={3}
-              defaultValue={values.msg}
-              variant="outlined"
-              onChange={handleChange('msg')}
-            />
-          </FormControl>
-        </Grid>
+        <FormControlLabel
+          value="start"
+          onChange={handleChange('defaultTemplate')}
+          control={<Switch checked={values.defaultTemplate} color="primary" />}
+          label="Default message template"
+          labelPlacement="start"
+        />
+        {!values.defaultTemplate && (
+          <Grid item xs={12}>
+            <FormControl fullWidth>
+              <TextField
+                label="Message Template"
+                multiline
+                rows={3}
+                defaultValue={values.msg}
+                variant="outlined"
+                onChange={handleChange('msg')}
+              />
+            </FormControl>
+          </Grid>
+        )}
       </Grid>
       <Box mt={2} display="flex" justifyContent="space-between">
         <Button color="primary">Cancel</Button>
         <Box mt={2}></Box>
-        <Button
-          variant="contained"
-          size="small"
-          type="submit"
-          color="primary"
-        >
+        <Button variant="contained" size="small" type="submit" color="primary">
           SAVE
         </Button>
       </Box>
