@@ -4,11 +4,12 @@ import Service from '../../service'
 const Register = {
    async SignUp(data, history, from){
        const res = await Service.register(data)
-       localStorage.setItem("user", JSON.stringify(res.data))
+       console.log({'res': res})
+       localStorage.setItem("user", JSON.stringify(res.data.data))
         try {
             return{
                 type: Type.REGISTER,
-                createData: data
+                createData: res.data.data
             }
             
         } catch (error) {
