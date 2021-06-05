@@ -7,7 +7,6 @@ import Chart from './Chart';
 import Deposits from './Deposits';
 import Orders from './Orders';
 
-
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -95,16 +94,27 @@ export default function Dashboard() {
   return (
     <Grid container spacing={3}>
       {/* Chart */}
-      <Grid item xs={12} md={8} lg={9}>
+      <Grid item xs={12} md={7} lg={8}>
         <Paper className={fixedHeightPaper}>
           <Chart />
         </Paper>
       </Grid>
       {/* Recent Deposits */}
-      <Grid item xs={12} md={4} lg={3}>
-        <Paper className={fixedHeightPaper}>
-          <Deposits />
-        </Paper>
+      <Grid item xs={12} md={5} lg={4}>
+        <Grid container spacing={2}>
+          <Grid item xs={6} md={6} lg={6}>
+            <Paper style={{ height: '6.8rem' }}></Paper>
+          </Grid>
+          <Grid item xs={6} md={6} lg={6}>
+            <Paper style={{ height: '6.8rem' }}></Paper>
+          </Grid>
+          <Grid item xs={6} md={6} lg={6}>
+            <Paper style={{ height: '6.8rem' }}></Paper>
+          </Grid>
+          <Grid item xs={6} md={6} lg={6}>
+            <Paper style={{ height: '6.8rem' }}></Paper>
+          </Grid>
+        </Grid>
       </Grid>
       {/* Recent Orders */}
       <Grid item xs={12}>

@@ -13,7 +13,6 @@ import Badge from '@material-ui/core/Badge';
 import MenuIcon from '@material-ui/icons/Menu';
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
 import NotificationsIcon from '@material-ui/icons/Notifications';
-import { mainListItems, secondaryListItems } from './listItems';
 import Dropdown from './DropDown';
 import { Button, Box } from '@material-ui/core';
 
@@ -182,7 +181,6 @@ export default function Nav({ title }) {
           </IconButton>
         </div>
         <Divider />
-        <List>{mainListItems}</List>
       </Drawer>
     </>
   );

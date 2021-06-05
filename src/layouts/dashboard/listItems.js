@@ -47,11 +47,12 @@ const NavItems = () => {
           <Typography variant="subtitle2">$359</Typography>
           <Typography variant="caption">Credit Balance</Typography>
         </Box>
-        <Button variant="contained" color="primary" size="small">
-          Top up
-        </Button>
+        <Link to="/payments">
+          <Button variant="contained" color="primary" size="small">
+            Top up
+          </Button>
+        </Link>
       </Box>
-
       <Divider />
       <Link class={classes.link} to="/dashboard">
         <ListItem button>
@@ -75,14 +76,6 @@ const NavItems = () => {
             <ion-icon name="finger-print-outline" />
           </ListItemIcon>
           <ListItemText primary="Verify Api" />
-        </ListItem>
-      </Link>
-      <Link class={classes.link} to="/payments">
-        <ListItem button>
-          <ListItemIcon>
-            <ion-icon name="card-outline" />
-          </ListItemIcon>
-          <ListItemText primary="Payments" />
         </ListItem>
       </Link>
       <Link class={classes.link} to="/api_logs">
@@ -112,7 +105,7 @@ const NavItems = () => {
       <Link class={classes.link} to="/logout">
         <ListItem button>
           <ListItemIcon>
-            <ion-icon name="settings-outline" />
+            <ion-icon name="power" />
           </ListItemIcon>
           <ListItemText primary="Logout" />
         </ListItem>

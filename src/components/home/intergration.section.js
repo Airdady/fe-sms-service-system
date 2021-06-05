@@ -31,20 +31,22 @@ const IntegrationSection = () => {
   const classes = useStyles();
 
   return (
-    <Box bgcolor="grey.500" p={6} style={{ transform: 'skewY(-3deg)' }}>
-      <Container style={{ transform: 'skewY(3deg)' }} maxWidth="md">
+    <Box bgcolor="white" p={6} style={{ transform: 'skewY(-3deg)' }}>
+      <Container style={{ transform: 'skewY(3deg)' }} maxWidth="xl">
         <Grid container spacing={3}>
           <Grid item md={6}>
             <Box display="flex" alignItems="center" height="100%">
               <Box>
                 <Typography variant="h4" gutterBottom>
-                  The world’s most powerful and easy-to-use APIs
+                  Verification Api / OTP
                 </Typography>
                 <Typography variant="body1">
-                  Send airtime online with a simple APIs, SDKS, Widgets or
-                  Plugins. With just a few lines of code, you can add mobile
-                  top-up to your web or mobile application in the programming
-                  language you already use.
+                  Verification Api is a security solution that ensures safe and
+                  secure login process. Integrate Verification Api in your
+                  existing system and manage the entire end to end business
+                  process ranging from OTP generation, delivery via SMS, time
+                  tracking and authentication without utilizing any additional
+                  resources.
                 </Typography>
               </Box>
             </Box>
@@ -65,13 +67,16 @@ const IntegrationSection = () => {
             <Box display="flex" alignItems="center" height="100%">
               <Box>
                 <Typography variant="h4" gutterBottom>
-                  The world’s most powerful and easy-to-use APIs
+                 Airdady  SMS Api
                 </Typography>
                 <Typography variant="body1">
-                  Send airtime online with a simple APIs, SDKS, Widgets or
-                  Plugins. With just a few lines of code, you can add mobile
-                  top-up to your web or mobile application in the programming
-                  language you already use.
+                  An extension of Enterprise Messaging Solution, two-way
+                  messaging as the name suggests allows both the enterprise and
+                  the end-user to send and receive messages; which in most cases
+                  is customer initiated. Creating a communicational loop between
+                  the enterprise and the end user, two-way messaging solution
+                  eliminates the need for the user to call customer care or to
+                  log into the web portals.
                 </Typography>
               </Box>
             </Box>

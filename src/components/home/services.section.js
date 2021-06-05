@@ -47,11 +47,11 @@ const ServiceSection = () => {
                 </Box>
                 <Box>
                   <Typography variant="h5" gutterBottom>
-                    Its time to build make your first Api Call
+                    Free Trial Account
                   </Typography>
                   <Typography variant="body2">
-                    Signup for a developer account and connect to our Api in A
-                    minute
+                    Signup for a developer account for free no credit card
+                    required and no hidden cost
                   </Typography>
                 </Box>
               </Box>
@@ -70,11 +70,12 @@ const ServiceSection = () => {
                 </Box>
                 <Box>
                   <Typography variant="h5" gutterBottom>
-                    Its time to build make your first Api Call
+                    Money-back guarantee in 30 days
                   </Typography>
                   <Typography variant="body2">
-                    Signup for a developer account and connect to our Api in A
-                    minute
+                    We promise to provide the best services and if your not
+                    satisfied with our services you can request your money back
+                    within 30 days
                   </Typography>
                 </Box>
               </Box>
@@ -93,11 +94,11 @@ const ServiceSection = () => {
                 </Box>
                 <Box>
                   <Typography variant="h5" gutterBottom>
-                    Its time to build make your first Api Call
+                    24/7 customer support
                   </Typography>
                   <Typography variant="body2">
-                    Signup for a developer account and connect to our Api in A
-                    minute
+                    We provide 24/7 customer support through our channel live
+                    chart,contact page and out business whatsapp number
                   </Typography>
                 </Box>
               </Box>
@@ -116,11 +117,12 @@ const ServiceSection = () => {
                 </Box>
                 <Box>
                   <Typography variant="h5" gutterBottom>
-                    Its time to build make your first Api Call
+                    Easy deployment
                   </Typography>
                   <Typography variant="body2">
-                    Signup for a developer account and connect to our Api in A
-                    minute
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service and with multiple SDK that means
+                    deployment with less codes
                   </Typography>
                 </Box>
               </Box>

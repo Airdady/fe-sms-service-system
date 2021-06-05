@@ -12,7 +12,7 @@ import DocumentationSection from './documentation.section';
 const useStyles = makeStyles((theme) => ({
   root: {
     width: '100%',
-    maxHeight: '40rem',
+    minHeight: '40rem',
     backgroundSize: 'cover',
     background:
       'url(https://i.ibb.co/kc0sppy/abstract-digital-technology-background-with-network-connection-lines.jpg)',

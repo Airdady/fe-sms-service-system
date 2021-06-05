@@ -17,6 +17,7 @@
     "crypto": "^1.0.1",
     "esm": "^3.2.25",
     "express": "^4.17.1",
+    "google-map-react": "^2.1.9",
     "highlight.js": "^10.7.2",
     "jsonwebtoken": "^8.5.1",
     "jwt-simple": "^0.5.6",

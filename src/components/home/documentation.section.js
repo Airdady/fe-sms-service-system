@@ -39,7 +39,7 @@ const DocumentationSection = () => {
   const [dense] = React.useState(false);
   const [secondary] = React.useState(false);
   return (
-    <Box bgcolor="grey.500" px={6} py={12} style={{ transform: 'skewY(-3deg)' }}>
+    <Box bgcolor="primary.main" px={6} py={12} style={{ transform: 'skewY(-3deg)' }}>
       <Container style={{ transform: 'skewY(3deg)' }} maxWidth="xl">
         <Grid container spacing={3}>
           <Grid item md={7}>
