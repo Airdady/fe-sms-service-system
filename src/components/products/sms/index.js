@@ -6,12 +6,6 @@ import Grid from '@material-ui/core/Grid';
 import SearchInput from '../../home/search';
 import Highlight from 'react-highlight';
 import ProductFeatures from './features';
-import ProductReports from './reports';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import StarIcon from '@material-ui/icons/Star';
 import Footer from '../../home/Footer';
 
 const useStyles = makeStyles((theme) => ({
@@ -19,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     backgroundSize: 'cover',
     background:
-      'url(https://numverify.com/images/promo_bgs/numverify_promo_bg.jpg)',
+      'url(https://i.ibb.co/kc0sppy/abstract-digital-technology-background-with-network-connection-lines.jpg)',
     '& .hljs': {
       borderRadius: theme.shape.borderRadius,
     },
@@ -36,8 +30,7 @@ const useStyles = makeStyles((theme) => ({
   },
   bgColor: {
     width: '100%',
-    height: '350px',
-    // clipPath: "polygon(100% 0, 100% 99%, 0 78%, 0 0)",
+    height: '400px',
     background: 'transparent',
   },
   rightBtn: {
@@ -67,7 +60,7 @@ export default function BasicTable() {
   const classes = useStyles();
 
   return (
-    <Box display="flex" flexDirection="column" flexGrow={1}>
+    <Box display="flex" bgcolor="white" flexDirection="column" flexGrow={1}>
       <div className={classes.root}>
         <MenuNav />
         {/* <div className={classes.bgColor}> */}
@@ -76,7 +69,8 @@ export default function BasicTable() {
             <Grid container style={{ height: '100%' }}>
               <Grid item md={4} style={{ marginTop: '6rem' }}>
                 <Typography variant="h6" style={{ color: 'white' }}>
-                  Global Phone Number Validation & Lookup JSON API
+                  Intensify online security of your services with simple,
+                  tangible, and valuable plug-and- play API
                 </Typography>
                 <Box mt={4} display>
                   <Button variant="contained">Get started</Button>
@@ -91,7 +85,6 @@ export default function BasicTable() {
                 style={{
                   display: 'flex',
                   justifyContent: 'space-around',
-                  marginTop: '2rem',
                   backgroundSize: 'cover',
                   marginLeft: 'auto',
                 }}
@@ -135,8 +128,14 @@ export default function BasicTable() {
           </Container>
         </div>
       </div>
-      <Box p={5} width="100%" bgcolor="#f0f3fb" textAlign="left">
-        <Container>
+      <Box
+        p={5}
+        width="100%"
+        bgcolor="white"
+        textAlign="left"
+        style={{ marginTop: '-2.5rem', transform: 'skewY(-3deg)' }}
+      >
+        <Container style={{ transform: 'skewY(3deg)' }}>
           <Grid container spacing={3}>
             <Box mt={5}>
               <Box textAlign="left" mb={3}>
@@ -154,47 +153,281 @@ export default function BasicTable() {
           </Grid>
         </Container>
       </Box>
-      <Box p={5} width="100%" bgcolor="white" mt={4} textAlign="left">
-        <Container>
+      <Box
+        px={5}
+        py={12}
+        width="100%"
+        bgcolor="#f0f3fb"
+        mt={4}
+        textAlign="left"
+        style={{ transform: 'skewY(-3deg)' }}
+      >
+        <Container style={{ transform: 'skewY(3deg)' }}>
+          <Box my={5}>
+            <Typography variant="h4">Relevant Industries</Typography>
+          </Box>
+
           <Grid container spacing={3}>
-            <Grid item md={6}>
-              <img
-                style={{ width: '90%' }}
-                src="https://www.moshified.com/easy@2x.31665d23.jpg"
-              />
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
             </Grid>
-            <Grid item md={6}>
-              <Box mb={2}>
-                <Typography variant="h5">Wordpress Made Easy</Typography>
-                <Typography variant="subtitle1">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                  obcaecati vel ad unde est illo at. Labore excepturi officia
-                  dolores!
-                </Typography>
-              </Box>
-              <Button variant="outlined">Read Documentation</Button>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
             </Grid>
-            <Grid item md={6}>
-              <Box mb={2}>
-                <Typography variant="h5">Wordpress Made Easy</Typography>
-                <Typography variant="subtitle1">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam
-                  obcaecati vel ad unde est illo at. Labore excepturi officia
-                  dolores!
-                </Typography>
-              </Box>
-              <Button variant="outlined">Read Documentation</Button>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
             </Grid>
-            <Grid item md={6}>
-              <img
-                style={{ width: '90%' }}
-                src="https://www.moshified.com/easy@2x.31665d23.jpg"
-              />
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
             </Grid>
           </Grid>
         </Container>
       </Box>
-      <Box p={5} width="100%" bgcolor="#f0f3fb" mt={4} textAlign="center">
+      <Box
+        px={5}
+        py={12}
+        width="100%"
+        bgcolor="#002045"
+        textAlign="left"
+        style={{ transform: 'skewY(-3deg)' }}
+      >
+        <Container style={{ transform: 'skewY(3deg)' }}>
+          <Box my={5}>
+            <Typography variant="h4">Relevant Industries</Typography>
+            <Typography variant="subtitle1" className={classes.p}>
+              Effortlessly integrate two API’s within few minutes before
+              starting the service.
+            </Typography>
+          </Box>
+          <Grid container spacing={3}>
+            <Grid item md={4}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={4}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={4}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={4}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={4}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={4}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      <Box
+        p={5}
+        width="100%"
+        bgcolor="#f0f3fb"
+        textAlign="left"
+        style={{ transform: 'skewY(-3deg)' }}
+      >
+        <Container style={{ transform: 'skewY(3deg)' }}>
+          <Box my={5}>
+            <Typography variant="h4">Relevant Industries</Typography>
+          </Box>
+
+          <Grid container spacing={3}>
+            <Grid item md={2}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={2}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Customizable Time Period</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Set the validity of your OTP as per your suitability and
+                    specification.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={2}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Instant Delivery</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Expeditiously deliver OTPs with our high speed and vigorous
+                    channels.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={2}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Instant Delivery</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Expeditiously deliver OTPs with our high speed and vigorous
+                    channels.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={2}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Effortlessly integrate two API’s within few minutes before
+                    starting the service.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={2}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Customizable Time Period</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                    Set the validity of your OTP as per your suitability and
+                    specification.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      <Box p={5} width="100%" mt={4} textAlign="center">
         <Container>
           <Grid container spacing={3}>
             <Grid style={{ margin: 'auto' }} item md={7}>
@@ -215,6 +448,7 @@ export default function BasicTable() {
           </Grid>
         </Container>
       </Box>
+
       <Footer />
     </Box>
   );

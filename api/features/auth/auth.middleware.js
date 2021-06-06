@@ -17,6 +17,8 @@ const authMiddleware = {
       if (err) return Response({ message: 'user does not exist', err });
       return next();
     });
+    
+    
   },
 
   getServiceTokenDetails: async (req, res, next) => {

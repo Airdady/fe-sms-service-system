@@ -8,7 +8,7 @@ import Verify from './api/v1/verify/verify.routes';
 
 const router = express.Router();
 
-router.use('/auth', UserRoute);
+router.use('/auth', UserRoute );
 router.use('/verify', Auth.verifyToken, VerifyRoute);
 router.use('/sms', Auth.verifyToken, Sms);
 router.use('/payments', checkout);
