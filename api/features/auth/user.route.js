@@ -30,5 +30,7 @@ router.get('/users/:id', (req, res) => {
 
 router.post('/', UserController.register);
 router.post('/login', UserController.login);
+router.post('/forgotpassword', UserController.sendResetLink);
+
 
 export default router;
