@@ -38,7 +38,7 @@ export default function Footer() {
 
   return (
     <>
-      <Box bgcolor="grey.500" p={6}>
+      <Box bgcolor="white" p={4}>
         <Container>
           <Grid container spacing={3}>
             <Grid item md={8}>

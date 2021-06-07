@@ -12,16 +12,20 @@ import types from './redux/types';
 
 const theme = createMuiTheme({
   typography: {
-    fontFamily: 'Poppins',
-    htmlFontSize: 17
+    fontFamily: 'Colfax,Helvetica,Arial,sans-serif',
+    htmlFontSize: 16,
   },
   palette: {
     type: 'light',
     primary: {
       main: '#002045',
+      light: '#0491fe',
+    },
+    text: {
+      primary: '#546b81',
     },
     background: {
-      default: '#efeeee',
+      default: '#F0F2F5',
     },
   },
 });

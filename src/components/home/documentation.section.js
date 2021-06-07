@@ -13,6 +13,8 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FolderIcon from '@material-ui/icons/Folder';
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
+import { Link } from 'react-router-dom';
+import ChevronRightRoundedIcon from '@material-ui/icons/ChevronRightRounded';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -39,13 +41,18 @@ const DocumentationSection = () => {
   const [dense] = React.useState(false);
   const [secondary] = React.useState(false);
   return (
-    <Box bgcolor="primary.main" px={6} py={12} style={{ transform: 'skewY(-3deg)' }}>
+    <Box
+      bgcolor="primary.light"
+      px={6}
+      py={12}
+      style={{ transform: 'skewY(-3deg)' }}
+    >
       <Container style={{ transform: 'skewY(3deg)' }} maxWidth="xl">
         <Grid container spacing={3}>
           <Grid item md={7}>
-              <Box maxWidth="80%">
-            <Highlight language="json">
-              {`{
+            <Box maxWidth="80%">
+              <Highlight language="json">
+                {`{
    "valid": true,   
    "local_format": "4158586273",
    "intl_format": "+14158586273",
@@ -55,7 +62,7 @@ const DocumentationSection = () => {
    "carrier": "AT&T Mobility LLC",
    "line_type": "mobile"
 }`}
-            </Highlight>
+              </Highlight>
             </Box>
           </Grid>
           <Grid item md={5}>
@@ -86,10 +93,12 @@ const DocumentationSection = () => {
                   ))}
                 </List>
               </Box>
+              <Link style={{ textDecoration: 'none' }} to="product/verify">
+                <Button endIcon={<ChevronRightRoundedIcon />}>
+                  View Details
+                </Button>
+              </Link>
             </Grid>
-            <Button variant="outlined" color="primary">
-              Primary
-            </Button>
           </Grid>
         </Grid>
       </Container>
