@@ -36,16 +36,13 @@ const userController = {
       });
     });
   },
-sendResetLink:async(req, res) => {
+sendResetLink:(req, res) => {
   const {email} = req.body;
-  User.findOne({email},(err, user)=>{
-    if(err || user) {
+  User.findOne({ email }).exec((err, user) => {
+    if(err || !user) {
       return Response(res, 404, 'User with this email does not Exist'); 
     }
-    const token =AuthUtil.sign({
-      _id: user._id,
-      email: user.email,
-    });
+    const token = AuthUtil.createToken({_id: user._id});
       const link = `${req.protocal}://localhost:5000/resetpassword-Link/${token}`
       console.log(token)
       sendEmail(
@@ -57,23 +54,8 @@ sendResetLink:async(req, res) => {
         <div>${link}</div>
         `
       );
-      return user.updateOne({resetLink: token}, function (err, success) {
-        if(err) {
-          return res.status(409).json({ error: "Resset password error." });
-        } else{
-          sgMail.send(data, function (error, body) {
-            if(error) {
-              return res.json({ 
-                error: err.message 
-              })
-            }
-            return Response(res, 200, 'Password rese link has been successfully sent to your inbox');
-             
-          });
-
-        }
-
-      })      
+      return Response(res, 200, 'Password rese link has been successfully sent to your inbox');
+      
   });
   
 },
