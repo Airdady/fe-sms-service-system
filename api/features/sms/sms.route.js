@@ -1,7 +1,10 @@
 import express from 'express';
 import Sms from './sms.modal';
+import visits from '../stats/stats.utils';
 
 const router = express.Router();
+
+router.use(visits)
 
 router.post('/', (req, res) => {
   req.body.userId = req.user._id;
