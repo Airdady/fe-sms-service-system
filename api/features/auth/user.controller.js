@@ -1,8 +1,14 @@
 import User from './user.modal';
 import AuthUtil from './auth.util';
-import sendEmail from '../../utils/sendEmails'
+//import sendEmail from '../../utils/sendEmails'
 import Response from '../../utils/response';
+import _ from 'lodash'
 import bcrypt from 'bcrypt';
+import sgMail  from '@sendgrid/mail'
+import { Error } from 'mongoose';
+require('dotenv').config();
+
+sgMail.setApiKey(process.env.SENDGRID_API_KEY)
 
 const userController = {
   login: (req, res) => {
@@ -20,6 +26,7 @@ const userController = {
       return Response(res, 401, 'Invalid login details');
     });
   },
+
   register: (req, res) => {
     bcrypt.genSalt(10, (err, salt) => {
       bcrypt.hash(req.body.password, salt, (err, password) => {
@@ -27,7 +34,7 @@ const userController = {
           if (err) {
             return res.status(400).send({ message: 'Create user failed', err });
           }
-          return res.status(200).send({
+          return res.status(201).send({
             status: 200,
             message: 'registration successful',
             data: user,
@@ -36,6 +43,7 @@ const userController = {
       });
     });
   },
+
 sendResetLink: (req, res) => {
   
     const {email} = req.body;
@@ -55,11 +63,13 @@ sendResetLink: (req, res) => {
         <div>${link}</div>
         `
       );
-      return Response(res, 200, 'Password rese link has been successfully sent to your inbox');
+      return Response(res, 200, 'Password reset link has been successfully sent to your inbox');
       
   });
  
 },
+
+
 
 };
 
