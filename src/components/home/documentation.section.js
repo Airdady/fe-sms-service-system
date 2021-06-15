@@ -6,7 +6,6 @@ import Box from '@material-ui/core/Box';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { Container, Paper } from '@material-ui/core';
-import Highlight from 'react-highlight';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
@@ -15,6 +14,7 @@ import FolderIcon from '@material-ui/icons/Folder';
 import RadioButtonCheckedIcon from '@material-ui/icons/RadioButtonChecked';
 import { Link } from 'react-router-dom';
 import ChevronRightRoundedIcon from '@material-ui/icons/ChevronRightRounded';
+import CodeSection from '../codeViewer';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -42,27 +42,16 @@ const DocumentationSection = () => {
   const [secondary] = React.useState(false);
   return (
     <Box
-      bgcolor="primary.light"
+      bgcolor="primary.main"
       px={6}
       py={12}
       style={{ transform: 'skewY(-3deg)' }}
     >
       <Container style={{ transform: 'skewY(3deg)' }} maxWidth="xl">
         <Grid container spacing={3}>
-          <Grid item md={7}>
-            <Box maxWidth="80%">
-              <Highlight language="json">
-                {`{
-   "valid": true,   
-   "local_format": "4158586273",
-   "intl_format": "+14158586273",
-   "country_code": "US",
-   "country_name": "United States of America",
-   "location": "Novato",
-   "carrier": "AT&T Mobility LLC",
-   "line_type": "mobile"
-}`}
-              </Highlight>
+          <Grid item md={7} sm={12}>
+            <Box width="100%">
+              <CodeSection />
             </Box>
           </Grid>
           <Grid item md={5}>

@@ -88,7 +88,7 @@ export default function UserMenu() {
           </Button>
           <Button variant="contained" style={{ marginLeft: '.5rem' }}>
             <Link to="/register" className={classes.links}>
-              Register
+              Get your free Api Keys
             </Link>
           </Button>
         </>
