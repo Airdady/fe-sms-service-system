@@ -47,7 +47,7 @@ const ServiceSection = () => {
                 </Box>
                 <Box>
                   <Typography variant="h5" gutterBottom>
-                    Free Trial Account
+                    Free Trial Credit
                   </Typography>
                   <Typography variant="body2">
                     Signup for a developer account for free no credit card
@@ -63,8 +63,8 @@ const ServiceSection = () => {
                 <Box mr={3}>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    width="70"
-                    height="70"
+                    width="50"
+                    height="50"
                     viewBox="0 0 429.691 487.719"
                   >
                     <g
@@ -119,12 +119,11 @@ const ServiceSection = () => {
                 </Box>
                 <Box>
                   <Typography variant="h5" gutterBottom>
-                    Money-back guarantee in 5 days
+                    No Expiry
                   </Typography>
                   <Typography variant="body2">
-                    We promise to provide the best services and if your not
-                    satisfied with our services you can request your money back
-                    within 30 days
+                    Once purchased, your SMS messages remain valid until you
+                    send them out to your users.
                   </Typography>
                 </Box>
               </Box>
@@ -143,11 +142,11 @@ const ServiceSection = () => {
                 </Box>
                 <Box>
                   <Typography variant="h5" gutterBottom>
-                    24/7 customer support
+                    Pay-As-You-Go
                   </Typography>
                   <Typography variant="body2">
-                    We provide 24/7 customer support through our channel live
-                    chart,contact page and out business whatsapp number
+                    Only top up your account with what you want to use. There
+                    are no plans or minimum requirements
                   </Typography>
                 </Box>
               </Box>

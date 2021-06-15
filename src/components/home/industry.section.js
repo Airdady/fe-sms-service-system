@@ -46,10 +46,275 @@ const IndustrySection = () => {
             </Box>
           </Grid>
           <Grid item md={6}>
-            <img
-              src="https://cdn.reloadly.com/assets-v2/images/globe.svg"
-              alt="globe"
-            />
+            <Box display="flex" alignItems="center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="617.707"
+              height="400"
+              viewBox="0 0 617.707 585.584"
+            >
+              <g id="globe" transform="translate(-112.6 -121.2)">
+                <path
+                  id="Path_78"
+                  data-name="Path 78"
+                  d="M182.3,228.5s6.9-11.9,14.8-6.9c11.9,0,40.6,3,56.4,11.9,21.8-2,22.7-4,26.7,1s19.8-9.9,20.8,0-26.7,9.9-35.6,23.7-4,22.8,3,27.7,21.8-16.9,31.7-24.7c9.9-7.9,12.9-9.9,22.7-8.9s18.8,5,23.7,18.8-8.9,22.7-13.9,24.7-10.9-7.9-16.8,5.9-11.9,9.9-28.7,20.8-26.7,5.9-36.6,22.8-19.8,16.8-23.7,28.7-2,33.6-5.9,37.6-19.8-31.6-28.7-29.7-16.8,6.9-17.8,22.8-8.9,21.8-5.9,26.7,9.9,6.9,18.8,2,13.9-10.9,15.8,4,5.9,32.6,14.8,42.5,16.8,7.9,23.7,31.6,12.9,28.7-2,22.7-35.6-28.7-39.5-33.6-1-13.9-17.8-25.7-21.7-19.8-23.7-23.7-2-17.8-3-26.7-5.9,3-7.9-14.8-14.8-48.5-10.8-60.4,8.9-39.5,17.8-58.3,12.8-29.7,10.9-36.6C163.6,247.3,171.5,236.4,182.3,228.5Z"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_79"
+                  data-name="Path 79"
+                  d="M326.7,234.4s13.9-4,21.8-6.9,13.8-4,8.9,6.9-15.8,14.8-15.8,14.8-32.6-2-27.7-6.9S323.7,243.3,326.7,234.4Z"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_80"
+                  data-name="Path 80"
+                  d="M392.6,706.7a81.266,81.266,0,0,1,3.6-13.7c4.9-13.8,25.7-6.9,36.6-31.7s14.8-30.7,13.8-44.5S426.8,603,413,589.1s-25.7-31.6-38.6-37.6-29.7-26.7-53.4-31.6-53.4-9.9-53.4,10.9,7.9,27.7-1,47.5,1,13.8,3,31.6c1.3,12,20.8,29.7,25.7,38.6s12.9,5.9,22.7,14.8c6.4,5.8,10.4,21.2,14.2,34.2"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_81"
+                  data-name="Path 81"
+                  d="M540.6,155.3c-4,4.5,2.6,16.8,3.6,25.7s-13.8,3-30.7,14.8-4,19.8-19.8,16.8S470,191.8,468,179s-23.7-16.8-34.6-11.9,8.9,6.9,5.9,21.8-17.8,14.8-24.7,13.9-11.9-5-21.8,5.9,4,17.8,5,28.7-9.9,19.8-4,20.8,17.8-16.8,21.8-5-10.8,17.8-15.8,30.7,15.8,32.6,31.6,39.5,19.8,0,12.9,11.9-23.7,27.7-32.6,43.5,4,15.8,18.8,14.8,17.8-3,14.8,13.8-6.9,19.8,4.9,20.8,16.8,1,27.7-20.8-9.9-19.8-6.9-36.6,5.9-15.8,16.8-22.7-4.9-10.9,3-16.8,11.3-9.5,17.8-16.8c7.9-8.9,3,5,16.8,17.8s24.7,33.6,24.7,41.5-12.9,22.7-5,23.7,9.9-5.9,15.8-16.8,12.8-4,15.8-10.9c2.4-5.5-15.8-10.9-25.7-27.7s-7.9-20.8-1-37.6,20.8-8.9,29.7-6.9-3,4.9,9.9,20.8,8.9-1,17.8,3.9,0-15.8,10.9-23.7,6.9-2,19.8,1,11.9-1,7.9-13.8-6.9-6-11.9-16.8,2.7-15.5,13.6-17.4"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_82"
+                  data-name="Path 82"
+                  d="M640.1,241.3s-32.6,5.9-36.6-7.9,0-15.8-8.9-23.7-18.8-32.6-18.8-32.6"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_83"
+                  data-name="Path 83"
+                  d="M417.3,160.2c5.2-.7,14.8-4.8,16.7-10,2.4-6.6-8.3-5.8-27.1-4.8s-19.9,17.9-30.8,8-28.7,4.9-33.6,13.8,18.8,2,24.7,1-5.9,11.9,9.9,10.9,33.2-1.6,22.7,6.9c-7.4,6.1-8.1,10.1-1.9,9.8,12.2-.7,15.3-1.5,22.2-7.4s6.2-10.9-.6-18.2C415.4,165.7,412.3,160.9,417.3,160.2Z"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_84"
+                  data-name="Path 84"
+                  d="M466.1,128.6c-4.9,12.9-15.7,25.1-5.8,30S473.7,171.2,478,184c5.3,15.6,17.8,4,28.7-2l10.9-5.9s6.9,8.9,7.9,1-5.9-12.9-19.8-23.7-23.7-16.8-21.8-19.8"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_85"
+                  data-name="Path 85"
+                  d="M682.2,320.9s-10.4-12.3-11.4-3.4-7.9,7.9-19.8,0-19.8-10.9-32.6,19.8-11.9,35.6-10.9,58.3-14.8,12.9-3,39.6,21.7,29.7,34.6,25.7,28.7-20.8,23.7,11.9-6.9,28.7-9.9,48.5-19.8,50.4-40.5,69.2S568.9,623.1,568,633s-2,20.8,1,23.7"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_86"
+                  data-name="Path 86"
+                  d="M697.5,413.9c0,161.4-130.8,292.2-292.2,292.2S113.1,575.2,113.1,413.9,243.9,121.7,405.3,121.7,697.5,252.5,697.5,413.9Z"
+                  fill="none"
+                  stroke="#0192fe"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                />
+                <path
+                  id="Path_87"
+                  data-name="Path 87"
+                  d="M473.4,273.6c19.2-5.6,71.3-15.5,116.3,17C646,331.3,657.6,399.9,659.9,420"
+                  fill="none"
+                  stroke="#546b81"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke-dasharray="5.984 5.984"
+                />
+                <path
+                  id="Path_88"
+                  data-name="Path 88"
+                  d="M213.7,390s.9-.5,2.7-1.3"
+                  fill="none"
+                  stroke="#ffe161"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                />
+                <path
+                  id="Path_89"
+                  data-name="Path 89"
+                  d="M222,386.5c21.2-7.1,81.3-17.3,157,55.2,61.1,58.5,57.5,144.4,55.3,167.6"
+                  fill="none"
+                  stroke="#546b81"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke-dasharray="6 6"
+                />
+                <path
+                  id="Path_90"
+                  data-name="Path 90"
+                  d="M434,612.3c-.2,1.9-.4,3-.4,3"
+                  fill="none"
+                  stroke="#ffe161"
+                  stroke-miterlimit="10"
+                  stroke-width="2"
+                />
+                <path
+                  id="Path_91"
+                  data-name="Path 91"
+                  d="M283,527.1S301.3,466.8,395.7,405C469.5,356.7,554,383,554,383"
+                  fill="none"
+                  stroke="#546b81"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke-dasharray="6 6"
+                />
+                <path
+                  id="Path_92"
+                  data-name="Path 92"
+                  d="M216.6,186.8S179,183,159.1,217.3C129,269.4,172,330.6,172,330.6l.5.8S206.9,209.5,316.6,189c84.2-15.7,129.3,33.2,129.3,33.2s5.8-49.7,41-38.1"
+                  fill="none"
+                  stroke="#7e7e7d"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke-dasharray="6 6"
+                />
+                <path
+                  id="Path_93"
+                  data-name="Path 93"
+                  d="M633.2,227.2s73.9,16.9,93.7,117.5c18.7,95-61.2,168.7-61.2,168.7"
+                  fill="none"
+                  stroke="#546b80"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke-dasharray="6 6"
+                />
+                <path
+                  id="Path_94"
+                  data-name="Path 94"
+                  d="M331.9,591.2s3.1,83.2-51.9,88.4c-39.8,3.8-57.1-31.6-57.1-31.6"
+                  fill="none"
+                  stroke="#546b81"
+                  stroke-miterlimit="10"
+                  stroke-width="1"
+                  stroke-dasharray="5.984 5.984"
+                />
+                <circle
+                  id="Ellipse_2"
+                  data-name="Ellipse 2"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(167.3 326.1)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_3"
+                  data-name="Ellipse 3"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(210.8 386.1)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_4"
+                  data-name="Ellipse 4"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(278.4 524.6)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_5"
+                  data-name="Ellipse 5"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(327.6 586)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_6"
+                  data-name="Ellipse 6"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(429 614)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_7"
+                  data-name="Ellipse 7"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(549 378.8)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_8"
+                  data-name="Ellipse 8"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(656.4 422.3)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_9"
+                  data-name="Ellipse 9"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(662.2 508.1)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_10"
+                  data-name="Ellipse 10"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(462.4 273.2)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_11"
+                  data-name="Ellipse 11"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(484.9 180.9)"
+                  fill="#546b81"
+                />
+                <circle
+                  id="Ellipse_12"
+                  data-name="Ellipse 12"
+                  cx="4"
+                  cy="4"
+                  r="4"
+                  transform="translate(442.6 220.4)"
+                  fill="#546b81"
+                />
+              </g>
+            </svg>
+            </Box>
           </Grid>
           <Grid style={{ display: 'flex', alignItems: 'center' }} item md={6}>
             <Grid container spacing={3}>
