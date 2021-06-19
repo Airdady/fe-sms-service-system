@@ -68,15 +68,13 @@ export default function CustomizedTabs() {
   return (
     <Grid container spacing={3}>
       <Grid item md={12}>
-        <Paper className={classes.paper}>
+        <Paper elevation={0} className={classes.paper}>
           <AntTabs
             value={value}
             onChange={handleChange}
             aria-label="ant example"
           >
-            <AntTab label="Profile" />
-            <AntTab label="Billing" />
-            <AntTab label="Password Reset" />
+            <AntTab label="Billing Address" />
           </AntTabs>
           <Box p={3}>
             {(activeTab?.match('Profile') && <ProfileSettings />) ||
