@@ -13,15 +13,15 @@ import Actions from './verify.action';
 
 const uuid = require('uuid');
 
-const Form = ({ data }) => {
+const Form = () => {
   const dispatch = useDispatch();
   const [values, setValues] = useState({
     otplen: 4,
     expiry: 600,
     profileName: '',
-    senderName: '',
+    senderId: '',
     serviceToken: `AC-${uuid.v4().replaceAll('-', '.')}`,
-    msg: 'Your one-time verification code is {code}',
+    message: 'Your one-time verification code is {code}',
   });
 
   const handleChange = (prop) => (event) => {
@@ -39,7 +39,7 @@ const Form = ({ data }) => {
         <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
-              label="Profile Name"
+              label="Profile"
               variant="outlined"
               size="small"
               defaultValue={values.profileName}
@@ -54,13 +54,13 @@ const Form = ({ data }) => {
               label="Sender Name"
               variant="outlined"
               size="small"
-              defaultValue={values.senderName}
-              onChange={handleChange('senderName')}
+              defaultValue={values.senderId}
+              onChange={handleChange('senderId')}
               required
             />
           </FormControl>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
               select
@@ -79,7 +79,7 @@ const Form = ({ data }) => {
             </TextField>
           </FormControl>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
               label="Expiry Time in (sec)"
@@ -97,9 +97,9 @@ const Form = ({ data }) => {
               label="Message Template"
               multiline
               rows={3}
-              defaultValue={values.msg}
+              defaultValue={values.message}
               variant="outlined"
-              onChange={handleChange('msg')}
+              onChange={handleChange('message')}
             />
           </FormControl>
         </Grid>
