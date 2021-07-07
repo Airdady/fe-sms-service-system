@@ -6,6 +6,7 @@ const Api = {
   createOtpProfile: (data) => Router.post('/verify', data),
   getOtpProfile: () => Router.get('/verify'),
   getLogs: () => Router.get('/api_logs/'),
+  getStats: () => Router.get('/stats/'),
   deleteOtpProfile: (id) => Router.delete(`/verify/${id}`),
   updateOtpProfile: (id, data) => Router.patch(`/verify/${id}`, data),
   createSmsProfile: (data) => Router.post('/sms', data),
