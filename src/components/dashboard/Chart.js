@@ -1,5 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { useTheme } from '@material-ui/core/styles';
+import service from '../../service'
 import {
   LineChart,
   Line,
@@ -16,64 +17,29 @@ function createData(time, amount) {
   return { time, amount };
 }
 
-const data = [
-  {
-    name: 'Page A',
-    uv: 4000,
-    pv: 2400,
-    amt: 2400,
-  },
-  {
-    name: 'Page B',
-    uv: 3000,
-    pv: 1398,
-    amt: 2210,
-  },
-  {
-    name: 'Page C',
-    uv: 2000,
-    pv: 9800,
-    amt: 2290,
-  },
-  {
-    name: 'Page D',
-    uv: 2780,
-    pv: 3908,
-    amt: 2000,
-  },
-  {
-    name: 'Page E',
-    uv: 1890,
-    pv: 4800,
-    amt: 2181,
-  },
-  {
-    name: 'Page F',
-    uv: 2390,
-    pv: 3800,
-    amt: 2500,
-  },
-  {
-    name: 'Page G',
-    uv: 3490,
-    pv: 4300,
-    amt: 2100,
-  },
-];
-
 export default function Chart() {
   const theme = useTheme();
+  const [work, setwork] = useState([])
 
+  useEffect(() => {
+    data()
+  }, [])
+
+  const data = async () => {
+    const work = await service.getStats()
+    console.log(work);
+    setwork(work.data.data)
+  }
   return (
     <React.Fragment>
       <Title>Today</Title>
       <ResponsiveContainer>
-        <LineChart width={500} height={300} data={data}>
-          <XAxis dataKey="name" />
+        <LineChart width={500} height={300} data={work}>
+          <XAxis dataKey="date"/>
           <YAxis />
           <CartesianGrid stroke="#eee" strokeDasharray="5 5" />
-          <Line type="monotone" dataKey="uv" stroke="#8884d8" />
-          <Line type="monotone" dataKey="pv" stroke="#82ca9d" />
+          <Line type="monotone" dataKey="sms" stroke="#8884d8" />
+          <Line type="monotone" dataKey="verify" stroke="#82ca9d" />
         </LineChart>
       </ResponsiveContainer>
     </React.Fragment>
