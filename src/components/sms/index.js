@@ -4,6 +4,7 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import { useDispatch } from 'react-redux';
 import Actions from './sms.action';
+import Table from './Table'
 import Tab from './docs';
 import List from './verify.list';
 
@@ -47,7 +48,7 @@ export default function Dashboard() {
       <Grid container spacing={3}>
         <Grid item md={8}>
           <Paper className={classes.paper}>
-            <Tab />
+            <Table />
           </Paper>
         </Grid>
         <List />
