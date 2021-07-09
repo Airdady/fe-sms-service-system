@@ -51,7 +51,7 @@ export default function Dashboard() {
       <Grid container spacing={3}>
         <Grid item md={8}>
           <Paper className={classes.paper}>
-            <Tab />
+            <Table />
           </Paper>
         </Grid>
         <List />
