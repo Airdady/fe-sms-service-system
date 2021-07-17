@@ -1,29 +1,15 @@
-import React from "react";
-import clsx from "clsx";
-import { makeStyles } from "@material-ui/core/styles";
-import Box from "@material-ui/core/Box";
-import Typography from "@material-ui/core/Typography";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Link from "@material-ui/core/Link";
-import HeadNav from "../Nav";
-import Button from "@material-ui/core/Button";
-import Table from "../Table";
+import React, { useMemo } from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import HeadNav from '../Nav';
+import Table from './Table';
 import CreateButton from './create';
-
-function Copyright() {
-  return (
-    <Typography variant="body2" color="textSecondary" align="center">
-      {"Copyright © "}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+import { useSelector, useDispatch } from 'react-redux';
+import Actions from './verify.action';
+import { Box, IconButton, Typography } from '@material-ui/core';
+import Tab from './docs';
+import List from './verify.list';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -31,41 +17,46 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    height: "100vh",
-    overflow: "auto",
-    marginTop: "3.5rem",
+    height: '100vh',
+    marginTop: '3.5rem',
     margin: 33,
   },
   container: {
-    paddingTop: theme.spacing(4),
-    paddingBottom: theme.spacing(4),
+    paddingTop: theme.spacing(1),
+    paddingBottom: theme.spacing(1),
   },
   appBarSpacer: theme.mixins.toolbar,
   paper: {
-    padding: theme.spacing(2),
-    overflow: "auto",
+    paddingTop: 0,
+    padding: theme.spacing(1),
+  },
+  iconButton: {
+    borderRadius: 4,
+    padding: 5,
+    background: theme.palette.primary.main,
+    color: 'white',
   },
 }));
 
 export default function Dashboard() {
   const classes = useStyles();
+  const dispatch = useDispatch();
+
+  useMemo(async () => {
+    dispatch(await Actions.GetOtpProfile());
+  }, [dispatch]);
+
   return (
     <>
-      <HeadNav title="Api Keys" />
-      <main className={classes.content}>
-        <div className={classes.appBarSpacer} />
-        <Grid container spacing={3}>
-          <Grid item xs={12}>
-            <Paper className={classes.paper}>
-              <CreateButton />
-              <Table />
-            </Paper>
-          </Grid>
+      <Grid container spacing={3}>
+        <Grid item md={8}>
+          <Paper className={classes.paper}>
+            <Tab />
+          </Paper>
         </Grid>
-        <Box pt={4}>
-          <Copyright />
-        </Box>
-      </main>
+
+        <List />
+      </Grid>
     </>
   );
 }
