@@ -1,77 +1,84 @@
-import React from 'react';
+import React, {Component} from 'react';
 import {
-  fade,
-  withStyles,
-  makeStyles,
-  createMuiTheme,
-} from '@material-ui/core/styles';
-import InputBase from '@material-ui/core/InputBase';
-import InputLabel from '@material-ui/core/InputLabel';
-import FormControl from '@material-ui/core/FormControl';
-import { green } from '@material-ui/core/colors';
-import { Box, Button, Grid } from '@material-ui/core';
+  CardElement,
+  injectStripe,
+  StripeProvider,
+  Elements,
+} from 'react-stripe-elements';
 
-const useStyles = makeStyles((theme) => ({
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  margin: {
-    margin: theme.spacing(1),
-  },
-}));
-const BootstrapInput = withStyles((theme) => ({
-  root: {
-    'label + &': {
-      marginTop: theme.spacing(3),
-    },
-  },
-  input: {
-    borderRadius: 4,
-    position: 'relative',
-    backgroundColor: theme.palette.common.white,
-    border: '1px solid #ced4da',
-    fontSize: 16,
-    width: '100%',
-    padding: '10px 12px',
-    '&:focus': {
-      borderColor: theme.palette.primary.main,
-    },
-  },
-}))(InputBase);
+// You can customize your Elements to give it the look and feel of your site.
+const createOptions = () => {
+  return {
+    style: {
+      base: {
+        fontSize: '16px',
+        color: '#424770',
+        fontFamily: 'Open Sans, sans-serif',
+        letterSpacing: '0.025em',
+        '::placeholder': {
+          color: '#aab7c4',
+        },
+      },
+      invalid: {
+        color: '#c23d4b',
+      },
+    }
+  }
+};
 
-export default function CustomizedInputs() {
-  const classes = useStyles();
+class _CardForm extends Component {
+  state = {
+    errorMessage: '',
+  };
 
-  return (
-    <form className={classes.root} noValidate>
-      <Grid container spacing={3}>
-        <Grid item xs={6}>
-          <FormControl fullWidth className={classes.margin}>
-            <InputLabel shrink htmlFor="old-password">
-              Old Password
-            </InputLabel>
-            <BootstrapInput id="old-password" />
-          </FormControl>
-          <FormControl fullWidth className={classes.margin}>
-            <InputLabel shrink htmlFor="new-password">
-              New Password
-            </InputLabel>
-            <BootstrapInput id="new-password" />
-          </FormControl>
-          <FormControl fullWidth className={classes.margin}>
-            <InputLabel shrink htmlFor="confirm-password">
-              confirm Password
-            </InputLabel>
-            <BootstrapInput required id="confirm-password" />
-          </FormControl>
-        </Grid>
-      </Grid>
-      <Box mt={2} display="flex" justifyContent="space-between">
-        <Button variant="contained" size="small" type="submit" color="primary">
-          SAVE
-        </Button>
-      </Box>
-    </form>
-  );
+  handleChange = ({error}) => {
+    if (error) {
+      this.setState({errorMessage: error.message});
+    }
+  };
+
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+    if (this.props.stripe) {
+      this.props.stripe.createToken().then(this.props.handleResult);
+    } else {
+      console.log("Stripe.js hasn't loaded yet.");
+    }
+  };
+
+  render() {
+    return (
+      <div className="CardDemo">
+        <form onSubmit={this.handleSubmit.bind(this)}>
+          <label>
+            Card details
+            <CardElement
+              onChange={this.handleChange}
+              {...createOptions()}
+            />
+          </label>
+          <div className="error" role="alert">
+            {this.state.errorMessage}
+          </div>
+          <button>Pay</button>
+        </form>
+      </div>
+    );
+  }
 }
+
+const CardForm = injectStripe(_CardForm);
+
+class CardDemo extends Component {
+  render() {
+    return (
+      <StripeProvider apiKey='pk_test_TYooMQauvdEDq54NiTphI7jx'>
+        <Elements>
+          <CardForm handleResult={this.props.handleResult} />
+        </Elements>
+      </StripeProvider>
+    );
+  }
+}
+
+export default CardDemo;
