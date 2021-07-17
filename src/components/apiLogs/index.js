@@ -1,4 +1,6 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
+import Service from '../../service';
+import { useSelector } from 'react-redux';
 import { makeStyles } from '@material-ui/core/styles';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
@@ -33,7 +35,17 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function Dashboard() {
+  const[Logs, setLogs] = useState([])
   const classes = useStyles();
+
+  useEffect( () => {
+    return results()
+  },[])
+
+  const results = async() => {
+  const data = await Service.getLogs()
+  setLogs(data.data.data)
+  }
 
   return (
     <>
@@ -46,14 +58,11 @@ export default function Dashboard() {
             <Divider />
             <Box p={2}>
               <Highlight language="http">
-                {`
-
-${[1, 2, 3, 4, 5].map(
-  () =>
-    '> April 11, 2021, 1:36 p.m. New message submitted msgid:94acbcdc-e88e-434e-a5ec-768ab465906c  to:18722348603  from:VAMOO LTD \n'
-)}
-
-                  `}
+              {`
+              ${Logs.map(log => (
+                ` \n > log ${log.createdAt} New message submitted msgid: ${log.msgId} to: ${log.to} from: ${log.from} \n`
+              )) }
+              `}
               </Highlight>
             </Box>
           </Paper>

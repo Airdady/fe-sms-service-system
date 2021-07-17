@@ -13,15 +13,14 @@ import Actions from './verify.action';
 
 const uuid = require('uuid');
 
-const Form = ({ data }) => {
+const Form = () => {
   const dispatch = useDispatch();
   const [values, setValues] = useState({
-    otplen: 4,
-    expiry: 600,
+    dlrUrl: '',
+    dlr: '',
     profileName: '',
     senderName: '',
-    serviceToken: `AC-${uuid.v4().replaceAll('-', '.')}`,
-    msg: 'Your one-time verification code is {code}',
+    dlrLevel: ''
   });
 
   const handleChange = (prop) => (event) => {
@@ -54,59 +53,52 @@ const Form = ({ data }) => {
               label="Sender Name"
               variant="outlined"
               size="small"
-              defaultValue={values.senderName}
-              onChange={handleChange('senderName')}
+              defaultValue={values.senderId}
+              onChange={handleChange('senderId')}
               required
-            />
-          </FormControl>
-        </Grid>
-        <Grid item md={6}>
-          <FormControl fullWidth>
-            <TextField
-              select
-              fullWidth
-              label="Select Code Length"
-              variant="outlined"
-              size="small"
-              defaultValue={values.otplen}
-              onChange={handleChange('otplen')}
-            >
-              {[4, 5, 6, 7, 8, 9, 10].map((option) => (
-                <MenuItem key={option.value} value={option}>
-                  {option}
-                </MenuItem>
-              ))}
-            </TextField>
-          </FormControl>
-        </Grid>
-        <Grid item md={6}>
-          <FormControl fullWidth>
-            <TextField
-              label="Expiry Time in (sec)"
-              type="number"
-              defaultValue={values.expiry}
-              variant="outlined"
-              size="small"
-              onChange={handleChange('expiry')}
             />
           </FormControl>
         </Grid>
         <Grid item md={12}>
           <FormControl fullWidth>
             <TextField
-              label="Message Template"
-              multiline
-              rows={3}
-              defaultValue={values.msg}
+              label="dlr"
               variant="outlined"
-              onChange={handleChange('msg')}
+              size="small"
+              defaultValue={values.dlr}
+              onChange={handleChange('dlr')}
+              required
+            />
+          </FormControl>
+        </Grid>
+        <Grid item md={12}>
+          <FormControl fullWidth>
+            <TextField
+              label="dlrUrl"
+              variant="outlined"
+              size="small"
+              defaultValue={values.dlrUrl}
+              onChange={handleChange('dlrUrl')}
+              required
+            />
+          </FormControl>
+        </Grid>
+        <Grid item md={12}>
+          <FormControl fullWidth>
+            <TextField
+              label="dlr level"
+              variant="outlined"
+              size="small"
+              defaultValue={values.dlrLevel}
+              onChange={handleChange('dlrLevel')}
+              required
             />
           </FormControl>
         </Grid>
       </Grid>
       <Box mt={2} display="flex" justifyContent="space-between">
         <Button color="primary">Cancel</Button>
-        <Box mt={2}></Box>
+        {/* <Box mt={2}></Box> */}
         <Button
           variant="contained"
           size="small"
