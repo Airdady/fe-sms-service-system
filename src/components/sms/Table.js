@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import TimeAgo from 'timeago-react';
 import { useDispatch } from 'react-redux';
 import Actions from './verify.action';
+import service from '../../service'
 
 const useStyles = makeStyles({
   table: {
@@ -20,9 +21,23 @@ const useStyles = makeStyles({
   },
 });
 
-export default function BasicTable({ data }) {
+export default function BasicTable() {
   const dispatch = useDispatch();
   const classes = useStyles();
+  const [data, setdata] = useState([])
+
+  useEffect(() => {
+    work()
+  }, [data])
+
+  const work = async () => {
+    const role = await service.getSmsProfile();
+    console.log(role)
+    setdata(role.data.data)
+  }
+
+  // console.log(data)
+
 
   const handleClick = (id) => async (e) => {
     e.preventDefault();
@@ -42,10 +57,10 @@ export default function BasicTable({ data }) {
         <TableHead>
           <TableRow>
             <TableCell>Profile Name</TableCell>
-            <TableCell align="left">Sender Name</TableCell>
-            <TableCell align="left">Code Length</TableCell>
-            <TableCell align="left">Expiry (sec)</TableCell>
-            <TableCell align="left">Time</TableCell>
+            <TableCell align="left">SenderId</TableCell>
+            <TableCell align="left">dlr</TableCell>
+            <TableCell align="left">dlrUrl</TableCell>
+            <TableCell align="left">dlr level</TableCell>
             <TableCell align="left">Status</TableCell>
             <TableCell align="right">Action</TableCell>
           </TableRow>
@@ -56,12 +71,10 @@ export default function BasicTable({ data }) {
               <TableCell component="th" scope="row">
                 {profile.profileName}
               </TableCell>
-              <TableCell align="left">{profile.senderName}</TableCell>
-              <TableCell align="center">{profile.otplen}</TableCell>
-              <TableCell align="left">{profile.expiry}</TableCell>
-              <TableCell align="left">
-                <TimeAgo datetime={profile.createdAt} locale="en" />
-              </TableCell>
+              <TableCell align="left">{profile.senderId}</TableCell>
+              <TableCell align="center">{profile.dlr}</TableCell>
+              <TableCell align="left">{profile.dlrUrl}</TableCell>
+              <TableCell align="left">{profile.dlrLevel}</TableCell>
               <TableCell align="right">
                 <Switch
                   color="primary"

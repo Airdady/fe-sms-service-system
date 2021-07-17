@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
@@ -12,6 +12,7 @@ import IconButton from '@material-ui/core/IconButton';
 import TimeAgo from 'timeago-react';
 import { useDispatch } from 'react-redux';
 import Actions from './verify.action';
+import service from '../../service'
 
 const useStyles = makeStyles({
   table: {
@@ -20,9 +21,19 @@ const useStyles = makeStyles({
   },
 });
 
-export default function BasicTable({ data }) {
+export default function BasicTable() {
   const dispatch = useDispatch();
   const classes = useStyles();
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+   profile()
+  }, [data])
+
+const profile = async () => {
+  const results = await service.getOtpProfile()
+  setData(results.data.data)
+}
 
   const handleClick = (id) => async (e) => {
     e.preventDefault();
@@ -56,7 +67,7 @@ export default function BasicTable({ data }) {
               <TableCell component="th" scope="row">
                 {profile.profileName}
               </TableCell>
-              <TableCell align="left">{profile.senderName}</TableCell>
+              <TableCell align="left">{profile.senderId}</TableCell>
               <TableCell align="center">{profile.otplen}</TableCell>
               <TableCell align="left">{profile.expiry}</TableCell>
               <TableCell align="left">

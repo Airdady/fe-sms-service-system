@@ -5,7 +5,7 @@ import DialogActions from '@material-ui/core/DialogActions';
 import DialogContent from '@material-ui/core/DialogContent';
 import FormControl from '@material-ui/core/FormControl';
 import MenuItem from '@material-ui/core/MenuItem';
-import { Box, FormControlLabel, Switch } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 // import { useSnackbar } from 'notistack';
 import { useDispatch, useSelector } from 'react-redux';
@@ -13,29 +13,20 @@ import Actions from './verify.action';
 
 const uuid = require('uuid');
 
-const Form = ({ data }) => {
+const Form = () => {
   const dispatch = useDispatch();
   const [values, setValues] = useState({
     otplen: 4,
     expiry: 600,
     profileName: '',
-    senderName: '',
+    senderId: '',
     serviceToken: `AC-${uuid.v4().replaceAll('-', '.')}`,
-    msg: 'Your one-time verification code is {code}',
-    defaultTemplate: true,
+    message: 'Your one-time verification code is {code}',
   });
 
   const handleChange = (prop) => (event) => {
-    console.log(prop, event.target.checked);
-    setValues({
-      ...values,
-      [prop]:
-        event.target.type !== 'checkbox'
-          ? event.target.value
-          : event.target.checked,
-    });
+    setValues({ ...values, [prop]: event.target.value });
   };
-
   const handleSubmit = async (event) => {
     event.preventDefault();
     dispatch(await Actions.CreateOtpProfile(values));
@@ -48,7 +39,7 @@ const Form = ({ data }) => {
         <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
-              label="Profile Name"
+              label="Profile"
               variant="outlined"
               size="small"
               defaultValue={values.profileName}
@@ -63,13 +54,13 @@ const Form = ({ data }) => {
               label="Sender Name"
               variant="outlined"
               size="small"
-              defaultValue={values.senderName}
-              onChange={handleChange('senderName')}
+              defaultValue={values.senderId}
+              onChange={handleChange('senderId')}
               required
             />
           </FormControl>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
               select
@@ -88,7 +79,7 @@ const Form = ({ data }) => {
             </TextField>
           </FormControl>
         </Grid>
-        <Grid item xs={6}>
+        <Grid item xs={12}>
           <FormControl fullWidth>
             <TextField
               label="Expiry Time in (sec)"
@@ -100,32 +91,28 @@ const Form = ({ data }) => {
             />
           </FormControl>
         </Grid>
-        <FormControlLabel
-          value="start"
-          onChange={handleChange('defaultTemplate')}
-          control={<Switch checked={values.defaultTemplate} color="primary" />}
-          label="Default message template"
-          labelPlacement="start"
-        />
-        {!values.defaultTemplate && (
-          <Grid item xs={12}>
-            <FormControl fullWidth>
-              <TextField
-                label="Message Template"
-                multiline
-                rows={3}
-                defaultValue={values.msg}
-                variant="outlined"
-                onChange={handleChange('msg')}
-              />
-            </FormControl>
-          </Grid>
-        )}
+        <Grid item xs={12}>
+          <FormControl fullWidth>
+            <TextField
+              label="Message Template"
+              multiline
+              rows={3}
+              defaultValue={values.message}
+              variant="outlined"
+              onChange={handleChange('message')}
+            />
+          </FormControl>
+        </Grid>
       </Grid>
       <Box mt={2} display="flex" justifyContent="space-between">
         <Button color="primary">Cancel</Button>
         <Box mt={2}></Box>
-        <Button variant="contained" size="small" type="submit" color="primary">
+        <Button
+          variant="contained"
+          size="small"
+          type="submit"
+          color="primary"
+        >
           SAVE
         </Button>
       </Box>
