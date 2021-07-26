@@ -2,6 +2,7 @@ import Router from '../config';
 
 const Api = {
   capturePayment: (data) => Router.post('/payments/capture', data),
+  getUserCredit: () => Router.get('/wallet/balance'),
   login: (data) => Router.post('/auth/login', data),
   createOtpProfile: (data) => Router.post('/verify_profile/', data),
   getOtpProfile: () => Router.get('/verify_profile/'),

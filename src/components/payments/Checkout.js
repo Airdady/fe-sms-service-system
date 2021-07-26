@@ -4,7 +4,6 @@ import {
   Grid,
   Box,
   Container,
-  Paper,
   Card,
   CardContent,
   Typography,
@@ -15,10 +14,11 @@ import OutlinedInput from '@material-ui/core/OutlinedInput';
 import InputLabel from '@material-ui/core/InputLabel';
 import InputAdornment from '@material-ui/core/InputAdornment';
 import FormControl from '@material-ui/core/FormControl';
-import Api from '../../service';
 import InputBase from '@material-ui/core/InputBase';
 import Stripe from './stripe';
-import Amount from './Amount';
+import Action from './payment.action';
+import { useDispatch } from 'react-redux';
+import SuccessPage from './successPage';
 
 const BootstrapInput = withStyles((theme) => ({
   root: {
@@ -80,9 +80,9 @@ const useStyles = makeStyles((theme) => ({
 const Checkout = () => {
   const classes = useStyles();
   const [amount, setAmount] = useState(0);
+  const dispatch = useDispatch()
 
   function createOrder(data, actions) {
-    console.log(data, actions);
     return actions.order
       .create({
         purchase_units: [
@@ -102,11 +102,10 @@ const Checkout = () => {
     setAmount(value);
   };
 
-  const handleApprove = (data) => {
+  const handleApprove = async (data) => {
     const newData = { amount, payerId: data.payerID, orderId: data.orderID };
-    Api.capturePayment(newData)
-      .then((res) => console.log(res))
-      .catch((error) => console.log(error));
+    dispatch(await Action.capturePayment(newData));
+    dispatch(await Action.getUserCredit());
   };
 
   return (
@@ -146,60 +145,11 @@ const Checkout = () => {
                 startAdornment={
                   <InputAdornment position="start">$</InputAdornment>
                 }
+                onMouseLeave={handleChange}
                 labelWidth={60}
               />
             </FormControl>
           </Box>
-          <Grid container spacing={3}>
-            <Box display="flex" ml={1} flexDirection="column" mb={1}>
-              <Typography variant="display2" gutterBottom>
-                Billing Address
-              </Typography>
-              <Typography variant="caption">
-                Enter your billing address
-              </Typography>
-            </Box>
-            <Grid item md={12}>
-              <FormControl fullWidth>
-                <InputLabel shrink htmlFor="address">
-                  Address
-                </InputLabel>
-                <BootstrapInput id="address" required />
-              </FormControl>
-            </Grid>
-            <Grid item md={6}>
-              <FormControl fullWidth>
-                <InputLabel shrink htmlFor="state">
-                  State
-                </InputLabel>
-                <BootstrapInput id="state" required />
-              </FormControl>
-            </Grid>
-            <Grid item md={6}>
-              <FormControl fullWidth>
-                <InputLabel shrink htmlFor="city">
-                  City
-                </InputLabel>
-                <BootstrapInput id="city" required />
-              </FormControl>
-            </Grid>
-            <Grid item md={8}>
-              <FormControl fullWidth>
-                <InputLabel shrink htmlFor="Country">
-                  Country
-                </InputLabel>
-                <BootstrapInput id="Country" required />
-              </FormControl>
-            </Grid>
-            <Grid item md={4}>
-              <FormControl>
-                <InputLabel shrink htmlFor="postal-code">
-                  Postal Code
-                </InputLabel>
-                <BootstrapInput id="postal-code" required />
-              </FormControl>
-            </Grid>
-          </Grid>
         </Grid>
         <Grid item md={6}>
           <Box display="flex" flexDirection="column" mb={2}>
@@ -263,7 +213,7 @@ const Checkout = () => {
                   <Box className={classes.PaypalContainer}>
                     <PayPalScriptProvider options={{ 'client-id': 'test' }}>
                       <PayPalButtons
-                        style={{ height: 25 }}
+                        style={{ height: 25, color: 'silver' }}
                         createOrder={createOrder}
                         onApprove={handleApprove}
                         forceReRender={amount}
@@ -277,40 +227,7 @@ const Checkout = () => {
           </Box>
         </Grid>
       </Grid>
-      {/* <Paper>
-        <Box display="flex" flexDirection="column" p={5}>
-          <Grid item md={12}>
-            <FormControl
-              fullWidth
-              className={classes.margin}
-              variant="outlined"
-            >
-              <InputLabel htmlFor="outlined-adornment-amount">
-                Amount
-              </InputLabel>
-              <OutlinedInput
-                id="outlined-adornment-amount"
-                onBlur={handleChange}
-                type="number"
-                startAdornment={
-                  <InputAdornment position="start">$</InputAdornment>
-                }
-                labelWidth={60}
-              />
-            </FormControl>
-          </Grid>
-          <Box mt={3}>
-            <PayPalScriptProvider options={{ 'client-id': 'test' }}>
-              <PayPalButtons
-                createOrder={createOrder}
-                onApprove={handleApprove}
-                forceReRender={amount}
-                disabled={amount < 1 ? true : false}
-              />
-            </PayPalScriptProvider>
-          </Box>
-        </Box>
-      </Paper> */}
+      <SuccessPage/>
     </Container>
   );
 };

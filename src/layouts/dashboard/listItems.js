@@ -5,6 +5,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import { Link } from 'react-router-dom';
 import { Avatar, Box, Button, Divider, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import CreditBox from './credit.box'
 
 const useStyles = makeStyles((theme) => ({
   link: {
@@ -35,24 +36,7 @@ const NavItems = () => {
           </Box>
         </Box>
       </Box>
-      <Box
-        width="100%"
-        px={3}
-        py={1}
-        display="flex"
-        bgcolor="gainsboro"
-        alignItems="center"
-      >
-        <Box mr="auto">
-          <Typography variant="subtitle2">$359</Typography>
-          <Typography variant="caption">Credit Balance</Typography>
-        </Box>
-        <Link to="/payments">
-          <Button variant="contained" color="primary" size="small">
-            Top up
-          </Button>
-        </Link>
-      </Box>
+      <CreditBox/>
       <Divider />
       <Link class={classes.link} to="/dashboard">
         <ListItem button>
