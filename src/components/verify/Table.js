@@ -13,6 +13,8 @@ import TimeAgo from 'timeago-react';
 import { useDispatch } from 'react-redux';
 import Actions from './verify.action';
 import service from '../../service'
+import NotFound from '../notFound/NotFound';
+import Loading from '../loading/Loading';
 
 const useStyles = makeStyles({
   table: {
@@ -25,6 +27,7 @@ export default function BasicTable() {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [data, setData] = useState([])
+  const [load, setLoad] = useState(true)
 
   useEffect(() => {
    profile()
@@ -33,6 +36,7 @@ export default function BasicTable() {
 const profile = async () => {
   const results = await service.getOtpProfile()
   setData(results.data.data)
+  setLoad(false)
 }
 
   const handleClick = (id) => async (e) => {
@@ -48,6 +52,8 @@ const profile = async () => {
   };
 
   return (
+    <>
+    {load ? <Loading /> : (!data.length ? <NotFound message={'Verify Api Not Found'}/> :
     <TableContainer>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -95,5 +101,8 @@ const profile = async () => {
         </TableBody>
       </Table>
     </TableContainer>
+    )
+    }
+    </>
   );
 }

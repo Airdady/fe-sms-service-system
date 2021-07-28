@@ -13,6 +13,8 @@ import TimeAgo from 'timeago-react';
 import { useDispatch } from 'react-redux';
 import Actions from './verify.action';
 import service from '../../service'
+import NotFound from '../notFound/NotFound';
+import Loading from '../loading/Loading';
 
 const useStyles = makeStyles({
   table: {
@@ -25,6 +27,7 @@ export default function BasicTable() {
   const dispatch = useDispatch();
   const classes = useStyles();
   const [data, setdata] = useState([])
+  const [Load, setLoad] = useState(true)
 
   useEffect(() => {
     work()
@@ -32,8 +35,8 @@ export default function BasicTable() {
 
   const work = async () => {
     const role = await service.getSmsProfile();
-    console.log(role)
     setdata(role.data.data)
+    setLoad(false)
   }
 
   // console.log(data)
@@ -52,6 +55,8 @@ export default function BasicTable() {
   };
 
   return (
+    <>
+    {Load ? <Loading /> : (!data.length ? <NotFound message={'Verify Messages Not Found'}/> :
     <TableContainer>
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
@@ -97,5 +102,8 @@ export default function BasicTable() {
         </TableBody>
       </Table>
     </TableContainer>
+    )
+    }
+    </>
   );
 }
