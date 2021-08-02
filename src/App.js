@@ -28,8 +28,8 @@ import AppLayout from "./AppLayout";
 function App() {
   return (
     <div>
-      <AppLayout>
       <Router>
+          <AppLayout>
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/product/number_lookup" component={LookupPage} />
@@ -69,8 +69,8 @@ function App() {
             <Settings />
           </PrivateRoute>
         </Switch>
+          </AppLayout>
       </Router>
-      </AppLayout>
     </div>
   );
 }
