@@ -86,27 +86,20 @@ export default function BasicTable() {
       <Box p={5} width="100%" bgcolor="#f0f3fb" textAlign="left">
         <Container>
           <Grid container spacing={3}>
-            <Grid item md={6}>
+            <Grid item md={6} >
               <Box mb={3}>
                 <Map/>
               </Box>
+              <Grid item md={6}>
+                <Typography>
+                  Kemp House 1560-6473 City Road India, Uganda ECV1M Delshoude
+                </Typography>
+                <Typography>+256758397272</Typography>
+                <Typography>info@airdady.com</Typography>
+              </Grid>
             </Grid>
             <Grid item md={6}>
               <Form />
-            </Grid>
-            <Grid item md={6}>
-              <Typography>
-                Kemp House 1560-6473 City Road India, Uganda ECV1M Delshoude
-              </Typography>
-              <Typography>+256758397272</Typography>
-              <Typography>info@airdady.com</Typography>
-            </Grid>
-            <Grid item md={6}>
-              <Typography>
-                Kemp House 1560-6473 City Road India, Uganda ECV1M Delshoude
-              </Typography>
-              <Typography>+256758397272</Typography>
-              <Typography>info@airdady.com</Typography>
             </Grid>
           </Grid>
         </Container>

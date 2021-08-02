@@ -9,7 +9,7 @@ import { Paper } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    marginTop: theme.spacing(8),
+    // marginTop: theme.spacing(8),
     display: 'flex',
     flexDirection: 'column',
     alignItems: 'center',
@@ -39,7 +39,7 @@ const ExpertForm = () => {
           directly. Fill the form bellow and one of our experts will get back to
           you as soon as possible tank you
         </Typography>
-        <form className={classes.form} noValidate>
+        <form className={classes.form}>
           <Grid container spacing={2}>
             <Grid item md={12} sm={12}>
               <TextField
