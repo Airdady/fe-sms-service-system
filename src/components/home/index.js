@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   table: {
-    minWidth: 650,
+    minWidth: "100%",
     marginTop: '1rem',
   },
   cardContent: {
@@ -63,8 +63,6 @@ export default function BasicTable() {
   return (
     <div style={{ width: '100%' }}>
       <div className={classes.root}>
-        <MenuNav />
-
         <div className={classes.bgColor}>
           <Container maxWidth="lg" style={{ height: '100%' }}>
             <Grid container style={{ height: '100%' }}>
