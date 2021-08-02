@@ -23,10 +23,12 @@ import Docs from './components/documentation';
 import ApiLog from './components/apiLogs';
 import Settings from './components/settings';
 import DashboardLayout from './layouts/dashboard/admin.layout';
+import AppLayout from "./AppLayout";
 
 function App() {
   return (
     <div>
+      <AppLayout>
       <Router>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -68,6 +70,7 @@ function App() {
           </PrivateRoute>
         </Switch>
       </Router>
+      </AppLayout>
     </div>
   );
 }
