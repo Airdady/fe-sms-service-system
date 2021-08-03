@@ -67,7 +67,7 @@ const useStyles = (location) =>
     },
 
     menu: {
-      display: location === "/login" && "none",
+      display: (location === "/login" || location === "/register") && "none",
     },
   }));
 
