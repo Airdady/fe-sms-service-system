@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuNav from '../home/nav';
-import { Container, Typography, Box, Button, Paper } from '@material-ui/core';
+import { Container, Typography, Box} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Footer from '../home/Footer';
 import Form from './form';
