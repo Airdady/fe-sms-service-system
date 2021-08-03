@@ -16,128 +16,135 @@ import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import MenuAppBar from "./components/home/nav";
 import Logo from "./Logo";
+import { useLocation } from "react-router-dom";
 
 const drawerWidth = 200;
 
-const useStyles = makeStyles(theme => ({
+const useStyles = (location) =>
+  makeStyles((theme) => ({
     root: {
-        display: "flex",
-        width: "100vw"
+      display: "flex",
+      width: "100vw",
     },
     appBar: {
-        zIndex: theme.zIndex.drawer + 1
+      zIndex: theme.zIndex.drawer + 1,
     },
     drawer: {
-        flexShrink: 0,
-        width: drawerWidth
+      flexShrink: 0,
+      width: drawerWidth,
     },
     drawerPaper: {
-        width: drawerWidth
+      width: drawerWidth,
     },
     menuButton: {
-        marginRight: theme.spacing(2),
-        [theme.breakpoints.up("md")]: {
-            display: "none"
-        }
+      marginRight: theme.spacing(2),
+      [theme.breakpoints.up("md")]: {
+        display: "none",
+      },
     },
     toolbar: {
-        ...theme.mixins.toolbar,
-        [theme.breakpoints.down("sm")]: {
-            display: "none"
-        }
+      ...theme.mixins.toolbar,
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
+      },
     },
 
     topNavigation: {
-        [theme.breakpoints.down("sm")]: {
-            display: "none"
-        }
+      [theme.breakpoints.down("sm")]: {
+        display: "none",
+      },
     },
 
     content: {
-        flexGrow: 1,
-        backgroundColor: theme.palette.background.default,
+      flexGrow: 1,
+      backgroundColor: theme.palette.background.default,
     },
 
     logoContainer: {
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center"
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+    },
+
+    menu: {
+      display: location === "/login" && "none",
+    },
+  }));
+
+export default function AppLayout({ children }) {
+  const { pathname } = useLocation();
+  const classes = useStyles(pathname)();
+  const theme = useTheme();
+  const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+
+  const [open, setOpen] = React.useState(false);
+
+  const toggleDrawer = (event) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
     }
-}));
 
-export default function AppLayout({children}) {
-    const classes = useStyles();
-    const theme = useTheme();
-    const isMdUp = useMediaQuery(theme.breakpoints.up("md"));
+    setOpen(!open);
+  };
 
-    const [open, setOpen] = React.useState(false);
-
-    const toggleDrawer = event => {
-        if (
-            event.type === "keydown" &&
-            (event.key === "Tab" || event.key === "Shift")
-        ) {
-            return;
-        }
-
-        setOpen(!open);
-    };
-
-    return (
-        <div className={classes.root}>
-            <CssBaseline />
-            <AppBar position="fixed" className={classes.appBar}>
-                <Toolbar className={classes.logoContainer}>
-                    <IconButton
-                        color="inherit"
-                        aria-label="open drawer"
-                        edge="start"
-                        onClick={toggleDrawer}
-                        className={classes.menuButton}
-                    >
-                        <MenuIcon />
-                    </IconButton>
-                    {isMdUp ? <MenuAppBar/> : <Logo />}
-                </Toolbar>
-            </AppBar>
-            <Drawer
-                className={classes.drawer}
-                // variant={!isMdUp ? "permanent" : "temporary"}
-                classes={{
-                    paper: classes.drawerPaper
-                }}
-                anchor="left"
-                open={open}
-                onClose={toggleDrawer}
-            >
-                <div className={classes.toolbar} />
-                <Divider />
-                <List>
-                    {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-                <Divider />
-                <List>
-                    {["All mail", "Trash", "Spam"].map((text, index) => (
-                        <ListItem button key={text}>
-                            <ListItemIcon>
-                                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-                            </ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
-                    ))}
-                </List>
-            </Drawer>
-            <main className={classes.content}>
-                <Toolbar />
-                {children}
-            </main>
-        </div>
-    );
+  return (
+    <div className={classes.root}>
+      {/*<CssBaseline />*/}
+      <AppBar position="fixed" className={`${classes.appBar} ${classes.menu}`}>
+        <Toolbar className={classes.logoContainer}>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={toggleDrawer}
+            className={classes.menuButton}
+          >
+            <MenuIcon />
+          </IconButton>
+          {isMdUp ? <MenuAppBar /> : <Logo />}
+        </Toolbar>
+      </AppBar>
+      <Drawer
+        className={`${classes.drawer} ${classes.menu}`}
+        // variant={!isMdUp ? "permanent" : "temporary"}
+        classes={{
+          paper: classes.drawerPaper,
+        }}
+        anchor="left"
+        open={open}
+        onClose={toggleDrawer}
+      >
+        <div className={classes.toolbar} />
+        <Divider />
+        <List>
+          {["Inbox", "Starred", "Send email", "Drafts"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+        <Divider />
+        <List>
+          {["All mail", "Trash", "Spam"].map((text, index) => (
+            <ListItem button key={text}>
+              <ListItemIcon>
+                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+              </ListItemIcon>
+              <ListItemText primary={text} />
+            </ListItem>
+          ))}
+        </List>
+      </Drawer>
+      <main className={classes.content}>
+        <Toolbar />
+        {children}
+      </main>
+    </div>
+  );
 }

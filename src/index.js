@@ -1,31 +1,31 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-import { createMuiTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { SnackbarProvider } from 'notistack';
-import { Provider } from 'react-redux';
-import store from './redux/store';
-import types from './redux/types';
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import { createTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
+import CssBaseline from "@material-ui/core/CssBaseline";
+import { SnackbarProvider } from "notistack";
+import { Provider } from "react-redux";
+import store from "./redux/store";
+import types from "./redux/types";
 
-const theme = createMuiTheme({
+const theme = createTheme({
   typography: {
-    fontFamily: 'Colfax,Helvetica,Arial,sans-serif',
+    fontFamily: "Colfax,Helvetica,Arial,sans-serif",
     htmlFontSize: 16,
   },
   palette: {
-    type: 'light',
+    type: "light",
     primary: {
-      main: '#002045',
-      light: '#0491fe',
+      main: "#002045",
+      light: "#0491fe",
     },
     text: {
-      primary: '#546b81',
+      primary: "#546b81",
     },
     background: {
-      default: 'white',
+      default: "white",
     },
   },
 });
@@ -43,7 +43,7 @@ ReactDOM.render(
       </SnackbarProvider>
     </Provider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
