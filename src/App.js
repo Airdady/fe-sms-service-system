@@ -24,52 +24,54 @@ import ApiLog from "./components/apiLogs";
 import Settings from "./components/settings";
 import DashboardLayout from "./layouts/dashboard/admin.layout";
 import AppLayout from "./AppLayout";
+import DocumentationPage from "./pages/documentation/DocumentationPage";
 
 function App() {
   return (
     <div>
       <Router>
-        <AppLayout>
-          <Switch>
-            <Route exact path="/" component={Home} />
-            <Route exact path="/product/number_lookup" component={LookupPage} />
-            <Route exact path="/product/sms" component={SmsPage} />
-            <Route exact path="/product/verify" component={VerifyPage} />
-            <Route exact path="/contact" component={ContactUs} />
-            <Route exact path="/pricing" component={Pricing} />
-            <Route exact path="/api_docs" component={Docs} />
-            <AuthRoute exact path="/register">
-              <Register />
-            </AuthRoute>
-            <AuthRoute exact path="/login">
-              <Login />
-            </AuthRoute>
-            <PrivateRoute exact path="/dashboard">
-              <Dashboard />
-            </PrivateRoute>
-            <PrivateRoute exact path="/verify">
-              <Verify />
-            </PrivateRoute>
-            <PrivateRoute exact path="/sms">
-              <Sms />
-            </PrivateRoute>
-            <PrivateRoute exact path="/profile">
-              <Profile />
-            </PrivateRoute>
-            <PrivateRoute exact path="/payments">
-              <Checkout />
-            </PrivateRoute>
-            <PrivateRoute exact path="/return">
-              <Checkout />
-            </PrivateRoute>
-            <PrivateRoute exact path="/api_logs">
-              <ApiLog />
-            </PrivateRoute>
-            <PrivateRoute exact path="/settings">
-              <Settings />
-            </PrivateRoute>
-          </Switch>
-        </AppLayout>
+        {/*<AppLayout>*/}
+        <Switch>
+          <Route exact path="/" component={DocumentationPage} />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/product/number_lookup" component={LookupPage} />
+          <Route exact path="/product/sms" component={SmsPage} />
+          <Route exact path="/product/verify" component={VerifyPage} />
+          <Route exact path="/contact" component={ContactUs} />
+          <Route exact path="/pricing" component={Pricing} />
+          <Route exact path="/api_docs" component={Docs} />
+          <AuthRoute exact path="/register">
+            <Register />
+          </AuthRoute>
+          <AuthRoute exact path="/login">
+            <Login />
+          </AuthRoute>
+          <PrivateRoute exact path="/dashboard">
+            <Dashboard />
+          </PrivateRoute>
+          <PrivateRoute exact path="/verify">
+            <Verify />
+          </PrivateRoute>
+          <PrivateRoute exact path="/sms">
+            <Sms />
+          </PrivateRoute>
+          <PrivateRoute exact path="/profile">
+            <Profile />
+          </PrivateRoute>
+          <PrivateRoute exact path="/payments">
+            <Checkout />
+          </PrivateRoute>
+          <PrivateRoute exact path="/return">
+            <Checkout />
+          </PrivateRoute>
+          <PrivateRoute exact path="/api_logs">
+            <ApiLog />
+          </PrivateRoute>
+          <PrivateRoute exact path="/settings">
+            <Settings />
+          </PrivateRoute>
+        </Switch>
+        {/*</AppLayout>*/}
       </Router>
     </div>
   );
