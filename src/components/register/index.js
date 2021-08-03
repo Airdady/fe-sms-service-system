@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@material-ui/core/Avatar";
 import Button from "@material-ui/core/Button";
-import CssBaseline from "@material-ui/core/CssBaseline";
 import TextField from "@material-ui/core/TextField";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
@@ -61,6 +60,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SignInSide() {
+  const [allow, setAllow] = useState(false);
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => alert(JSON.stringify(data));
 
@@ -68,7 +68,6 @@ export default function SignInSide() {
 
   return (
     <Grid container component="main" className={classes.root}>
-      <CssBaseline />
       <Grid item sm={4} md={7} className={classes.image} />
       <Grid item sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>
@@ -138,9 +137,10 @@ export default function SignInSide() {
                 <FormControlLabel
                   control={
                     <Checkbox
-                      value="allowExtraEmails"
+                      value={allow}
                       color="primary"
                       {...register("allowExtraEmails")}
+                      onClick={() => setAllow(!allow)}
                     />
                   }
                   label="I want to receive inspiration, marketing promotions and updates via email."
