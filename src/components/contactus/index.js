@@ -60,7 +60,6 @@ export default function BasicTable() {
   return (
     <Box display="flex" flexDirection="column" flexGrow={1}>
       <div className={classes.root}>
-        <MenuNav />
         <Box display="flex" alignItems="center" className={classes.bgColor}>
           <Container maxWidth="lg">
             <Grid container style={{ height: '100%' }}>
