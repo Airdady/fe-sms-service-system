@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 
 const { SubMenu } = Menu;
-const { Content } = Layout;
+const { Content, Sider } = Layout;
 
 export default function DocumentationPage() {
   return (
