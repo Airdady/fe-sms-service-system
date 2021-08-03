@@ -1,6 +1,6 @@
 import React from "react";
 import "antd/dist/antd.css";
-import { Layout, Menu, Breadcrumb } from "antd";
+import { Layout, Menu } from "antd";
 import {
   UserOutlined,
   LaptopOutlined,
@@ -8,7 +8,7 @@ import {
 } from "@ant-design/icons";
 
 const { SubMenu } = Menu;
-const { Header, Content, Footer, Sider } = Layout;
+const { Content } = Layout;
 
 export default function DocumentationPage() {
   return (
