@@ -57,7 +57,7 @@ export default function DocumentationPage() {
             </Menu>
           </Sider>
           <Content
-            style={{ padding: "0 24px", height: "100%", overflow: "scroll" }}
+            style={{ padding: "30px 30px", height: "100%", overflow: "scroll" }}
           >
             <Switch>
               <Route path={`${path}/`} exact>
