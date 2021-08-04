@@ -1,23 +1,21 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Layout, Menu } from "antd";
-import {
-  UserOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-} from "@ant-design/icons";
-import Text from "antd/lib/typography/Text";
-import Title from "antd/es/typography/Title";
-import Paragraph from "antd/es/typography/Paragraph";
+import { LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
-import HeaderTable from "./HeaderTable";
-import VerifyOTP from "./components/VerifyOTP";
+import Document from "./components/Document";
+import SendOTP from "./components/SendOTP";
+import { verify } from "./data";
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 
 export default function DocumentationPage() {
   const { path, url } = useRouteMatch();
+  const getPath = (url) => {
+    if (url === "") return path;
+    return `${path}/${url}`;
+  };
   return (
     <Layout style={{ height: "100vh" }}>
       <Content style={{ padding: "0 0" }}>
@@ -33,16 +31,11 @@ export default function DocumentationPage() {
               style={{ height: "100%" }}
             >
               <SubMenu key="Verification" title="Verification">
-                <Menu.Item key="1">
-                  <Link to={`${url}`}>XTXTX</Link>{" "}
-                </Menu.Item>
-                <Menu.Item key="2">
-                  <Link to={`${url}/verify-otp`}>Verify OTP</Link>
-                </Menu.Item>
-                <Menu.Item key="3">
-                  <Link to={`${url}/resend-otp`}>Resend OTP</Link>
-                </Menu.Item>
-                <Menu.Item key="4">option4</Menu.Item>
+                {verify.map((v) => (
+                  <Menu.Item key={v.path}>
+                    <Link to={getPath(v.path)}>{v.label}</Link>
+                  </Menu.Item>
+                ))}
               </SubMenu>
               <SubMenu key="Python" icon={<LaptopOutlined />} title="Python">
                 <Menu.Item key="5">option5</Menu.Item>
@@ -62,15 +55,16 @@ export default function DocumentationPage() {
             style={{ padding: "30px 30px", height: "100%", overflow: "scroll" }}
           >
             <Switch>
-              <Route path={`${path}/`} exact>
-                <h1>Hello world</h1>
-              </Route>
-              <Route path={`${path}/verify-otp`} exact>
-                <VerifyOTP />
-              </Route>
-              <Route path={`${path}/resend-otp`} exact>
-                <VerifyOTP />
-              </Route>
+              {verify.map((v) => (
+                <Route
+                  // path={`${path}${v.path}`}
+                  path={getPath(v.path)}
+                  key={v.path}
+                  exact
+                >
+                  <Document {...v} />
+                </Route>
+              ))}
             </Switch>
           </Content>
         </Layout>
