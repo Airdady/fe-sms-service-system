@@ -37,9 +37,11 @@ export default function DocumentationPage() {
                   <Link to={`${url}`}>XTXTX</Link>{" "}
                 </Menu.Item>
                 <Menu.Item key="2">
-                  <Link to={`${url}/verify-otp`}>Verify OPT</Link>
+                  <Link to={`${url}/verify-otp`}>Verify OTP</Link>
                 </Menu.Item>
-                <Menu.Item key="3">option3</Menu.Item>
+                <Menu.Item key="3">
+                  <Link to={`${url}/resend-otp`}>Resend OTP</Link>
+                </Menu.Item>
                 <Menu.Item key="4">option4</Menu.Item>
               </SubMenu>
               <SubMenu key="Python" icon={<LaptopOutlined />} title="Python">
@@ -64,6 +66,9 @@ export default function DocumentationPage() {
                 <h1>Hello world</h1>
               </Route>
               <Route path={`${path}/verify-otp`} exact>
+                <VerifyOTP />
+              </Route>
+              <Route path={`${path}/resend-otp`} exact>
                 <VerifyOTP />
               </Route>
             </Switch>
