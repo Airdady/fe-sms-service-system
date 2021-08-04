@@ -2,7 +2,7 @@ import React from "react";
 import Title from "antd/es/typography/Title";
 import Text from "antd/lib/typography/Text";
 import Paragraph from "antd/es/typography/Paragraph";
-import HeaderTable from "../HeaderTable";
+import DocTable from "../DocTable";
 
 export default function Document({
   url,
@@ -23,9 +23,9 @@ export default function Document({
       </Text>
 
       <Title level={5}>Headers</Title>
-      <HeaderTable options={headers} />
+      <DocTable options={headers} />
       <Title level={5}>Params</Title>
-      <HeaderTable options={params} />
+      <DocTable options={params} />
       <Title level={5}>Body:</Title>
       <Text>
         <pre>{body}</pre>

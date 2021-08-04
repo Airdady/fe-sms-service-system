@@ -1,6 +1,6 @@
 import React from "react";
 import { Table } from "antd";
-export default function HeaderTable({ options }) {
+export default function DocTable({ options }) {
   const dataSource = options.data.map((data) => ({
     key: data.keys,
     name: data.label,

@@ -1,10 +1,8 @@
 import React from "react";
 import "antd/dist/antd.css";
 import { Layout, Menu } from "antd";
-import { LaptopOutlined, NotificationOutlined } from "@ant-design/icons";
 import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
 import Document from "./components/Document";
-import SendOTP from "./components/SendOTP";
 import { sms, verify } from "./data";
 
 const { SubMenu } = Menu;
