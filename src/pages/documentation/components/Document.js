@@ -11,6 +11,7 @@ export default function Document({
   headers,
   params,
   request,
+  body,
 }) {
   return (
     <>
@@ -25,9 +26,12 @@ export default function Document({
       <HeaderTable options={headers} />
       <Title level={5}>Params</Title>
       <HeaderTable options={params} />
-
+      <Title level={5}>Body:</Title>
       <Text>
-        Example Request
+        <pre>{body}</pre>
+      </Text>
+      <Title level={5}>Example Request</Title>
+      <Text>
         <pre>{request}</pre>
       </Text>
     </>
