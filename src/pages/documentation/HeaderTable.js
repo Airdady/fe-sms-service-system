@@ -1,24 +1,15 @@
 import React from "react";
 import { Table } from "antd";
-export default function HeaderTable() {
-  const dataSource = [
-    {
-      key: "1",
-      name: "Authorization",
-      value: "Token {api_token}",
-    },
-  ];
-  const columns = [
-    {
-      title: "Header Name",
-      dataIndex: "name",
-      key: "HeadName",
-    },
-    {
-      title: "Value",
-      dataIndex: "value",
-      key: "headerValue",
-    },
-  ];
+export default function HeaderTable({ options }) {
+  const dataSource = options.data.map((data) => ({
+    key: data.keys,
+    name: data.label,
+    value: data.value,
+  }));
+  const columns = options.columns.map((column) => ({
+    title: column.title,
+    dataIndex: column.dataIndex,
+    key: column.key,
+  }));
   return <Table dataSource={dataSource} columns={columns} />;
 }
