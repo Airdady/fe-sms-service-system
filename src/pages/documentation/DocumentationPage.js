@@ -6,11 +6,18 @@ import {
   LaptopOutlined,
   NotificationOutlined,
 } from "@ant-design/icons";
+import Text from "antd/lib/typography/Text";
+import Title from "antd/es/typography/Title";
+import Paragraph from "antd/es/typography/Paragraph";
+import { Link, Route, Switch, useRouteMatch } from "react-router-dom";
+import HeaderTable from "./HeaderTable";
+import VerifyOTP from "./components/VerifyOTP";
 
 const { SubMenu } = Menu;
 const { Content, Sider } = Layout;
 
 export default function DocumentationPage() {
+  const { path, url } = useRouteMatch();
   return (
     <Layout style={{ height: "100vh" }}>
       <Content style={{ padding: "0 0" }}>
@@ -25,13 +32,13 @@ export default function DocumentationPage() {
               defaultOpenKeys={["sub1"]}
               style={{ height: "100%" }}
             >
-              <SubMenu
-                key="JavaScript"
-                icon={<UserOutlined />}
-                title="JavaScript"
-              >
-                <Menu.Item key="1">Installation</Menu.Item>
-                <Menu.Item key="2">option2</Menu.Item>
+              <SubMenu key="Verification" title="Verification">
+                <Menu.Item key="1">
+                  <Link to={`${url}`}>XTXTX</Link>{" "}
+                </Menu.Item>
+                <Menu.Item key="2">
+                  <Link to={`${url}/verify-otp`}>Verify OPT</Link>
+                </Menu.Item>
                 <Menu.Item key="3">option3</Menu.Item>
                 <Menu.Item key="4">option4</Menu.Item>
               </SubMenu>
@@ -51,7 +58,16 @@ export default function DocumentationPage() {
           </Sider>
           <Content
             style={{ padding: "0 24px", height: "100%", overflow: "scroll" }}
-          ></Content>
+          >
+            <Switch>
+              <Route path={`${path}/`} exact>
+                <h1>Hello world</h1>
+              </Route>
+              <Route path={`${path}/verify-otp`} exact>
+                <VerifyOTP />
+              </Route>
+            </Switch>
+          </Content>
         </Layout>
       </Content>
     </Layout>
