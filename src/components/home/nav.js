@@ -1,19 +1,19 @@
-import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import MenuItem from '@material-ui/core/MenuItem';
-import Menu from '@material-ui/core/Menu';
-import { Container, Button, Box } from '@material-ui/core';
-import { Link } from 'react-router-dom';
-import AuthUser from '../Account.user';
+import React from "react";
+import { makeStyles } from "@material-ui/core/styles";
+import AppBar from "@material-ui/core/AppBar";
+import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
+import MenuItem from "@material-ui/core/MenuItem";
+import Menu from "@material-ui/core/Menu";
+import { Container, Button, Box } from "@material-ui/core";
+import { Link } from "react-router-dom";
+import AuthUser from "../Account.user";
 
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    '& .MuiAppBar-root': {
-      background: 'transparent',
+    "& .MuiAppBar-root": {
+      background: "transparent",
     },
   },
   menuButton: {
@@ -22,25 +22,25 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
     marginLeft: 5,
-    textDecoration: 'none',
+    textDecoration: "none",
     color: theme.palette.primary.main,
   },
   bgColor: {
-    width: '100%',
-    height: '92vh',
-    display: 'grid',
-    clipPath: 'polygon(100% 0, 100% 99%, 0 78%, 0 0)',
+    width: "100%",
+    height: "92vh",
+    display: "grid",
+    clipPath: "polygon(100% 0, 100% 99%, 0 78%, 0 0)",
     background: theme.palette.primary.main,
-    gridTemplateRows: 'repeat(12, 1fr)',
-    gridTemplateColumns: 'repeat(12, 1fr)',
+    gridTemplateRows: "repeat(12, 1fr)",
+    gridTemplateColumns: "repeat(12, 1fr)",
   },
   links: {
-    textDecoration: 'none',
-    color: 'inherit',
-    textTransform: 'capitalize',
+    textDecoration: "none",
+    color: "inherit",
+    textTransform: "capitalize",
   },
   navButtons: {
-    margin: '0 1rem',
+    margin: "0 1rem",
     fontSize: theme.typography.subtitle1.fontSize,
     fontWeight: theme.typography.fontWeightRegular,
   },
@@ -66,7 +66,7 @@ export default function MenuAppBar() {
           <Container maxWidth="lg">
             <Toolbar>
               <Box display="flex" alignItems="center" className={classes.title}>
-                <Link style={{ display: 'flex', alignItems: 'center' }} to="/">
+                <Link style={{ display: "flex", alignItems: "center" }} to="/">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="40"
@@ -110,15 +110,15 @@ export default function MenuAppBar() {
                   id="menu-appbar"
                   anchorEl={anchorEl}
                   anchorOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: "top",
+                    horizontal: "right",
                   }}
                   keepMounted
                   transformOrigin={{
-                    vertical: 'top',
-                    horizontal: 'right',
+                    vertical: "top",
+                    horizontal: "right",
                   }}
-                  style={{ top: '3rem' }}
+                  style={{ top: "3rem" }}
                   open={open}
                   onClose={handleClose}
                 >
@@ -134,7 +134,7 @@ export default function MenuAppBar() {
                   </MenuItem>
                 </Menu>
                 <Button color="inherit" className={classes.navButtons}>
-                  <Link to="/api_docs" className={classes.links}>
+                  <Link to="/documentations" className={classes.links}>
                     Developers
                   </Link>
                 </Button>

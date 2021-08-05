@@ -11,5 +11,5 @@ export default function DocTable({ options }) {
     dataIndex: column.dataIndex,
     key: column.key,
   }));
-  return <Table dataSource={dataSource} columns={columns} />;
+  return <Table dataSource={dataSource} columns={columns} pagination={false} />;
 }
