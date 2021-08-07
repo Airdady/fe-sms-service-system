@@ -1,22 +1,22 @@
-import React, { useMemo, useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Box, Button, Typography } from '@material-ui/core';
-import Action from '../../components/payments/payment.action';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useMemo } from "react";
+import { Link } from "react-router-dom";
+import { Box, Button, Typography } from "@material-ui/core";
+import Action from "../../components/payments/payment.action";
+import { useSelector, useDispatch } from "react-redux";
 
 const CreditBox = () => {
   // const [balance, setBalance] = useState(0);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-  useMemo(async() => {
+  useMemo(async () => {
     dispatch(await Action.getUserCredit());
-  },[dispatch])
+  }, [dispatch]);
 
   const balance = useSelector(({ Payment }) => Payment.credit);
- 
-  console.log('====================================');
+
+  console.log("====================================");
   console.log(balance);
-  console.log('====================================');
+  console.log("====================================");
   return (
     <Box
       width="100%"
@@ -27,7 +27,9 @@ const CreditBox = () => {
       alignItems="center"
     >
       <Box mr="auto">
-        <Typography color="primary" variant="h6">${balance}</Typography>
+        <Typography color="primary" variant="h6">
+          ${balance}
+        </Typography>
         <Typography variant="caption">Credit Balance</Typography>
       </Box>
       <Link to="/payments">

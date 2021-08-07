@@ -1,6 +1,5 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import MenuNav from './nav';
 import { Container, Typography, Box, Button } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import Footer from './Footer';
@@ -21,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   table: {
-    minWidth: 650,
+    minWidth: "100%",
     marginTop: '1rem',
   },
   cardContent: {
@@ -63,8 +62,6 @@ export default function BasicTable() {
   return (
     <div style={{ width: '100%' }}>
       <div className={classes.root}>
-        <MenuNav />
-
         <div className={classes.bgColor}>
           <Container maxWidth="lg" style={{ height: '100%' }}>
             <Grid container style={{ height: '100%' }}>
@@ -82,6 +79,7 @@ export default function BasicTable() {
               <Grid
                 item
                 md={7}
+                sm={12}
                 style={{
                   marginTop: '2rem',
                   display: 'flex',
@@ -105,7 +103,7 @@ export default function BasicTable() {
                     >
                       <feOffset dy="3" input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="3" result="blur" />
-                      <feFlood flood-opacity="0.161" />
+                      <feFlood floodOpacity="0.161" />
                       <feComposite operator="in" in2="blur" />
                       <feComposite in="SourceGraphic" />
                     </filter>
@@ -119,7 +117,7 @@ export default function BasicTable() {
                     >
                       <feOffset input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="30" result="blur-2" />
-                      <feFlood flood-opacity="0.161" />
+                      <feFlood floodOpacity="0.161" />
                       <feComposite operator="in" in2="blur-2" />
                       <feComposite in="SourceGraphic" />
                     </filter>
@@ -133,7 +131,7 @@ export default function BasicTable() {
                     >
                       <feOffset input="SourceAlpha" />
                       <feGaussianBlur stdDeviation="30" result="blur-3" />
-                      <feFlood flood-opacity="0.161" />
+                      <feFlood floodOpacity="0.161" />
                       <feComposite operator="in" in2="blur-3" />
                       <feComposite in="SourceGraphic" />
                     </filter>
@@ -161,8 +159,8 @@ export default function BasicTable() {
                       data-name="John Doe"
                       transform="translate(594 275)"
                       fill="#383737"
-                      font-size="34"
-                      font-family="HelveticaNeue, Helvetica Neue"
+                      fontSize="34"
+                      fontFamily="HelveticaNeue, Helvetica Neue"
                     >
                       <tspan x="0" y="0">
                         John Doe
@@ -180,9 +178,9 @@ export default function BasicTable() {
                         transform="translate(0 2)"
                         fill="none"
                         stroke="#000"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
                       />
                       <path
                         id="Path_3"
@@ -190,9 +188,9 @@ export default function BasicTable() {
                         d="M18,32.5,7.5,20,18,7.5"
                         fill="none"
                         stroke="#000"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
                       />
                     </g>
                     <g
@@ -206,9 +204,9 @@ export default function BasicTable() {
                         d="M19.5,18A1.5,1.5,0,1,1,18,16.5,1.5,1.5,0,0,1,19.5,18Z"
                         fill="none"
                         stroke="#000"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
                       />
                       <path
                         id="Path_5"
@@ -216,9 +214,9 @@ export default function BasicTable() {
                         d="M19.5,7.5A1.5,1.5,0,1,1,18,6a1.5,1.5,0,0,1,1.5,1.5Z"
                         fill="none"
                         stroke="#000"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
                       />
                       <path
                         id="Path_6"
@@ -226,9 +224,9 @@ export default function BasicTable() {
                         d="M19.5,28.5A1.5,1.5,0,1,1,18,27,1.5,1.5,0,0,1,19.5,28.5Z"
                         fill="none"
                         stroke="#000"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="3"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="3"
                       />
                     </g>
                     <path
@@ -293,8 +291,8 @@ export default function BasicTable() {
                       data-name="Tuesday . 6:08 PM"
                       transform="translate(731.349 349.473)"
                       fill="#383737"
-                      font-size="23"
-                      font-family="HelveticaNeue, Helvetica Neue"
+                      fontSize="23"
+                      fontFamily="HelveticaNeue, Helvetica Neue"
                     >
                       <tspan x="0" y="0">
                         Tuesday . 6:08 PM
@@ -319,8 +317,8 @@ export default function BasicTable() {
                       data-name="Tuesday . 6:08 PM"
                       transform="translate(351 769)"
                       fill="#383737"
-                      font-size="23"
-                      font-family="HelveticaNeue, Helvetica Neue"
+                      fontSize="23"
+                      fontFamily="HelveticaNeue, Helvetica Neue"
                     >
                       <tspan x="0" y="0">
                         Tuesday . 6:08 PM
@@ -328,15 +326,15 @@ export default function BasicTable() {
                     </text>
                     <text
                       id="Lorem_Ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry._Lorem_Ipsum_has_been_the_industry_s_standard_dummy_text_ever_since_the_1500s_"
-                      data-name="Lorem Ipsum is simply dummy 
+                      data-name="Lorem Ipsum is simply dummy
 text of the printing and typesetting
  industry. Lorem Ipsum has been
- the industry’s standard dummy 
+ the industry’s standard dummy
 text ever since the 1500s,"
                       transform="translate(243 870)"
-                      font-size="30"
-                      font-family="HelveticaNeue, Helvetica Neue"
-                      letter-spacing="0.03em"
+                      fontSize="30"
+                      fontFamily="HelveticaNeue, Helvetica Neue"
+                      letterSpacing="0.03em"
                     >
                       <tspan x="0" y="0">
                         Lorem Ipsum is simply dummy
@@ -381,9 +379,9 @@ text ever since the 1500s,"
                       transform="translate(918.999 244)"
                       fill="none"
                       stroke="#000"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="3"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="3"
                     />
                     <path
                       id="Icon_awesome-user-alt"
@@ -407,8 +405,8 @@ text ever since the 1500s,"
                         data-name="Hi John"
                         transform="translate(657 471)"
                         fill="#383737"
-                        font-size="34"
-                        font-family="HelveticaNeue, Helvetica Neue"
+                        fontSize="34"
+                        fontFamily="HelveticaNeue, Helvetica Neue"
                       >
                         <tspan x="0" y="0">
                           Hi John
@@ -436,8 +434,8 @@ text ever since the 1500s,"
  swaibu?"
                           transform="translate(542.64 479.001)"
                           fill="#002e81"
-                          font-size="34"
-                          font-family="HelveticaNeue, Helvetica Neue"
+                          fontSize="34"
+                          fontFamily="HelveticaNeue, Helvetica Neue"
                         >
                           <tspan x="0" y="0">
                             What happened last night
@@ -463,8 +461,8 @@ text ever since the 1500s,"
  swaibu?"
                           transform="translate(542.64 479.001)"
                           fill="#002e81"
-                          font-size="34"
-                          font-family="HelveticaNeue, Helvetica Neue"
+                          fontSize="34"
+                          fontFamily="HelveticaNeue, Helvetica Neue"
                         >
                           <tspan x="0" y="0">
                             What happened last night
@@ -499,8 +497,8 @@ text ever since the 1500s,"
  swaibu?"
                           transform="translate(50.288 124.631)"
                           fill="#002e81"
-                          font-size="34"
-                          font-family="HelveticaNeue, Helvetica Neue"
+                          fontSize="34"
+                          fontFamily="HelveticaNeue, Helvetica Neue"
                         >
                           <tspan x="0" y="0">
                             What happened last night
@@ -525,15 +523,15 @@ text ever since the 1500s,"
                         />
                         <text
                           id="Lorem_Ipsum_is_simply_dummy_text_of_the_printing_and_typesetting_industry._Lorem_Ipsum_has_been_the_industry_s_standard_dummy_text_ever_since_the_1500s_2"
-                          data-name="Lorem Ipsum is simply dummy 
+                          data-name="Lorem Ipsum is simply dummy
 text of the printing and typesetting
- industry. Lorem Ipsum has been 
+ industry. Lorem Ipsum has been
 the industry’s standard dummy
  text ever since the 1500s,"
                           transform="translate(41.288 66.997)"
                           fill="#002e81"
-                          font-size="34"
-                          font-family="HelveticaNeue, Helvetica Neue"
+                          fontSize="34"
+                          fontFamily="HelveticaNeue, Helvetica Neue"
                         >
                           <tspan x="0" y="0">
                             Lorem Ipsum is simply dummy

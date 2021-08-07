@@ -1,4 +1,4 @@
-import Types from './types';
+import Types from "./types";
 
 const initialState = {
   user: {},
@@ -6,14 +6,15 @@ const initialState = {
 
 const userData = (state = initialState, action) => {
   switch (action.type) {
-    case Types.GET_USER_DETAILS:
-      const user = localStorage.getItem('user');
+    case Types.GET_USER_DETAILS: {
+      const user = localStorage.getItem("user");
       return {
         ...state,
         user: user && JSON.parse(user).user,
       };
+    }
     case Types.LOGOUT:
-      localStorage.removeItem('user')
+      localStorage.removeItem("user");
       return { ...state, user: {} };
     default:
       return state;
