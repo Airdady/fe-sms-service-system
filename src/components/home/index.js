@@ -67,7 +67,10 @@ export default function BasicTable() {
             <Grid container style={{ height: '100%' }}>
               <Grid item md={5} style={{ marginTop: '6rem' }}>
                 <Typography variant="h3" style={{ color: 'white' }}>
-                  Connect Secure & Enngage with Customers
+                Empower Every Enterprise to Connect Global Users Efficiently and Achieve More
+                </Typography>
+                <Typography variant="p" style={{color: 'black'}}>
+                Easily and simply connect with your clients via text and voice messages, no matter where they are.
                 </Typography>
                 <Box mt={4} display>
                   <Button variant="contained">Get started</Button>
@@ -75,6 +78,7 @@ export default function BasicTable() {
                     Talk to Experts
                   </Button>
                 </Box>
+                
               </Grid>
               <Grid
                 item
@@ -561,6 +565,56 @@ the industry’s standard dummy
                   </g>
                 </svg>
               </Grid>
+              <Box textAlign="center" width="100%">
+                <Typography variant="h4">
+                Follow up the customer and drive customer growth
+                </Typography>
+                <Typography variant="p" style={{color: 'black'}}>
+                Easy and simple to connect with your clients via text and voice messages, no matter where they are.
+                </Typography>
+                </Box>
+                <Box >
+                  <Button>
+                    <Box>
+                      {/* image */}
+                    </Box>
+                    <Box >
+                      <Typography variant="p" style={{color: 'black'}}>
+                      Customer acquisition
+                      </Typography>
+                    </Box>
+                  </Button>
+                  <Button>
+                    <Box>
+                      {/* image */}
+                    </Box>
+                    <Box>
+                      <Typography variant="p" style={{color: 'black'}}>
+                      Customer participation
+                      </Typography>
+                    </Box>
+                  </Button>
+                  <Button>
+                    <Box>
+                      {/* image */}
+                    </Box>
+                    <Box>
+                      <Typography variant="p" style={{color: 'black'}}>
+                      Customer conversion
+                      </Typography>
+                    </Box>
+                  </Button>
+                  <Button>
+                    <Box>
+                      {/* image */}
+                    </Box>
+                    <Box>
+                      <Typography variant="p" style={{color: 'black'}}>
+                      Customer retention
+                      </Typography>
+                    </Box>
+                  </Button>
+                </Box>
             </Grid>
           </Container>
         </div>

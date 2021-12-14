@@ -62,18 +62,25 @@ export default function BasicTable() {
   return (
     <Box display="flex" bgcolor="white" flexDirection="column" flexGrow={1}>
       <div className={classes.root}>
-        <MenuNav />
         {/* <div className={classes.bgColor}> */}
         <div className={classes.bgColor}>
           <Container maxWidth="lg" style={{ height: '350px' }}>
             <Grid container style={{ height: '100%' }}>
               <Grid item md={4} style={{ marginTop: '6rem' }}>
+        <Typography variant="h4" style={{ color: 'white' }}>
+              Verification SMS
+                </Typography>
                 <Typography variant="h6" style={{ color: 'white' }}>
-                  Intensify online security of your services with simple,
-                  tangible, and valuable plug-and- play API
+                Increase the registration conversion rate and speed up your business process
+                </Typography>
+                <Typography variant="p" style={{color: 'white'}}>
+                Support a variety of languages, help global users to carry out security verification through the fastest way, 
+                retain every customer, 
+                let customers feel the enterprise's efficient service, 
+                promote the business development of the enterprise.
                 </Typography>
                 <Box mt={4} display>
-                  <Button variant="contained">Get started</Button>
+                  <Button variant="contained">Free Trail</Button>
                   <Button variant="contained" className={classes.rightBtn}>
                     Talk to Experts
                   </Button>
@@ -139,14 +146,8 @@ export default function BasicTable() {
           <Grid container spacing={3}>
             <Box mt={5}>
               <Box textAlign="left" mb={3}>
-                <Typography variant="h4">What is Route OTP?</Typography>
-                <Typography variant="subtitle1">
-                  Route OTP is a security solution that ensures safe and secure
-                  login process. Integrate Route OTP in your existing system and
-                  manage the entire end to end business process ranging from OTP
-                  generation, delivery via SMS, time tracking and authentication
-                  without utilizing any additional resources.
-                </Typography>
+                <Typography variant="h4">Stable and reliable technical support
+to help you efficiently serve global customers</Typography>
               </Box>
               <ProductFeatures />
             </Box>
@@ -164,17 +165,16 @@ export default function BasicTable() {
       >
         <Container style={{ transform: 'skewY(3deg)' }}>
           <Box my={5}>
-            <Typography variant="h4">Relevant Industries</Typography>
+            <Typography variant="h4">Assist new user registration and activation to retain every customer</Typography>
           </Box>
 
           <Grid container spacing={3}>
             <Grid item md={3}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Convenient log in</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                    Dynamic authentication improves retention rate by eliminating the need to remember complex passwords.
                   </Typography>
                 </Box>
               </Paper>
@@ -182,10 +182,11 @@ export default function BasicTable() {
             <Grid item md={3}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Ensure safety</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  Sensitive operations are confirmed and 
+                  authenticated to reduce malicious operations by illegal users and 
+                  ensure account security
                   </Typography>
                 </Box>
               </Paper>
@@ -193,10 +194,11 @@ export default function BasicTable() {
             <Grid item md={3}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Identity authentication</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  Guarantee the authenticity of registration, 
+                  mobile phone number binding, retrieve password, 
+                  and avoid repeated data.
                   </Typography>
                 </Box>
               </Paper>
@@ -204,54 +206,14 @@ export default function BasicTable() {
             <Grid item md={3}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Information confirmation
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item md={3}>
-              <Paper className={classes.paper}>
-                <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
-                  <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item md={3}>
-              <Paper className={classes.paper}>
-                <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
-                  <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item md={3}>
-              <Paper className={classes.paper}>
-                <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
-                  <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item md={3}>
-              <Paper className={classes.paper}>
-                <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
-                  <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  Important information authentication, 
+                  such as information change, 
+                  payment confirmation, 
+                  activity confirmation, 
+                  to ensure information security.</Typography>
+.
                   </Typography>
                 </Box>
               </Paper>
@@ -269,20 +231,18 @@ export default function BasicTable() {
       >
         <Container style={{ transform: 'skewY(3deg)' }}>
           <Box my={5}>
-            <Typography variant="h4">Relevant Industries</Typography>
-            <Typography variant="subtitle1" className={classes.p}>
-              Effortlessly integrate two API’s within few minutes before
-              starting the service.
-            </Typography>
+            <Typography variant="h4">Leading platform advantages and professional guarantee</Typography>
+            
           </Box>
           <Grid container spacing={3}>
             <Grid item md={4}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Channel advantage</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  In-depth cooperation with hundreds of overseas operators, 
+                  multi-protocol docking to ensure that demand is met, 
+                  and multiple submission methods can easily reach the worldwide.
                   </Typography>
                 </Box>
               </Paper>
@@ -290,10 +250,12 @@ export default function BasicTable() {
             <Grid item md={4}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Platform advantage</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  With 15 years of international telecom operation experience, 
+                  we can carry out independent research and 
+                  development based on user needs and 
+                  present a continuously optimized industry platform.
                   </Typography>
                 </Box>
               </Paper>
@@ -301,43 +263,11 @@ export default function BasicTable() {
             <Grid item md={4}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Cost advantage</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item md={4}>
-              <Paper className={classes.paper}>
-                <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
-                  <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item md={4}>
-              <Paper className={classes.paper}>
-                <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
-                  <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
-                  </Typography>
-                </Box>
-              </Paper>
-            </Grid>
-            <Grid item md={4}>
-              <Paper className={classes.paper}>
-                <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
-                  <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  The directly connected channel has low resource price and high efficiency. 
+                  The platform has flexible billing mode, 
+                  which can be sent on demand and provides multiple payment modes for users to choose.
                   </Typography>
                 </Box>
               </Paper>
@@ -354,11 +284,11 @@ export default function BasicTable() {
       >
         <Container style={{ transform: 'skewY(3deg)' }}>
           <Box my={5}>
-            <Typography variant="h4">Relevant Industries</Typography>
+            <Typography variant="h4">Create more value for your enterprise</Typography>
           </Box>
 
           <Grid container spacing={3}>
-            <Grid item md={2}>
+            <Grid item md={5}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
                   <Typography variant="h6">Easy Deployment</Typography>
@@ -369,57 +299,105 @@ export default function BasicTable() {
                 </Box>
               </Paper>
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={7}>
+                <Typography variant="p" style={{color: 'black'}}>
+                Don't underestimate text messages.
+                </Typography>
+            <Grid container spacing={3}>
+            <Grid item md={12}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Customizable Time Period</Typography>
+                  <Typography variant="h6">New customers through verification code</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Set the validity of your OTP as per your suitability and
-                    specification.
+                  Provide a global stable connection SMS channel for your website and APP, 
+                  quickly verify the authenticity of customers, improve the conversion rate of registration, 
+                  help products to attract new customers efficiently.
                   </Typography>
                 </Box>
               </Paper>
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={12}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Instant Delivery</Typography>
+                  <Typography variant="h6">Product promotion</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Expeditiously deliver OTPs with our high speed and vigorous
-                    channels.
+                  Analyze registered users, 
+                  filter potential users, 
+                  promote your products and activities to them through messages, 
+                  creating more value for your enterprise.
                   </Typography>
                 </Box>
               </Paper>
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={12}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Instant Delivery</Typography>
+                  <Typography variant="h6">Retentive customer maintenance</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Expeditiously deliver OTPs with our high speed and vigorous
-                    channels.
+                  We can send orders reminder, 
+                  meeting notice, 
+                  holiday blessing and so on through SMS, 
+                  accurately grasp the time and events to interact with customers at key points of customer contact, 
+                  and extend customer life cycle.
                   </Typography>
                 </Box>
               </Paper>
             </Grid>
-            <Grid item md={2}>
+            </Grid>
+            </Grid>
+            
+          </Grid>
+        </Container>
+      </Box>
+      <Box
+        p={5}
+        width="100%"
+        bgcolor="#f0f3fb"
+        textAlign="left"
+        style={{ transform: 'skewY(-3deg)' }}
+      >
+        <Container style={{ transform: 'skewY(3deg)' }}>
+          <Box my={5}>
+            <Typography variant="h4">4 steps to access in</Typography>
+          </Box>
+
+          <Grid container spacing={3}>
+            <Grid item md={3}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Sign up</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  Authorization key is automatically generated after signed up.
                   </Typography>
                 </Box>
               </Paper>
             </Grid>
-            <Grid item md={2}>
+            <Grid item md={3}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Customizable Time Period</Typography>
+                  <Typography variant="h6">Protocal setting</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Set the validity of your OTP as per your suitability and
-                    specification.
+                  Support SMPP protoal,allow API HTTPinterface.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Docking platform adjusting</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                  Adjusting accoding to mimicking production environment,avoid unknowns in advance.
+                  </Typography>
+                </Box>
+              </Paper>
+            </Grid>
+            <Grid item md={3}>
+              <Paper className={classes.paper}>
+                <Box className={classes.box} p={3}>
+                  <Typography variant="h6">Production process</Typography>
+                  <Typography variant="subtitle1" className={classes.p}>
+                  Schedule taskes,status report timely.
                   </Typography>
                 </Box>
               </Paper>
