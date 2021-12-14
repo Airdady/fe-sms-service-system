@@ -67,7 +67,7 @@ export default function BasicTable() {
             <Grid container style={{ height: '100%' }}>
               <Grid item md={5} style={{ marginTop: '6rem' }}>
                 <Typography variant="h3" style={{ color: 'white' }}>
-                  Connect Secure & Enngage with Customers
+                  Connect Secure & Engage with Customers
                 </Typography>
                 <Box mt={4} display>
                   <Button variant="contained">Get started</Button>
