@@ -30,10 +30,12 @@ export default function ProductFeatures() {
             <Grid item md={6}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Easy Deployment</Typography>
+                  <Typography variant="h6">Global compliance 
+                  Cover global operators</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Effortlessly integrate two API’s within few minutes before
-                    starting the service.
+                  Engaged in international communication business for 15 years, 
+                  familiar with laws and regulations of various countries, 
+                  and cooperated with more than 100 international operators.
                   </Typography>
                 </Box>
               </Paper>
@@ -41,10 +43,12 @@ export default function ProductFeatures() {
             <Grid item md={6}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Customizable Time Period</Typography>
+                  <Typography variant="h6">Reach within 5 seconds Fast and efficient</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Set the validity of your OTP as per your suitability and
-                    specification.
+                  Dedicated to the deployment of global nodes to ensure access speed, 
+                  dedicated lines cover up to 190 countries and regions.
+
+
                   </Typography>
                 </Box>
               </Paper>
@@ -52,10 +56,11 @@ export default function ProductFeatures() {
             <Grid item md={6}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Instant Delivery</Typography>
+                  <Typography variant="h6">Higt reaching rate Multi-channel intelligent scheduling, stable and reliable</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Expeditiously deliver OTPs with our high speed and vigorous
-                    channels.
+                  Supports technologies such as large capacity and high concurrency, 
+                  distributed cluster, and high elastic extensible network architecture, 
+                  and supports rich channel resources to ensure reaching rate
                   </Typography>
                 </Box>
               </Paper>
@@ -63,10 +68,11 @@ export default function ProductFeatures() {
             <Grid item md={6}>
               <Paper className={classes.paper}>
                 <Box className={classes.box} p={3}>
-                  <Typography variant="h6">Instant Delivery</Typography>
+                  <Typography variant="h6">Security privacy Escort your customers' information</Typography>
                   <Typography variant="subtitle1" className={classes.p}>
-                    Expeditiously deliver OTPs with our high speed and vigorous
-                    channels.
+                  The platform supports HTTPS/SSL interconnection for encrypted transmission, 
+                  and adopts automatic disaster recovery mechanism, redundant backup, 
+                  and data desensitization to ensure customer data security.
                   </Typography>
                 </Box>
               </Paper>

@@ -69,13 +69,12 @@ export default function BasicTable() {
   return (
     <Box display="flex" flexDirection="column" flexGrow={1}>
       <div className={classes.root}>
-        <MenuNav />
         {/* <div className={classes.bgColor}> */}
         <div className={classes.bgColor}>
           <Container maxWidth="lg" style={{ height: '350px' }}>
             <Grid container style={{ height: '100%' }}>
               <Grid item md={4} style={{ marginTop: '6rem' }}>
-                <Typography variant="h6" style={{ color: 'white' }}>
+                <Typography variant="h6" style={{ color: 'black' }}>
                   Global Phone Number Validation & Lookup JSON API
                 </Typography>
                 <Box mt={4} display>
